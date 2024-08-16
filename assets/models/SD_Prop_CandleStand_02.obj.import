@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://yy73s6s6uu2i"
+path="res://.godot/imported/SD_Prop_CandleStand_02.obj-191780a1fa3353d39a6694b2be651828.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_CandleStand_02.obj-191780a1fa3353d39a6694b2be651828.mesh"]
+
+source_file="res://assets/models/SD_Prop_CandleStand_02.obj"
+dest_files=["res://.godot/imported/SD_Prop_CandleStand_02.obj-191780a1fa3353d39a6694b2be651828.mesh", "res://.godot/imported/SD_Prop_CandleStand_02.obj-191780a1fa3353d39a6694b2be651828.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

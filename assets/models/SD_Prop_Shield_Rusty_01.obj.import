@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcdb2rp4lxsp1"
+path="res://.godot/imported/SD_Prop_Shield_Rusty_01.obj-ea8a0e67f991cd30a28458b19e6213ee.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Shield_Rusty_01.obj-ea8a0e67f991cd30a28458b19e6213ee.mesh"]
+
+source_file="res://assets/models/SD_Prop_Shield_Rusty_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Shield_Rusty_01.obj-ea8a0e67f991cd30a28458b19e6213ee.mesh", "res://.godot/imported/SD_Prop_Shield_Rusty_01.obj-ea8a0e67f991cd30a28458b19e6213ee.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

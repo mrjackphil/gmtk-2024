@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bpimbf6x6p0bj"
+path="res://.godot/imported/SD_Prop_Panks_02.obj-9a561e75967439ff9ccec952c12eb80c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Panks_02.obj-9a561e75967439ff9ccec952c12eb80c.mesh"]
+
+source_file="res://assets/models/SD_Prop_Panks_02.obj"
+dest_files=["res://.godot/imported/SD_Prop_Panks_02.obj-9a561e75967439ff9ccec952c12eb80c.mesh", "res://.godot/imported/SD_Prop_Panks_02.obj-9a561e75967439ff9ccec952c12eb80c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

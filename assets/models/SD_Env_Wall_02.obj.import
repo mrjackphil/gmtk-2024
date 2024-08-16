@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://j0udv88q3cdy"
+path="res://.godot/imported/SD_Env_Wall_02.obj-55da4a0f9f7378744bbc2ba007f83806.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Wall_02.obj-55da4a0f9f7378744bbc2ba007f83806.mesh"]
+
+source_file="res://assets/models/SD_Env_Wall_02.obj"
+dest_files=["res://.godot/imported/SD_Env_Wall_02.obj-55da4a0f9f7378744bbc2ba007f83806.mesh", "res://.godot/imported/SD_Env_Wall_02.obj-55da4a0f9f7378744bbc2ba007f83806.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

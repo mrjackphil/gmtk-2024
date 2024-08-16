@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcwaxmr53s1sm"
+path="res://.godot/imported/SD_Trap_FloorGrinder_02.obj-5587cb6e4eeead373aee83effc2da70e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Trap_FloorGrinder_02.obj-5587cb6e4eeead373aee83effc2da70e.mesh"]
+
+source_file="res://assets/models/SD_Trap_FloorGrinder_02.obj"
+dest_files=["res://.godot/imported/SD_Trap_FloorGrinder_02.obj-5587cb6e4eeead373aee83effc2da70e.mesh", "res://.godot/imported/SD_Trap_FloorGrinder_02.obj-5587cb6e4eeead373aee83effc2da70e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

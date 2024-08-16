@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dbc420xjo2u1h"
+path="res://.godot/imported/SD_Env_Floor_Stone_Broken_05.obj-6486011430812b169b5284babd25d4bc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Floor_Stone_Broken_05.obj-6486011430812b169b5284babd25d4bc.mesh"]
+
+source_file="res://assets/models/SD_Env_Floor_Stone_Broken_05.obj"
+dest_files=["res://.godot/imported/SD_Env_Floor_Stone_Broken_05.obj-6486011430812b169b5284babd25d4bc.mesh", "res://.godot/imported/SD_Env_Floor_Stone_Broken_05.obj-6486011430812b169b5284babd25d4bc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

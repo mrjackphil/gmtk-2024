@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d13g3484w1n3x"
+path="res://.godot/imported/SD_Prop_PotionBrew_02.obj-dc0f002440812d7ada29538b9e8110fb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_PotionBrew_02.obj-dc0f002440812d7ada29538b9e8110fb.mesh"]
+
+source_file="res://assets/models/SD_Prop_PotionBrew_02.obj"
+dest_files=["res://.godot/imported/SD_Prop_PotionBrew_02.obj-dc0f002440812d7ada29538b9e8110fb.mesh", "res://.godot/imported/SD_Prop_PotionBrew_02.obj-dc0f002440812d7ada29538b9e8110fb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

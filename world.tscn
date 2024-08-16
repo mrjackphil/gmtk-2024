@@ -1,16 +1,18 @@
-[gd_scene load_steps=32 format=4 uid="uid://b6ldmtigej1wc"]
+[gd_scene load_steps=33 format=4 uid="uid://b6ldmtigej1wc"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_34ioo"]
 [ext_resource type="Script" path="res://components/interactions/interaction.gd" id="4_sxlfi"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="6_fd4ue"]
 [ext_resource type="PackedScene" uid="uid://mtq86lxuoo1" path="res://assets/models/SK_Character_RiotCop.fbx" id="6_r8tpa"]
-[ext_resource type="SpriteFrames" uid="uid://cvvbm2een0pev" path="res://assets/sprites/traktor.ase" id="7_dfdi8"]
+[ext_resource type="Script" path="res://scripts/shrink.gd" id="7_ogecx"]
 [ext_resource type="Script" path="res://components/interactions/slider.gd" id="7_v1jk4"]
 [ext_resource type="Script" path="res://components/basic/InteractableComponent.gd" id="7_vtgtv"]
-[ext_resource type="Script" path="res://scripts/move.gd" id="9_jff0j"]
+[ext_resource type="ArrayMesh" uid="uid://diaybdak0q6gp" path="res://assets/models/SD_Prop_Brazier_02.obj" id="8_83kdj"]
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="9_sugpi"]
 [ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="10_v88av"]
 [ext_resource type="Texture2D" uid="uid://cyg2snr1w5xw5" path="res://addons/func_godot/textures/default_texture.png" id="11_alter"]
+[ext_resource type="Material" uid="uid://3sp75cxolgtx" path="res://assets/shader.tres" id="12_en6uk"]
+[ext_resource type="ArrayMesh" uid="uid://c1dnnm7y38f7p" path="res://assets/models/SD_Prop_Chest_04.obj" id="13_rquo1"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdm6l"]
 albedo_texture = ExtResource("6_fd4ue")
@@ -48,21 +50,6 @@ sky_material = SubResource("PhysicalSkyMaterial_gl8hn")
 background_mode = 2
 sky = SubResource("Sky_00ngy")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ndvm7"]
-billboard_mode = 2
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_ed6bt"]
-emission_shape = 3
-emission_box_extents = Vector3(-0.03, 0, 0)
-gravity = Vector3(0, 1, 0)
-linear_accel_max = 2.0
-radial_accel_max = 2.0
-turbulence_enabled = true
-
-[sub_resource type="QuadMesh" id="QuadMesh_csuj5"]
-lightmap_size_hint = Vector2i(2, 2)
-size = Vector2(0.08, 0.08)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5r0y5"]
 albedo_texture = ExtResource("11_alter")
 metallic_specular = 0.0
@@ -95,6 +82,12 @@ points = PackedVector3Array(-1, 3, -7, -1, 0.5, -7, 5, 0.5, -7, 5, 3, -7, -1, 3,
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nx4es"]
 points = PackedVector3Array(5, 1.5, -6, 5, 1.5, -6, 5, 1.5, -6, 5, 3, -6, -3, 0.5, -1.5, -3, 0.5, -1.5, -3, 0.5, -1.5, 4, 0.5, -1.5, 5, 3, -4, 5, 3, -4, 5, 3, -4, -3, 0.5, 1.5, 4, 0.5, 1.5, 4, 0.5, 1.5, 4, 0.5, 1.5, 5, 1.5, -4)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_xd38o"]
+points = PackedVector3Array(0.490087, 0.152245, 0.491492, -0.491816, 0.0107617, -0.4909, 0.4922, 0.0305298, -0.47978, -0.3541, 1.7254, -0.353426, -0.4922, 0.0100973, 0.478029, 0.353775, 1.69639, 0.3541, -0.341869, 1.69639, 0.3541, 0.3541, 1.69716, -0.341956, 0.517849, 0.0969422, -0.504736, 0.4922, 0.0305298, 0.466536, -0.506037, 0.12468, 0.491492, -0.506037, 0.12468, -0.504736, 0.517849, 0.0969422, 0.491492, 0.490087, 0.12468, -0.504736, -0.478275, 0.152245, 0.491492)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7n3bj"]
+points = PackedVector3Array(-0.877997, 0, -0.488007, -0.899656, 0.57158, -0.5, -0.906191, 0.573681, 0.5, 0.878184, 0, 0.484387, 0.878184, 0, -0.488007, 0.899847, 0.57158, -0.5, -0.877997, 0, 0.484387, 0.906384, 0.573681, 0.5, -1.06281, 0.282308, -0.184327, 1.0628, 0.282308, -0.184427, -1.06281, 0.282308, 0.214066, 1.0628, 0.282308, 0.214066, -1.06281, 0.415146, -0.184327, 1.0628, 0.415146, -0.184427)
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388498, -0.187797, 0.0791359)
@@ -487,29 +480,16 @@ collision_layer = 8
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05798, 0)
 shape = SubResource("CapsuleShape3D_82wy7")
 
+[node name="ShrinkComponent" type="Node" parent="CharacterBody3D" node_paths=PackedStringArray("shinkable_object")]
+script = ExtResource("7_ogecx")
+shinkable_object = NodePath("..")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.866025, 0.12941, 0.482963, -0.5, 0.224144, 0.836516, 0, -0.965926, 0.258819, 0, 6, 0)
 shadow_enabled = true
-
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -3, 1, -2)
-shaded = true
-texture_filter = 0
-sprite_frames = ExtResource("7_dfdi8")
-animation = &"idle"
-autoplay = "idle"
-frame_progress = 0.149424
-script = ExtResource("9_jff0j")
-
-[node name="GPUParticles3D" type="GPUParticles3D" parent="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.106098, 0.0614343, 0)
-material_override = SubResource("StandardMaterial3D_ndvm7")
-amount = 24
-process_material = SubResource("ParticleProcessMaterial_ed6bt")
-draw_pass_1 = SubResource("QuadMesh_csuj5")
 
 [node name="FuncGodotMap" type="Node3D" parent="."]
 transform = Transform3D(-0.995676, 0, -0.092892, 0, 1, 0, 0.092892, 0, -0.995676, 4.2256, 0.289415, 32.838)
@@ -533,3 +513,33 @@ shape = SubResource("ConvexPolygonShape3D_o32io")
 
 [node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="FuncGodotMap/entity_0_worldspawn"]
 shape = SubResource("ConvexPolygonShape3D_nx4es")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03741, 0, 12.9646)
+collision_layer = 9
+
+[node name="ShrinkComponent" type="Node" parent="StaticBody3D"]
+script = ExtResource("7_ogecx")
+
+[node name="SdPropBrazier02" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("8_83kdj")
+skeleton = NodePath("../..")
+surface_material_override/0 = ExtResource("12_en6uk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConvexPolygonShape3D_xd38o")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 11)
+collision_layer = 9
+
+[node name="SdPropChest04" type="MeshInstance3D" parent="StaticBody3D2"]
+material_override = ExtResource("12_en6uk")
+mesh = ExtResource("13_rquo1")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+shape = SubResource("ConvexPolygonShape3D_7n3bj")
+
+[node name="ShrinkComponent" type="Node" parent="StaticBody3D2"]
+script = ExtResource("7_ogecx")

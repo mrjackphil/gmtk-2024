@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://6mfyusm7jy5m"
+path="res://.godot/imported/SD_Env_Goblin_SpikeBeam_03.obj-83351ca63503aafe73f0d343f89d3c28.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Goblin_SpikeBeam_03.obj-83351ca63503aafe73f0d343f89d3c28.mesh"]
+
+source_file="res://assets/models/SD_Env_Goblin_SpikeBeam_03.obj"
+dest_files=["res://.godot/imported/SD_Env_Goblin_SpikeBeam_03.obj-83351ca63503aafe73f0d343f89d3c28.mesh", "res://.godot/imported/SD_Env_Goblin_SpikeBeam_03.obj-83351ca63503aafe73f0d343f89d3c28.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

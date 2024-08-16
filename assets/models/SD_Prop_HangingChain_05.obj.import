@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cupifm65ijseq"
+path="res://.godot/imported/SD_Prop_HangingChain_05.obj-ecac106246e92c16d479918c76f5b1ca.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_HangingChain_05.obj-ecac106246e92c16d479918c76f5b1ca.mesh"]
+
+source_file="res://assets/models/SD_Prop_HangingChain_05.obj"
+dest_files=["res://.godot/imported/SD_Prop_HangingChain_05.obj-ecac106246e92c16d479918c76f5b1ca.mesh", "res://.godot/imported/SD_Prop_HangingChain_05.obj-ecac106246e92c16d479918c76f5b1ca.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

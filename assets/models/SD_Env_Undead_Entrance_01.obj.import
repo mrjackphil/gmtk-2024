@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cofaxo0sj1osg"
+path="res://.godot/imported/SD_Env_Undead_Entrance_01.obj-567c60ed7b17ada00bda0b8f7f8f2f3f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Undead_Entrance_01.obj-567c60ed7b17ada00bda0b8f7f8f2f3f.mesh"]
+
+source_file="res://assets/models/SD_Env_Undead_Entrance_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Undead_Entrance_01.obj-567c60ed7b17ada00bda0b8f7f8f2f3f.mesh", "res://.godot/imported/SD_Env_Undead_Entrance_01.obj-567c60ed7b17ada00bda0b8f7f8f2f3f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

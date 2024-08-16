@@ -18,7 +18,6 @@ var animations := {
 
 func _ready() -> void:
 	rhand_anim_player.connect("animation_finished", _idle)
-	# lhand_anim_player.connect("animation_finished", _idle)
 
 func _process(_delta: float) -> void:
 	var can_interact := false
@@ -30,40 +29,19 @@ func _process(_delta: float) -> void:
 
 	if Input.is_action_just_pressed("combat_attack"):
 		attack()
-		
-	if Input.is_action_just_pressed("combat_defense"):
-		defense()
-
-	if Input.is_action_just_released("combat_defense"):
-		unfold_defense()
 
 func _idle(_anim_string: String) -> void:
 	rhand_anim_player.play(animations.idle)
 
 func shoot() -> void:
-	print('test')
-	
 	if not shoot_raycast or not shoot_raycast.is_colliding(): return
 	
 	var collider := shoot_raycast.get_collider()
 	collider.scale *= 2
 
 func attack() -> void:
-	#rhand_anim_player.play(animations.attack)
 	shoot()
 	pass
-
-func defense() -> void:
-	lhand_anim_player.play("defense")
-	
-	if movement_component:
-		movement_component.EXTERNAL_MODIFICATOR -= 250
-
-func unfold_defense() -> void:
-	lhand_anim_player.play_backwards("defense", 0)
-	
-	if movement_component:
-		movement_component.EXTERNAL_MODIFICATOR += 250
 
 # Kick, push, bash
 func push() -> void:

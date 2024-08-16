@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dlix4i8ktope1"
+path="res://.godot/imported/SD_Prop_Banner_Emblem_02.obj-54c07aae409abdf54752f3da58daae0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Banner_Emblem_02.obj-54c07aae409abdf54752f3da58daae0b.mesh"]
+
+source_file="res://assets/models/SD_Prop_Banner_Emblem_02.obj"
+dest_files=["res://.godot/imported/SD_Prop_Banner_Emblem_02.obj-54c07aae409abdf54752f3da58daae0b.mesh", "res://.godot/imported/SD_Prop_Banner_Emblem_02.obj-54c07aae409abdf54752f3da58daae0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

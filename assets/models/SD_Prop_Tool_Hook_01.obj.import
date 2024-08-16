@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://tilfav7sbvqf"
+path="res://.godot/imported/SD_Prop_Tool_Hook_01.obj-b9c9dd0eb9d7e7914eedfbadb40cbe70.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Tool_Hook_01.obj-b9c9dd0eb9d7e7914eedfbadb40cbe70.mesh"]
+
+source_file="res://assets/models/SD_Prop_Tool_Hook_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Tool_Hook_01.obj-b9c9dd0eb9d7e7914eedfbadb40cbe70.mesh", "res://.godot/imported/SD_Prop_Tool_Hook_01.obj-b9c9dd0eb9d7e7914eedfbadb40cbe70.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

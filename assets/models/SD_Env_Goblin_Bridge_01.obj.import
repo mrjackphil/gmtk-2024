@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://di8o6uv4ankbu"
+path="res://.godot/imported/SD_Env_Goblin_Bridge_01.obj-97d57ea88e7a84455ac06f9c9d8f95e9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Goblin_Bridge_01.obj-97d57ea88e7a84455ac06f9c9d8f95e9.mesh"]
+
+source_file="res://assets/models/SD_Env_Goblin_Bridge_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Goblin_Bridge_01.obj-97d57ea88e7a84455ac06f9c9d8f95e9.mesh", "res://.godot/imported/SD_Env_Goblin_Bridge_01.obj-97d57ea88e7a84455ac06f9c9d8f95e9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

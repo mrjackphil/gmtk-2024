@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://l1mm80w0klrx"
+path="res://.godot/imported/SD_Env_Dungeon_Entrance_01.obj-9ee12ab3fe557f0142e49cea35a96693.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Dungeon_Entrance_01.obj-9ee12ab3fe557f0142e49cea35a96693.mesh"]
+
+source_file="res://assets/models/SD_Env_Dungeon_Entrance_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Dungeon_Entrance_01.obj-9ee12ab3fe557f0142e49cea35a96693.mesh", "res://.godot/imported/SD_Env_Dungeon_Entrance_01.obj-9ee12ab3fe557f0142e49cea35a96693.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

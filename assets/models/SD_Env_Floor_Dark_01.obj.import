@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://drm880vhrhw7h"
+path="res://.godot/imported/SD_Env_Floor_Dark_01.obj-fc8e6584cfd1bc14b62f62dcaa31054b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Floor_Dark_01.obj-fc8e6584cfd1bc14b62f62dcaa31054b.mesh"]
+
+source_file="res://assets/models/SD_Env_Floor_Dark_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Floor_Dark_01.obj-fc8e6584cfd1bc14b62f62dcaa31054b.mesh", "res://.godot/imported/SD_Env_Floor_Dark_01.obj-fc8e6584cfd1bc14b62f62dcaa31054b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

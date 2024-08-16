@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b86tf1p1v311f"
+path="res://.godot/imported/SD_Env_Undead_Pillar_02.obj-42ba4c91b92957885b186e51fe4c38ce.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Undead_Pillar_02.obj-42ba4c91b92957885b186e51fe4c38ce.mesh"]
+
+source_file="res://assets/models/SD_Env_Undead_Pillar_02.obj"
+dest_files=["res://.godot/imported/SD_Env_Undead_Pillar_02.obj-42ba4c91b92957885b186e51fe4c38ce.mesh", "res://.godot/imported/SD_Env_Undead_Pillar_02.obj-42ba4c91b92957885b186e51fe4c38ce.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

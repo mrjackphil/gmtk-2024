@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cjym8kiep3eek"
+path="res://.godot/imported/SD_Env_Undead_Stairs_01.obj-2856497986b87119defa8f210346d1c1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Undead_Stairs_01.obj-2856497986b87119defa8f210346d1c1.mesh"]
+
+source_file="res://assets/models/SD_Env_Undead_Stairs_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Undead_Stairs_01.obj-2856497986b87119defa8f210346d1c1.mesh", "res://.godot/imported/SD_Env_Undead_Stairs_01.obj-2856497986b87119defa8f210346d1c1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dayn78v6ckx26"
+path="res://.godot/imported/SD_Prop_WallCuffs_01.obj-90b7d2dc2a3b1e8aa69371c4b1a7f15d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_WallCuffs_01.obj-90b7d2dc2a3b1e8aa69371c4b1a7f15d.mesh"]
+
+source_file="res://assets/models/SD_Prop_WallCuffs_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_WallCuffs_01.obj-90b7d2dc2a3b1e8aa69371c4b1a7f15d.mesh", "res://.godot/imported/SD_Prop_WallCuffs_01.obj-90b7d2dc2a3b1e8aa69371c4b1a7f15d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

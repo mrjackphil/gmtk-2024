@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5xqe6axooc1g"
+path="res://.godot/imported/SD_Prop_Stool_01.obj-bc3881a9f58d5ab01c8a5b838203265a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Stool_01.obj-bc3881a9f58d5ab01c8a5b838203265a.mesh"]
+
+source_file="res://assets/models/SD_Prop_Stool_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Stool_01.obj-bc3881a9f58d5ab01c8a5b838203265a.mesh", "res://.godot/imported/SD_Prop_Stool_01.obj-bc3881a9f58d5ab01c8a5b838203265a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

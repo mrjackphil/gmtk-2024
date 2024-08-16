@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cdf34aasdblai"
+path="res://.godot/imported/SD_Prop_Pot_Large_01.obj-f1485eb50c6ea92cc37de48849ea93e1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Pot_Large_01.obj-f1485eb50c6ea92cc37de48849ea93e1.mesh"]
+
+source_file="res://assets/models/SD_Prop_Pot_Large_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Pot_Large_01.obj-f1485eb50c6ea92cc37de48849ea93e1.mesh", "res://.godot/imported/SD_Prop_Pot_Large_01.obj-f1485eb50c6ea92cc37de48849ea93e1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

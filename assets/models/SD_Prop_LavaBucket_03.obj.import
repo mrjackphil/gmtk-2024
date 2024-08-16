@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bont5n4bvmjje"
+path="res://.godot/imported/SD_Prop_LavaBucket_03.obj-d8706e10c2fccded4fbaa1044b91b442.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_LavaBucket_03.obj-d8706e10c2fccded4fbaa1044b91b442.mesh"]
+
+source_file="res://assets/models/SD_Prop_LavaBucket_03.obj"
+dest_files=["res://.godot/imported/SD_Prop_LavaBucket_03.obj-d8706e10c2fccded4fbaa1044b91b442.mesh", "res://.godot/imported/SD_Prop_LavaBucket_03.obj-d8706e10c2fccded4fbaa1044b91b442.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

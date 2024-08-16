@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ve0insvqr04q"
+path="res://.godot/imported/SD_Env_Pillar_Stone_Broken_03.obj-48f64a016c4cc6445297a7509c0e1d45.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Pillar_Stone_Broken_03.obj-48f64a016c4cc6445297a7509c0e1d45.mesh"]
+
+source_file="res://assets/models/SD_Env_Pillar_Stone_Broken_03.obj"
+dest_files=["res://.godot/imported/SD_Env_Pillar_Stone_Broken_03.obj-48f64a016c4cc6445297a7509c0e1d45.mesh", "res://.godot/imported/SD_Env_Pillar_Stone_Broken_03.obj-48f64a016c4cc6445297a7509c0e1d45.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

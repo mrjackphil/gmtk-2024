@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b2nipccsf8tnt"
+path="res://.godot/imported/SD_Prop_Corpse_03.obj-53413536d1c4f805c30cd9fc66d77e4f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Corpse_03.obj-53413536d1c4f805c30cd9fc66d77e4f.mesh"]
+
+source_file="res://assets/models/SD_Prop_Corpse_03.obj"
+dest_files=["res://.godot/imported/SD_Prop_Corpse_03.obj-53413536d1c4f805c30cd9fc66d77e4f.mesh", "res://.godot/imported/SD_Prop_Corpse_03.obj-53413536d1c4f805c30cd9fc66d77e4f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

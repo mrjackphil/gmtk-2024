@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dfeuck8oong84"
+path="res://.godot/imported/SD_Env_Pillar_Wood_01.obj-cdbbfe48aa5cdc3bf459bea136e8d24c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Pillar_Wood_01.obj-cdbbfe48aa5cdc3bf459bea136e8d24c.mesh"]
+
+source_file="res://assets/models/SD_Env_Pillar_Wood_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Pillar_Wood_01.obj-cdbbfe48aa5cdc3bf459bea136e8d24c.mesh", "res://.godot/imported/SD_Env_Pillar_Wood_01.obj-cdbbfe48aa5cdc3bf459bea136e8d24c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

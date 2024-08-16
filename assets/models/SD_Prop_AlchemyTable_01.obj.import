@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bdu46e5t4tfdu"
+path="res://.godot/imported/SD_Prop_AlchemyTable_01.obj-ec9a618e000225e9934edb2cc283ae0b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_AlchemyTable_01.obj-ec9a618e000225e9934edb2cc283ae0b.mesh"]
+
+source_file="res://assets/models/SD_Prop_AlchemyTable_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_AlchemyTable_01.obj-ec9a618e000225e9934edb2cc283ae0b.mesh", "res://.godot/imported/SD_Prop_AlchemyTable_01.obj-ec9a618e000225e9934edb2cc283ae0b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

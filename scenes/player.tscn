@@ -212,10 +212,9 @@ _root = NodePath("../..")
 _yaw = NodePath("../../Yaw")
 _camera = NodePath("../../Yaw/Camera3D")
 
-[node name="CombatComponent" type="Node" parent="Components" node_paths=PackedStringArray("rhand_anim_player", "lhand_anim_player", "movement_component", "raycast", "shoot_raycast", "interaction_component")]
+[node name="CombatComponent" type="Node" parent="Components" node_paths=PackedStringArray("rhand_anim_player", "movement_component", "raycast", "shoot_raycast", "interaction_component")]
 script = ExtResource("6_7oddd")
 rhand_anim_player = NodePath("../../Yaw/RHand/RightHandAnimation")
-lhand_anim_player = NodePath("")
 movement_component = NodePath("../MovementComponent")
 raycast = NodePath("../../Yaw/RayCast3D")
 shoot_raycast = NodePath("../../Yaw/RHand/RayCast3D")

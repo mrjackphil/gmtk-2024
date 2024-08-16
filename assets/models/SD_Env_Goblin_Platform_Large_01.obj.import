@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bkmo0rncrlysy"
+path="res://.godot/imported/SD_Env_Goblin_Platform_Large_01.obj-ac5df35d4fc56b9f0dc429d09a506c2f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Goblin_Platform_Large_01.obj-ac5df35d4fc56b9f0dc429d09a506c2f.mesh"]
+
+source_file="res://assets/models/SD_Env_Goblin_Platform_Large_01.obj"
+dest_files=["res://.godot/imported/SD_Env_Goblin_Platform_Large_01.obj-ac5df35d4fc56b9f0dc429d09a506c2f.mesh", "res://.godot/imported/SD_Env_Goblin_Platform_Large_01.obj-ac5df35d4fc56b9f0dc429d09a506c2f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

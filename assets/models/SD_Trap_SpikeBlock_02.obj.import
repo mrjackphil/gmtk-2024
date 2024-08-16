@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dma4rl7uegjep"
+path="res://.godot/imported/SD_Trap_SpikeBlock_02.obj-9621b3cb091d8173b85f6e8d0dc53562.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Trap_SpikeBlock_02.obj-9621b3cb091d8173b85f6e8d0dc53562.mesh"]
+
+source_file="res://assets/models/SD_Trap_SpikeBlock_02.obj"
+dest_files=["res://.godot/imported/SD_Trap_SpikeBlock_02.obj-9621b3cb091d8173b85f6e8d0dc53562.mesh", "res://.godot/imported/SD_Trap_SpikeBlock_02.obj-9621b3cb091d8173b85f6e8d0dc53562.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

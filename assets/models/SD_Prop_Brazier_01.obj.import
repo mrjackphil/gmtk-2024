@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://coi23gptmsmc0"
+path="res://.godot/imported/SD_Prop_Brazier_01.obj-69a2f6846f71e4a3b77de87447d4eb20.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Brazier_01.obj-69a2f6846f71e4a3b77de87447d4eb20.mesh"]
+
+source_file="res://assets/models/SD_Prop_Brazier_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Brazier_01.obj-69a2f6846f71e4a3b77de87447d4eb20.mesh", "res://.godot/imported/SD_Prop_Brazier_01.obj-69a2f6846f71e4a3b77de87447d4eb20.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

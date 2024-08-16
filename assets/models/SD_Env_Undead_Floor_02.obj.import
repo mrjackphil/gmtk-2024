@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://crobe0vl3opsj"
+path="res://.godot/imported/SD_Env_Undead_Floor_02.obj-1a66f412186bb0e93e9f3fd4915cfbbd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Undead_Floor_02.obj-1a66f412186bb0e93e9f3fd4915cfbbd.mesh"]
+
+source_file="res://assets/models/SD_Env_Undead_Floor_02.obj"
+dest_files=["res://.godot/imported/SD_Env_Undead_Floor_02.obj-1a66f412186bb0e93e9f3fd4915cfbbd.mesh", "res://.godot/imported/SD_Env_Undead_Floor_02.obj-1a66f412186bb0e93e9f3fd4915cfbbd.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

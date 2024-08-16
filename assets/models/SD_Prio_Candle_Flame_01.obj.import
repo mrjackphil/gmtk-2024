@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://hbsppwe4pwt8"
+path="res://.godot/imported/SD_Prio_Candle_Flame_01.obj-a53da6b79a78e4549f97f418bd9a922c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prio_Candle_Flame_01.obj-a53da6b79a78e4549f97f418bd9a922c.mesh"]
+
+source_file="res://assets/models/SD_Prio_Candle_Flame_01.obj"
+dest_files=["res://.godot/imported/SD_Prio_Candle_Flame_01.obj-a53da6b79a78e4549f97f418bd9a922c.mesh", "res://.godot/imported/SD_Prio_Candle_Flame_01.obj-a53da6b79a78e4549f97f418bd9a922c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

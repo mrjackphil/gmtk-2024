@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csr7l5fgyiv5n"
+path="res://.godot/imported/SD_Prop_WallGrate_01.obj-84ef19628a9c58f6db36bf581f879db4.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_WallGrate_01.obj-84ef19628a9c58f6db36bf581f879db4.mesh"]
+
+source_file="res://assets/models/SD_Prop_WallGrate_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_WallGrate_01.obj-84ef19628a9c58f6db36bf581f879db4.mesh", "res://.godot/imported/SD_Prop_WallGrate_01.obj-84ef19628a9c58f6db36bf581f879db4.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

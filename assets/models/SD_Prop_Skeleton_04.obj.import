@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxr2l0ek0ym7o"
+path="res://.godot/imported/SD_Prop_Skeleton_04.obj-26328fa3dcdc5fbb3735ddd5fe08094d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Skeleton_04.obj-26328fa3dcdc5fbb3735ddd5fe08094d.mesh"]
+
+source_file="res://assets/models/SD_Prop_Skeleton_04.obj"
+dest_files=["res://.godot/imported/SD_Prop_Skeleton_04.obj-26328fa3dcdc5fbb3735ddd5fe08094d.mesh", "res://.godot/imported/SD_Prop_Skeleton_04.obj-26328fa3dcdc5fbb3735ddd5fe08094d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

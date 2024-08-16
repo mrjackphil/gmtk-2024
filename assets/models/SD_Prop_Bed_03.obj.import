@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c0fcsf8l4jfy4"
+path="res://.godot/imported/SD_Prop_Bed_03.obj-d5e0cbcec15876a4163214c86ef2c998.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Bed_03.obj-d5e0cbcec15876a4163214c86ef2c998.mesh"]
+
+source_file="res://assets/models/SD_Prop_Bed_03.obj"
+dest_files=["res://.godot/imported/SD_Prop_Bed_03.obj-d5e0cbcec15876a4163214c86ef2c998.mesh", "res://.godot/imported/SD_Prop_Bed_03.obj-d5e0cbcec15876a4163214c86ef2c998.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

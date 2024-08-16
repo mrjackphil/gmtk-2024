@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bon05eowqyklr"
+path="res://.godot/imported/SD_Prop_Pot_Smashed_01.obj-9f44947e3fdc680631d2452bd043ed30.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Pot_Smashed_01.obj-9f44947e3fdc680631d2452bd043ed30.mesh"]
+
+source_file="res://assets/models/SD_Prop_Pot_Smashed_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Pot_Smashed_01.obj-9f44947e3fdc680631d2452bd043ed30.mesh", "res://.godot/imported/SD_Prop_Pot_Smashed_01.obj-9f44947e3fdc680631d2452bd043ed30.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

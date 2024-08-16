@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://qekxo52urqqy"
+path="res://.godot/imported/SD_Prop_Rug_Blue_Large_01.obj-3fd5847a8aaf602fe050a40764ccf952.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Rug_Blue_Large_01.obj-3fd5847a8aaf602fe050a40764ccf952.mesh"]
+
+source_file="res://assets/models/SD_Prop_Rug_Blue_Large_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Rug_Blue_Large_01.obj-3fd5847a8aaf602fe050a40764ccf952.mesh", "res://.godot/imported/SD_Prop_Rug_Blue_Large_01.obj-3fd5847a8aaf602fe050a40764ccf952.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ctp7m1gvid00x"
+path="res://.godot/imported/SD_Prop_Rug_Green_Large_02.obj-f626bc690441256c9db2b2bcaf8dc074.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Rug_Green_Large_02.obj-f626bc690441256c9db2b2bcaf8dc074.mesh"]
+
+source_file="res://assets/models/SD_Prop_Rug_Green_Large_02.obj"
+dest_files=["res://.godot/imported/SD_Prop_Rug_Green_Large_02.obj-f626bc690441256c9db2b2bcaf8dc074.mesh", "res://.godot/imported/SD_Prop_Rug_Green_Large_02.obj-f626bc690441256c9db2b2bcaf8dc074.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

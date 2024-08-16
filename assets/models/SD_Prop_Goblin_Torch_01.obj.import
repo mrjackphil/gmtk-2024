@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cq0ihua4vpekp"
+path="res://.godot/imported/SD_Prop_Goblin_Torch_01.obj-4b439d461b3d1c9312cda9e8fceafb2c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Prop_Goblin_Torch_01.obj-4b439d461b3d1c9312cda9e8fceafb2c.mesh"]
+
+source_file="res://assets/models/SD_Prop_Goblin_Torch_01.obj"
+dest_files=["res://.godot/imported/SD_Prop_Goblin_Torch_01.obj-4b439d461b3d1c9312cda9e8fceafb2c.mesh", "res://.godot/imported/SD_Prop_Goblin_Torch_01.obj-4b439d461b3d1c9312cda9e8fceafb2c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

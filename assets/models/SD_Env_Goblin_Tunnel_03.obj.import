@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgn2c47p0fno0"
+path="res://.godot/imported/SD_Env_Goblin_Tunnel_03.obj-e07e80fc17ea9bde094fbfbdd264489b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SD_Env_Goblin_Tunnel_03.obj-e07e80fc17ea9bde094fbfbdd264489b.mesh"]
+
+source_file="res://assets/models/SD_Env_Goblin_Tunnel_03.obj"
+dest_files=["res://.godot/imported/SD_Env_Goblin_Tunnel_03.obj-e07e80fc17ea9bde094fbfbdd264489b.mesh", "res://.godot/imported/SD_Env_Goblin_Tunnel_03.obj-e07e80fc17ea9bde094fbfbdd264489b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
