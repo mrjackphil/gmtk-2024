@@ -1,0 +1,86 @@
+[gd_scene load_steps=16 format=3 uid="uid://cjbbe0hvndj55"]
+
+[ext_resource type="Script" path="res://components/basic/InteractableComponent.gd" id="1_rg8s7"]
+[ext_resource type="Script" path="res://components/interactions/killer.gd" id="2_bc3d6"]
+[ext_resource type="SpriteFrames" uid="uid://map6nothcwv6" path="res://assets/sprites/ork/orc.aseprite" id="3_hulpf"]
+[ext_resource type="Script" path="res://components/composed/NpcController.gd" id="5_o87hp"]
+[ext_resource type="Script" path="res://components/basic/HitboxComponent.gd" id="5_v23b1"]
+[ext_resource type="Script" path="res://components/basic/HealthComponent.gd" id="6_31uha"]
+[ext_resource type="Script" path="res://components/basic/HurtEffectComponent.gd" id="7_hfnhd"]
+[ext_resource type="Resource" uid="uid://bl7g0nvc7s803" path="res://components/effects/standart_push.tres" id="8_csvbw"]
+[ext_resource type="Script" path="res://components/effects/squash_effect.gd" id="9_ialvh"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mj3uu"]
+
+[sub_resource type="Resource" id="Resource_vr5a7"]
+script = ExtResource("2_bc3d6")
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7rvsk"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pd4ae"]
+size = Vector3(1, 1.9, 1)
+
+[sub_resource type="Resource" id="Resource_bfrp2"]
+script = ExtResource("9_ialvh")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_qw2kv"]
+radius = 12.0
+
+[node name="NPC" type="CharacterBody3D" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_mj3uu")
+
+[node name="InteractableComponent" type="Node3D" parent="."]
+process_mode = 4
+script = ExtResource("1_rg8s7")
+interations = Array[Resource("res://components/interactions/interaction.gd")]([SubResource("Resource_vr5a7")])
+
+[node name="Area3D" type="Area3D" parent="InteractableComponent"]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="InteractableComponent/Area3D"]
+shape = SubResource("CapsuleShape3D_7rvsk")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 1, 0, 0, 0)
+gi_mode = 2
+billboard = 2
+shaded = true
+texture_filter = 0
+sprite_frames = ExtResource("3_hulpf")
+autoplay = "default"
+frame_progress = 0.694375
+metadata/_aseprite_wizard_interface_config_ = {
+"layer_section": false,
+"slice_section": true
+}
+
+[node name="NpcController" type="Node" parent="." node_paths=PackedStringArray("_hp_component", "_hitbox_component", "_hit_effect_component", "_enemy_detection_area")]
+script = ExtResource("5_o87hp")
+_hp_component = NodePath("../HealthComponent")
+_hitbox_component = NodePath("../HitboxComponent")
+_hit_effect_component = NodePath("../HurtEffectComponent")
+_enemy_detection_area = NodePath("../Area3D")
+
+[node name="HitboxComponent" type="Area3D" parent="."]
+script = ExtResource("5_v23b1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+shape = SubResource("BoxShape3D_pd4ae")
+
+[node name="HealthComponent" type="Node" parent="."]
+script = ExtResource("6_31uha")
+hp = 3
+
+[node name="HurtEffectComponent" type="Node" parent="."]
+script = ExtResource("7_hfnhd")
+effect_list = Array[Resource("res://components/effects/effect.gd")]([ExtResource("8_csvbw"), SubResource("Resource_bfrp2")])
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_qw2kv")

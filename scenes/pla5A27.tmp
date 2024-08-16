@@ -1,0 +1,241 @@
+[gd_scene load_steps=18 format=3 uid="uid://cide4w7urra1m"]
+
+[ext_resource type="Texture2D" uid="uid://lax4gqqtomfr" path="res://sprite.png" id="1_6oj32"]
+[ext_resource type="Script" path="res://components/basic/CameraMouseMoveComponent.gd" id="1_ukkef"]
+[ext_resource type="Script" path="res://components/basic/MovementComponent.gd" id="3_x5up6"]
+[ext_resource type="Script" path="res://components/basic/InteractionComponent.gd" id="4_qfqm5"]
+[ext_resource type="Texture2D" uid="uid://bn1wwj25xft5n" path="res://assets/sprites/shadow.png" id="6_2c8yv"]
+[ext_resource type="Script" path="res://components/basic/CombatComponent.gd" id="6_7oddd"]
+[ext_resource type="PackedScene" uid="uid://ccx4kj8vk2l12" path="res://components/composed/PlayerUIComponent.tscn" id="7_i87mi"]
+[ext_resource type="Script" path="res://components/basic/MovementHelper.gd" id="8_char7"]
+[ext_resource type="AnimationLibrary" uid="uid://evtjapo8bp5l" path="res://assets/player_anims.res" id="9_v3f1i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_ngi6h"]
+radius = 0.4
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mj3uu"]
+height = 1.8
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ct4c5"]
+radius = 0.45
+height = 0.9
+
+[sub_resource type="Animation" id="Animation_lgnly"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Yaw/RHand:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Yaw/RHand:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.500239, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Yaw/RHand:position:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Yaw/RHand:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Yaw/RHand:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Yaw/RHand:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.261799, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Yaw/Hurtbox/CollisionShape3D:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khld0"]
+_data = {
+"RESET": SubResource("Animation_lgnly")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jskvt"]
+size = Vector3(2, 1, 1)
+
+[sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_8vrei"]
+length = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_spt4p"]
+size = Vector3(0.2, 1, 0.2)
+
+[node name="Player" type="CharacterBody3D" groups=["player"]]
+
+[node name="CeilingCheck" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingCheck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("SphereShape3D_ngi6h")
+
+[node name="WalkCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_mj3uu")
+
+[node name="CrouchCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("CapsuleShape3D_ct4c5")
+disabled = true
+
+[node name="Yaw" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.9, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Yaw"]
+transform = Transform3D(1, 0, 0, 0, 0.999786, 0.0206983, 0, -0.0206983, 0.999786, 0, -0.3, 0)
+doppler_tracking = 1
+
+[node name="RayCast3D" type="RayCast3D" parent="Yaw"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0)
+target_position = Vector3(0, 0, -2)
+collision_mask = 2
+collide_with_areas = true
+collide_with_bodies = false
+debug_shape_thickness = 1
+
+[node name="RHand" type="Node3D" parent="Yaw"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0.4, -0.500239, -0.5)
+
+[node name="Sword" type="Sprite3D" parent="Yaw/RHand"]
+transform = Transform3D(0.107, 1.59442e-09, 0, -1.59442e-09, 0.107, 0, 0, 0, 0.107, 0, 0, 0)
+shaded = true
+no_depth_test = true
+texture_filter = 0
+texture = ExtResource("1_6oj32")
+hframes = 2
+
+[node name="RightHandAnimation" type="AnimationPlayer" parent="Yaw/RHand"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_khld0"),
+"player_anims": ExtResource("9_v3f1i")
+}
+autoplay = "idle"
+
+[node name="Hurtbox" type="Area3D" parent="Yaw" groups=["player_weapon"]]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Yaw/Hurtbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7, -1)
+shape = SubResource("BoxShape3D_jskvt")
+disabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="MovementHelperComponent" type="Node3D" parent="Components" node_paths=PackedStringArray("ground_check", "space_check", "body")]
+script = ExtResource("8_char7")
+ground_check = NodePath("GroundController")
+space_check = NodePath("SpaceController")
+body = NodePath("../..")
+
+[node name="GroundController" type="Area3D" parent="Components/MovementHelperComponent"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Components/MovementHelperComponent/GroundController"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.18557e-08, 0.1, -0.25)
+shape = SubResource("SeparationRayShape3D_8vrei")
+
+[node name="SpaceController" type="Area3D" parent="Components/MovementHelperComponent"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Components/MovementHelperComponent/SpaceController"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.49691e-08, 1.5, -0.6)
+shape = SubResource("BoxShape3D_spt4p")
+
+[node name="CameraMouseMoveComponent" type="Node" parent="Components" node_paths=PackedStringArray("_root", "_yaw", "_camera")]
+script = ExtResource("1_ukkef")
+_root = NodePath("../..")
+_yaw = NodePath("../../Yaw")
+_camera = NodePath("../../Yaw/Camera3D")
+
+[node name="CombatComponent" type="Node" parent="Components" node_paths=PackedStringArray("rhand_anim_player", "lhand_anim_player", "movement_component", "raycast", "interaction_component")]
+script = ExtResource("6_7oddd")
+rhand_anim_player = NodePath("../../Yaw/RHand/RightHandAnimation")
+lhand_anim_player = NodePath("")
+movement_component = NodePath("../MovementComponent")
+raycast = NodePath("../../Yaw/RayCast3D")
+interaction_component = NodePath("../InteractionComponent")
+
+[node name="InteractionComponent" type="Node" parent="Components" node_paths=PackedStringArray("raycast")]
+script = ExtResource("4_qfqm5")
+raycast = NodePath("../../Yaw/RayCast3D")
+
+[node name="MovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("char_body", "camera", "walk_collision", "crouch_collision", "ceiling_check", "camera_root")]
+script = ExtResource("3_x5up6")
+char_body = NodePath("../..")
+camera = NodePath("../../Yaw/Camera3D")
+walk_collision = NodePath("../../WalkCollision")
+crouch_collision = NodePath("../../CrouchCollision")
+ceiling_check = NodePath("../../CeilingCheck")
+camera_root = NodePath("../../Yaw")
+
+[node name="UI" parent="." node_paths=PackedStringArray("interaction_component") instance=ExtResource("7_i87mi")]
+interaction_component = NodePath("../Components/InteractionComponent")
+
+[node name="Decal" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -49.25, 0)
+size = Vector3(0.5, 98.5, 0.5)
+texture_albedo = ExtResource("6_2c8yv")
+modulate = Color(0, 0, 0, 1)
+distance_fade_enabled = true
+distance_fade_begin = 100.0

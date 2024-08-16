@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="PushEffect" load_steps=2 format=3 uid="uid://bl7g0nvc7s803"]
+
+[ext_resource type="Script" path="res://components/effects/push_effect.gd" id="1_0m4oc"]
+
+[resource]
+script = ExtResource("1_0m4oc")
+PUSH_UP_STRENGTH = 5
+PUSH_BACK_STRENGTH = 10

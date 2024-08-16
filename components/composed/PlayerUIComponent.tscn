@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://ccx4kj8vk2l12"]
+
+[ext_resource type="Script" path="res://components/composed/PlayerUIComponent.gd" id="1_lad45"]
+[ext_resource type="Texture2D" uid="uid://77yyoxp8ug3" path="res://assets/sprites/hand.png" id="2_q5sbg"]
+
+[node name="UI" type="CanvasLayer" node_paths=PackedStringArray("cursor")]
+script = ExtResource("1_lad45")
+cursor = NodePath("CenterContainer/TextureRect")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("2_q5sbg")
+expand_mode = 2
+stretch_mode = 5

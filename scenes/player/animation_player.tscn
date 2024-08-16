@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://rqub848nd0k4"]
+
+[sub_resource type="Animation" id="Animation_4edk2"]
+resource_name = "1h_swing"
+length = 0.4
+
+[sub_resource type="Animation" id="Animation_gprhs"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_llhch"]
+resource_name = "idle"
+length = 3.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ddi63"]
+_data = {
+"1h_attack": SubResource("Animation_4edk2"),
+"RESET": SubResource("Animation_gprhs"),
+"idle": SubResource("Animation_llhch")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_ddi63")
+}
+autoplay = "idle"

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqa38kgdsn40h"]
+
+[ext_resource type="Texture2D" uid="uid://wak0gcrvsk5o" path="res://assets/sprites/sword.png" id="1_ywvoq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2bjw1"]
+
+[node name="Yaw" type="Node3D"]
+transform = Transform3D(0.999577, 0, -0.0290847, 0, 1, 0, 0.0290847, 0, 0.999577, 0, 1.5, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -1.355)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="AttackBox" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AttackBox"]
+transform = Transform3D(1, 0, 3.72529e-09, 0, 1, 0, 6.33299e-08, 0, 1, -0.0290847, -0.6, -0.999577)
+shape = SubResource("BoxShape3D_2bjw1")
+
+[node name="Weapon" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3, -0.1, -0.3)
+shaded = true
+no_depth_test = true
+texture_filter = 0
+texture = ExtResource("1_ywvoq")

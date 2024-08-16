@@ -1,0 +1,18 @@
+[remap]
+
+importer="aseprite_wizard.plugin"
+type="SpriteFrames"
+uid="uid://map6nothcwv6"
+path="res://.godot/imported/orc.aseprite-0f8797f28c01d47bb4209ee4cdc5a39b.res"
+
+[deps]
+
+source_file="res://assets/sprites/ork/orc.aseprite"
+dest_files=["res://.godot/imported/orc.aseprite-0f8797f28c01d47bb4209ee4cdc5a39b.res"]
+
+[params]
+
+split_layers=false
+exclude_layers_pattern=""
+only_visible_layers=false
+sheet_type="2 columns"
