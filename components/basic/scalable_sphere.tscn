@@ -14,6 +14,9 @@ albedo_texture = ExtResource("1_rml4r")
 material = SubResource("StandardMaterial3D_wlso5")
 
 [node name="ScalableSphere" type="RigidBody3D"]
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 2
 script = ExtResource("1_1tf2m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

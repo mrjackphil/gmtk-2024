@@ -7,7 +7,6 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hvcqh"]
 render_priority = 0
 shader = ExtResource("1_pkt0y")
-shader_parameter/ColorParameter = Color(1, 0.0862745, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bjfu1"]
 radius = 0.2
@@ -41,8 +40,8 @@ light_color = Color(1, 0.0666667, 0.0392157, 1)
 shape = SubResource("SphereShape3D_bjfu1")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 0
-collision_mask = 16
+collision_layer = 8
+collision_mask = 24
 script = ExtResource("2_pdfcs")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
