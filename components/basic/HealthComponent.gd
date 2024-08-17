@@ -1,7 +1,7 @@
 extends Node
 class_name HealthComponent
 
-var _hp = 10
+var _hp: int = 10
 @export var hp: int:
 	get: 
 		return _hp
@@ -28,6 +28,3 @@ func _dead() -> void:
 	gun.visible = false
 	death_camera.make_current()
 	movement_component.process_mode = Node.PROCESS_MODE_DISABLED
-
-func _on_area_3d_area_entered(area: Area3D) -> void:
-	_dead()
