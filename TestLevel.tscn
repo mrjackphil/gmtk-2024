@@ -21,7 +21,7 @@ size = Vector3(1, 1, 4)
 size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
-size = Vector3(2, 1, 15)
+size = Vector3(2, 1, 4.50732)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqx02"]
 
@@ -156,7 +156,7 @@ collision_mask = 4
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, -6)
+transform = Transform3D(0.999746, 0.0225303, 0, -0.0225303, 0.999746, 0, 0, 0, 1, -8, 3.5, -6)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
@@ -306,7 +306,6 @@ script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D2"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -18.9937, 6.70222, 0.0976755)
@@ -328,14 +327,10 @@ script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D3"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.993697, 0.702224, -4.90232)
 collision_layer = 9
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D4"]
@@ -345,15 +340,12 @@ use_collision = true
 size = Vector3(2, 1, 15)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.65317)
 shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D4"]
-script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
+SHRINK_TIMEOUT = 2000
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.9937, 0.702224, -9.90232)
@@ -378,16 +370,21 @@ script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.02393, 2.33221, -7.18048)
+mass = 0.2
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 mesh = SubResource("SphereMesh_c0t6y")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
 shape = SubResource("SphereShape3D_8xyjl")
+
+[node name="ScaleComponent" type="Node" parent="RigidBody3D"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 10.0
+SCALE_SLOWNESS = 0.01
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")
