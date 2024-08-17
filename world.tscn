@@ -1,9 +1,8 @@
-[gd_scene load_steps=59 format=4 uid="uid://b6ldmtigej1wc"]
+[gd_scene load_steps=57 format=4 uid="uid://b6ldmtigej1wc"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_34ioo"]
 [ext_resource type="Script" path="res://components/interactions/interaction.gd" id="4_sxlfi"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="6_fd4ue"]
-[ext_resource type="PackedScene" uid="uid://mtq86lxuoo1" path="res://assets/models/SK_Character_RiotCop.fbx" id="6_r8tpa"]
 [ext_resource type="Script" path="res://components/interactions/slider.gd" id="7_v1jk4"]
 [ext_resource type="ArrayMesh" uid="uid://diaybdak0q6gp" path="res://assets/models/SD_Prop_Brazier_02.obj" id="8_83kdj"]
 [ext_resource type="Script" path="res://addons/func_godot/src/map/func_godot_map.gd" id="9_sugpi"]
@@ -12,11 +11,9 @@
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="12_835oq"]
 [ext_resource type="Material" uid="uid://3sp75cxolgtx" path="res://assets/shader.tres" id="12_en6uk"]
 [ext_resource type="ArrayMesh" uid="uid://c1dnnm7y38f7p" path="res://assets/models/SD_Prop_Chest_04.obj" id="13_rquo1"]
-[ext_resource type="PackedScene" uid="uid://b2x5da362mkoy" path="res://scenes/bullet.tscn" id="14_eafn0"]
+[ext_resource type="PackedScene" path="res://scenes/bullet.tscn" id="14_eafn0"]
 [ext_resource type="PackedScene" uid="uid://dx46s1ptpg31o" path="res://scenes/enemy/walkable/walkable.tscn" id="14_jvv8u"]
 [ext_resource type="PackedScene" uid="uid://bmh3xus3tte1r" path="res://scenes/enemy/static/static.tscn" id="14_qhax4"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_82wy7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1jxm"]
 
@@ -206,16 +203,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388498, -0.187797, 0.07913
 
 [node name="Player" parent="." instance=ExtResource("1_34ioo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 8)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.22936, -4.76837e-07, 10.2555)
-collision_layer = 8
-
-[node name="SK_Character_RiotCop" parent="CharacterBody3D" instance=ExtResource("6_r8tpa")]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.05798, 0)
-shape = SubResource("CapsuleShape3D_82wy7")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")

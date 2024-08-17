@@ -36,6 +36,11 @@ func _physics_process(delta: float) -> void:
 	_crouch_handler(delta)
 	_jump_handler(delta)
 	char_body.move_and_slide()
+	for col_idx in char_body.get_slide_collision_count():
+		var col := char_body.get_slide_collision(col_idx)
+		if col.get_collider() is RigidBody3D:
+			col.get_collider().apply_central_impulse(-col.get_normal() * 0.3)
+			col.get_collider().apply_impulse(-col.get_normal() * 0.01, col.get_position())
 
 ###########################################################
 

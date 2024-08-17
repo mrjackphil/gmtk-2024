@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_1bfqr"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="3_pccgs"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_0mso6"]
-[ext_resource type="PackedScene" uid="uid://4xf5fsbl5yur" path="res://components/basic/ScalableBox.tscn" id="5_ko2dv"]
-[ext_resource type="PackedScene" uid="uid://8i4o3cedrbte" path="res://components/basic/ScalableBoxAlt.tscn" id="6_uwcba"]
-[ext_resource type="PackedScene" uid="uid://l48iuhccdaep" path="res://components/basic/ScalableBoxAlt2x1.tscn" id="7_g0amo"]
-[ext_resource type="PackedScene" uid="uid://bsyoiupd441ng" path="res://components/basic/ScalableBox2x1.tscn" id="8_wvgui"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalableBox.tscn" id="5_ko2dv"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalableBoxAlt.tscn" id="6_uwcba"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalableBoxAlt2x1.tscn" id="7_g0amo"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalableBox2x1.tscn" id="8_wvgui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdm6l"]
 albedo_texture = ExtResource("2_1bfqr")
