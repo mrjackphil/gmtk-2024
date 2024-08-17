@@ -215,7 +215,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386142, 0.103466, -1.15502
 
 [node name="Sprite3D" type="Sprite3D" parent="Yaw/RHand/Bullet placement"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0399525, 0.149105, 0)
-billboard = 2
+billboard = 1
 no_depth_test = true
 texture_filter = 0
 texture = ExtResource("4_ysp4u")
