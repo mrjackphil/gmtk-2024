@@ -1,5 +1,5 @@
 extends Node
-class_name BehaviorComponent
+class_name EnemyBehaviorComponent
 
 @export var movement_component: EnemyMovementComponent
 @export var rotation_component: EnemyRotationComponent
@@ -21,21 +21,31 @@ func _ready():
 
 
 func _physics_process(delta):
-	var enemy_position = enemy.global_transform.origin
+	var enemy_position: Vector3 = enemy.global_transform.origin
 	match _state:
 		State.idle:
-			rotation_component.set_rotation_vector(Vector3.ZERO)
-			if movement_component:
-				movement_component.set_destination(enemy_position)
+			_do_idle_state(delta, enemy_position)
 		State.patrol:
-			rotation_component.set_rotation_vector(Vector3.ZERO)
-			if movement_component:
-				movement_component.set_destination(enemy_position)
+			_do_patrol_state(delta, enemy_position)
 		State.triggered:
-			var target_position: Vector3 = _detected_body.global_transform.origin
-			rotation_component.set_rotation_vector(target_position)
-			if movement_component:
-				movement_component.set_destination(target_position)
+			_do_triggered_state(delta, enemy_position)
+
+
+func _do_idle_state(delta: float, enemy_position: Vector3):
+	rotation_component.set_rotation_vector(Vector3.ZERO)
+	if movement_component:
+		movement_component.set_destination(enemy_position)
+
+func _do_patrol_state(delta: float, enemy_position: Vector3):
+	rotation_component.set_rotation_vector(Vector3.ZERO)
+	if movement_component:
+		movement_component.set_destination(enemy_position)
+
+func _do_triggered_state(delta: float, enemy_position: Vector3):
+	var target_position: Vector3 = _detected_body.global_transform.origin
+	rotation_component.set_rotation_vector(target_position)
+	if movement_component:
+		movement_component.set_destination(Vector3(target_position.x, 0, target_position.z))
 
 
 func _body_detected(body: Node3D):

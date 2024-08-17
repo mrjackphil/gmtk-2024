@@ -1,0 +1,68 @@
+[gd_scene load_steps=10 format=3 uid="uid://de7quvw0aybc8"]
+
+[ext_resource type="Script" path="res://scripts/flying.gd" id="1_exqcc"]
+[ext_resource type="Script" path="res://components/enemy/EnemyMovementComponent.gd" id="4_0f71l"]
+[ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="4_ctg1j"]
+[ext_resource type="Script" path="res://components/enemy/FlyingBehaviorComponent.gd" id="4_whi5r"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l8exn"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k1ybw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s6jxj"]
+radius = 4.96864
+
+[sub_resource type="SphereMesh" id="SphereMesh_vhk5s"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_r0ebn"]
+radius = 0.2
+height = 1.0
+
+[node name="Flying" type="CharacterBody3D"]
+script = ExtResource("1_exqcc")
+
+[node name="CeilingCheck" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingCheck"]
+shape = SubResource("SphereShape3D_l8exn")
+
+[node name="WalkCollision" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_k1ybw")
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerDetectionArea"]
+shape = SubResource("SphereShape3D_s6jxj")
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes"]
+mesh = SubResource("SphereMesh_vhk5s")
+skeleton = NodePath("../..")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.296443)
+mesh = SubResource("CapsuleMesh_r0ebn")
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="EnemyRotationComponent" type="Node" parent="Components" node_paths=PackedStringArray("rotation_body")]
+script = ExtResource("4_ctg1j")
+rotation_body = NodePath("../../Meshes")
+
+[node name="EnemyMovementComponent" type="Node" parent="Components" node_paths=PackedStringArray("char_body", "nav")]
+script = ExtResource("4_0f71l")
+char_body = NodePath("../..")
+nav = NodePath("../../NavigationAgent3D")
+
+[node name="FlyingBehaviorComponent" type="Node" parent="Components" node_paths=PackedStringArray("movement_component", "rotation_component", "player_detection_area", "enemy")]
+script = ExtResource("4_whi5r")
+movement_component = NodePath("../EnemyMovementComponent")
+rotation_component = NodePath("../EnemyRotationComponent")
+player_detection_area = NodePath("../../PlayerDetectionArea")
+enemy = NodePath("../..")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
