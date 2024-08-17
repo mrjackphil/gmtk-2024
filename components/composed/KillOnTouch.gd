@@ -1,7 +1,7 @@
 extends Area3D
 class_name KillOnTouch
 
-@export var DAMAGE = null
+@export var DAMAGE: int
 
 func _ready() -> void:
 	area_entered.connect(_collide)
