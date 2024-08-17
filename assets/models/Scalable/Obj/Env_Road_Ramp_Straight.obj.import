@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcjck0wwyoc0a"
+path="res://.godot/imported/Env_Road_Ramp_Straight.obj-d0912a02db192b4b53e5c1e644ebb5d0.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Road_Ramp_Straight.obj-d0912a02db192b4b53e5c1e644ebb5d0.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Road_Ramp_Straight.obj"
+dest_files=["res://.godot/imported/Env_Road_Ramp_Straight.obj-d0912a02db192b4b53e5c1e644ebb5d0.mesh", "res://.godot/imported/Env_Road_Ramp_Straight.obj-d0912a02db192b4b53e5c1e644ebb5d0.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

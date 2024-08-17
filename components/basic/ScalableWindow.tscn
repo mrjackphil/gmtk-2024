@@ -8,10 +8,11 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7lq5"]
 albedo_texture = ExtResource("1_3abrb")
 
-[sub_resource type="BoxMesh" id="BoxMesh_6itdj"]
+[sub_resource type="BoxMesh" id="BoxMesh_34eag"]
 material = ExtResource("1_emhwd")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rxock"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_nl7mk"]
+size = Vector3(2, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yru0m"]
 albedo_texture = ExtResource("1_3abrb")
@@ -52,11 +53,11 @@ metadata/_edit_group_ = true
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ScalableBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.06581e-14)
 material_override = SubResource("StandardMaterial3D_x7lq5")
-mesh = SubResource("BoxMesh_6itdj")
+mesh = SubResource("BoxMesh_34eag")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ScalableBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -5.32905e-15)
-shape = SubResource("BoxShape3D_rxock")
+shape = SubResource("BoxShape3D_nl7mk")
 
 [node name="ScaleComponent" type="Node" parent="ScalableBox"]
 script = ExtResource("2_cf7bf")
@@ -71,7 +72,7 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ScalableBox/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_rxock")
+shape = SubResource("BoxShape3D_nl7mk")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="ScalableBox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)

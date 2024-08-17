@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bn5vucc7hpjnt"
+path="res://.godot/imported/ute_empty_mesh.obj-177bd385aa4ae17b34e5e26dfc96d773.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ute_empty_mesh.obj-177bd385aa4ae17b34e5e26dfc96d773.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ute_empty_mesh.obj"
+dest_files=["res://.godot/imported/ute_empty_mesh.obj-177bd385aa4ae17b34e5e26dfc96d773.mesh", "res://.godot/imported/ute_empty_mesh.obj-177bd385aa4ae17b34e5e26dfc96d773.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

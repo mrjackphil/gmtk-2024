@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bjlds1hw3ckli"
+path="res://.godot/imported/Env_Water_Tile.obj-1cb3d87f707045b2ff71fb337817c53c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Water_Tile.obj-1cb3d87f707045b2ff71fb337817c53c.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Water_Tile.obj"
+dest_files=["res://.godot/imported/Env_Water_Tile.obj-1cb3d87f707045b2ff71fb337817c53c.mesh", "res://.godot/imported/Env_Water_Tile.obj-1cb3d87f707045b2ff71fb337817c53c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

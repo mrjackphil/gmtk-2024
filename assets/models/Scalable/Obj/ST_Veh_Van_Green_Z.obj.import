@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dl7nq0vy4qif0"
+path="res://.godot/imported/ST_Veh_Van_Green_Z.obj-00a41990c0cb967d9571dcc957c0c608.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ST_Veh_Van_Green_Z.obj-00a41990c0cb967d9571dcc957c0c608.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ST_Veh_Van_Green_Z.obj"
+dest_files=["res://.godot/imported/ST_Veh_Van_Green_Z.obj-00a41990c0cb967d9571dcc957c0c608.mesh", "res://.godot/imported/ST_Veh_Van_Green_Z.obj-00a41990c0cb967d9571dcc957c0c608.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

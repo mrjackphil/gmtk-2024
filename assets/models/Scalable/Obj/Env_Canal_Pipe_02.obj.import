@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dwogd8g8ufxfe"
+path="res://.godot/imported/Env_Canal_Pipe_02.obj-8ad7fdd7591c76a1b506a1561045dd3c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Canal_Pipe_02.obj-8ad7fdd7591c76a1b506a1561045dd3c.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Canal_Pipe_02.obj"
+dest_files=["res://.godot/imported/Env_Canal_Pipe_02.obj-8ad7fdd7591c76a1b506a1561045dd3c.mesh", "res://.godot/imported/Env_Canal_Pipe_02.obj-8ad7fdd7591c76a1b506a1561045dd3c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

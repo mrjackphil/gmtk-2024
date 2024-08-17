@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bcwylma4krkh1"
+path="res://.godot/imported/ST_Veh_Ute_Blue_Empty_Z.obj-170b415bfe0fdf8a05eb8505edb99449.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ST_Veh_Ute_Blue_Empty_Z.obj-170b415bfe0fdf8a05eb8505edb99449.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ST_Veh_Ute_Blue_Empty_Z.obj"
+dest_files=["res://.godot/imported/ST_Veh_Ute_Blue_Empty_Z.obj-170b415bfe0fdf8a05eb8505edb99449.mesh", "res://.godot/imported/ST_Veh_Ute_Blue_Empty_Z.obj-170b415bfe0fdf8a05eb8505edb99449.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

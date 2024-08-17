@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cnsrcwiseby04"
+path="res://.godot/imported/Env_Seawall_Wall.obj-e869e67d33383b17e8cdb47ff8443302.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Seawall_Wall.obj-e869e67d33383b17e8cdb47ff8443302.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Seawall_Wall.obj"
+dest_files=["res://.godot/imported/Env_Seawall_Wall.obj-e869e67d33383b17e8cdb47ff8443302.mesh", "res://.godot/imported/Env_Seawall_Wall.obj-e869e67d33383b17e8cdb47ff8443302.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

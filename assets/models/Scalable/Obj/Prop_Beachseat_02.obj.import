@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://pylmlh1eb3b1"
+path="res://.godot/imported/Prop_Beachseat_02.obj-69d9d9d2857a661043d232aa67f618ad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Beachseat_02.obj-69d9d9d2857a661043d232aa67f618ad.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Prop_Beachseat_02.obj"
+dest_files=["res://.godot/imported/Prop_Beachseat_02.obj-69d9d9d2857a661043d232aa67f618ad.mesh", "res://.godot/imported/Prop_Beachseat_02.obj-69d9d9d2857a661043d232aa67f618ad.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

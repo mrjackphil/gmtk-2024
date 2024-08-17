@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bndv0cjpgyewy"
+path="res://.godot/imported/Building_House_012.obj-793ed24f82a6e22b52d58f07d116ef5e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Building_House_012.obj-793ed24f82a6e22b52d58f07d116ef5e.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Building_House_012.obj"
+dest_files=["res://.godot/imported/Building_House_012.obj-793ed24f82a6e22b52d58f07d116ef5e.mesh", "res://.godot/imported/Building_House_012.obj-793ed24f82a6e22b52d58f07d116ef5e.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
