@@ -35,10 +35,11 @@ func _physics_process(delta: float) -> void:
 	var move_vect: Vector3 = direction.normalized().rotated(Vector3.UP, char_body.rotation.y) * speed
 
 	if move_vect:
-		char_body.velocity.x = move_vect.x
-		char_body.velocity.z = move_vect.z
-		if direction.y != 0:
-			char_body.velocity.y = -direction.y
+		#char_body.velocity.x = move_vect.x
+		#char_body.velocity.z = move_vect.z
+		#char_body.velocity.y = -move_vect.y
+		if char_body.get_node("Meshes"):
+			char_body.velocity = char_body.get_node("Meshes").global_transform.basis.z * -1 * 10
 	else:
 		char_body.velocity.x = move_toward(char_body.velocity.x, 0, speed)
 		char_body.velocity.z = move_toward(char_body.velocity.z, 0, speed)

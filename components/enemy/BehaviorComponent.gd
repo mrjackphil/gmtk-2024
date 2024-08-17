@@ -31,7 +31,6 @@ func _physics_process(delta):
 			_do_triggered_state(delta, enemy_position)
 
 
-
 func _do_idle_state(delta: float, enemy_position: Vector3):
 	rotation_component.set_rotation_vector(Vector3.ZERO)
 	if movement_component:
