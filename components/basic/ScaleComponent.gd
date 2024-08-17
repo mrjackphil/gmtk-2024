@@ -22,7 +22,7 @@ func _get_resized_scale() -> Vector3:
 	var x = clamp(parent.scale.x + SCALE_VELOCITY.x, MIN_SCALE, MAX_SCALE)
 	var y = clamp(parent.scale.y + SCALE_VELOCITY.y, MIN_SCALE, MAX_SCALE)
 	var z = clamp(parent.scale.z + SCALE_VELOCITY.z, MIN_SCALE, MAX_SCALE)
-	
+
 	return Vector3(x,y,z)
 
 func _physics_process(delta: float) -> void:

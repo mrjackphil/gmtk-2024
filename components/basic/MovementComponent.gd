@@ -6,7 +6,7 @@ class_name MovementComponent
 func _ready() -> void:
 	coyote_timer.one_shot = true
 	coyote_timer.timeout.connect(_unallow_jump)
-	char_body.add_child.call_deferred(coyote_timer) 
+	char_body.add_child.call_deferred(coyote_timer)
 
 func _unallow_jump() -> void:
 	can_jump = false
@@ -59,7 +59,7 @@ func _sprint_handler(delta: float) -> int:
 		camera.fov = lerp(camera.fov, CAMERA_FOV_SPRINT, 0.1)
 	else:
 		camera.fov = lerp(camera.fov, CAMERA_FOV_DEFAULT, 0.1)
-	
+
 	return int(speed)
 
 ###########################################################
@@ -75,7 +75,7 @@ var is_crouching := false
 func _crouch_handler(delta: float) -> void:
 	if Input.is_action_pressed("move_crouch"):
 		is_crouching = true
-	elif ceiling_check.get_overlapping_areas().size() == 0: 
+	elif ceiling_check.get_overlapping_areas().size() == 0:
 		is_crouching = false
 
 	if is_crouching:

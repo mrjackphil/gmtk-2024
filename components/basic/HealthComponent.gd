@@ -19,5 +19,3 @@ func hurt(damage: int) -> int:
 		hp_end.emit()
 
 	return hp
-	
-	

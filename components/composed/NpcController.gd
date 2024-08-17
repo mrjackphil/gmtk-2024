@@ -55,12 +55,11 @@ func _attack_player() -> void:
 
 func _move_to_player(body: CharacterBody3D):
 	var goto = (body.position - owner.position).normalized() * Vector3(1, 0, 1)
-	owner.velocity += goto * 0.1	
-		
+	owner.velocity += goto * 0.1
+
 func _physics_process(delta: float) -> void:
 	_horizontal_movement()
 	_apply_gravity(delta)
 	_attack_player()
 
 	owner.move_and_slide()
-	
