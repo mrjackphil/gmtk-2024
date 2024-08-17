@@ -16,6 +16,10 @@ run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/sprites/sword.png"
 
+[autoload]
+
+DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
+
 [compression]
 
 formats/mode=0
@@ -59,7 +63,7 @@ variables={}
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/func_godot/plugin.cfg")
+enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg", "res://addons/func_godot/plugin.cfg")
 
 [input]
 
@@ -130,11 +134,16 @@ combat_defense={
 
 [layer_names]
 
+3d_render/layer_2="bullet"
 3d_physics/layer_1="game"
-3d_physics/layer_2="interactable"
+3d_physics/layer_2="bullets"
 3d_physics/layer_4="resizable"
+
+[physics]
+
+3d/run_on_separate_thread=true
+3d/physics_engine="JoltPhysics3D"
 
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="mobile"

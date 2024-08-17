@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dnvrpa2axk42i"
+path="res://.godot/imported/SA_Wep_SMG.obj-203a6a97273f62755264e4c607423d56.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SA_Wep_SMG.obj-203a6a97273f62755264e4c607423d56.mesh"]
+
+source_file="res://assets/models/SA_Wep_SMG.obj"
+dest_files=["res://.godot/imported/SA_Wep_SMG.obj-203a6a97273f62755264e4c607423d56.mesh", "res://.godot/imported/SA_Wep_SMG.obj-203a6a97273f62755264e4c607423d56.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
