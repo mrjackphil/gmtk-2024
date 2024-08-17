@@ -283,13 +283,6 @@ crouch_collision = NodePath("../../CrouchCollision")
 ceiling_check = NodePath("../../CeilingCheck")
 camera_root = NodePath("../../Yaw")
 
-[node name="HealthComponent" type="Node" parent="Components" node_paths=PackedStringArray("gun", "main_camera", "death_camera", "movement_component")]
-script = ExtResource("5_kuavu")
-gun = NodePath("../../Yaw/RHand")
-main_camera = NodePath("../../Yaw/Camera3D")
-death_camera = NodePath("../../DeathCamera")
-movement_component = NodePath("../MovementComponent")
-
 [node name="UI" parent="." instance=ExtResource("7_i87mi")]
 
 [node name="Decal" type="Decal" parent="."]
@@ -302,3 +295,17 @@ distance_fade_begin = 100.0
 
 [node name="DeathCamera" type="Camera3D" parent="."]
 transform = Transform3D(0.28985, 0.957072, 0, -0.957072, 0.28985, 0, 0, 0, 1, 0, 0.385642, 0)
+
+[node name="Hitbox" type="Area3D" parent="."]
+collision_layer = 16
+
+[node name="HealthComponent" type="Node" parent="Hitbox" node_paths=PackedStringArray("gun", "main_camera", "death_camera", "movement_component")]
+script = ExtResource("5_kuavu")
+gun = NodePath("../../Yaw/RHand")
+main_camera = NodePath("../../Yaw/Camera3D")
+death_camera = NodePath("../../DeathCamera")
+movement_component = NodePath("../../Components/MovementComponent")
+
+[node name="WalkCollision" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
+shape = SubResource("CapsuleShape3D_mj3uu")

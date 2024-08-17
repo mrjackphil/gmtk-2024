@@ -11,9 +11,9 @@
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="12_835oq"]
 [ext_resource type="Material" uid="uid://3sp75cxolgtx" path="res://assets/shader.tres" id="12_en6uk"]
 [ext_resource type="ArrayMesh" uid="uid://c1dnnm7y38f7p" path="res://assets/models/SD_Prop_Chest_04.obj" id="13_rquo1"]
-[ext_resource type="PackedScene" path="res://scenes/bullet.tscn" id="14_eafn0"]
 [ext_resource type="PackedScene" uid="uid://dx46s1ptpg31o" path="res://scenes/enemy/walkable/walkable.tscn" id="14_jvv8u"]
 [ext_resource type="PackedScene" uid="uid://bmh3xus3tte1r" path="res://scenes/enemy/static/static.tscn" id="14_qhax4"]
+[ext_resource type="PackedScene" uid="uid://bsqvc73t8kngf" path="res://scenes/enemy_bullet/enemy_bullet.tscn" id="14_yu7cm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1jxm"]
 
@@ -306,9 +306,6 @@ shape = SubResource("ConvexPolygonShape3D_7n3bj")
 
 [node name="ScaleComponent" type="Node" parent="Rigidbody"]
 script = ExtResource("12_835oq")
-
-[node name="Bullet" parent="." instance=ExtResource("14_eafn0")]
-transform = Transform3D(0.0535449, 0.947512, -0.315204, -0.158684, 0.31972, 0.93413, 0.985876, -2.98023e-08, 0.167474, -1.86197, 0.369878, 4.20604)
 
 [node name="Static" parent="." instance=ExtResource("14_qhax4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.87277, 0, 0)
@@ -772,3 +769,6 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/Node3D/CSGBox3D5/Area3D"]
 shape = SubResource("BoxShape3D_uye4o")
+
+[node name="EnemyBullet" parent="." instance=ExtResource("14_yu7cm")]
+transform = Transform3D(1, 0, 0, 0, 0.156228, 0.987721, 0, -0.987721, 0.156228, -3.31288, 1.4208, 2.7654)
