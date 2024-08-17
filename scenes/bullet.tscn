@@ -10,16 +10,18 @@ shader = ExtResource("1_vp8fn")
 [sub_resource type="SphereShape3D" id="SphereShape3D_nyqxe"]
 radius = 0.2
 
-[node name="Bullet" type="RigidBody3D"]
+[node name="Bullet" type="RigidBody3D" node_paths=PackedStringArray("COLLIDER_AREA")]
 top_level = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_vxxdv")
+COLLIDER_AREA = NodePath("Area3D")
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(0.99943, 0, 0.0337483, 0, 1, 0, -0.0337483, 0, 0.99943, 0, 0, 0)
 material_override = SubResource("ShaderMaterial_p73w1")
 cast_shadow = 0
+calculate_tangents = false
 collision_layer = 2
 radius = 0.2
 radial_segments = 8
@@ -30,4 +32,10 @@ metadata/_edit_lock_ = true
 light_color = Color(1, 1, 0.0392157, 1)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_nyqxe")
+
+[node name="Area3D" type="Area3D" parent="."]
+priority = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_nyqxe")

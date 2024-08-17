@@ -228,7 +228,8 @@ space_check = NodePath("SpaceController")
 body = NodePath("../..")
 
 [node name="GroundController" type="Area3D" parent="Components/MovementHelperComponent"]
-collision_layer = 4
+disable_mode = 1
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Components/MovementHelperComponent/GroundController"]
@@ -236,7 +237,8 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.185
 shape = SubResource("SeparationRayShape3D_8vrei")
 
 [node name="SpaceController" type="Area3D" parent="Components/MovementHelperComponent"]
-collision_layer = 4
+disable_mode = 1
+collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Components/MovementHelperComponent/SpaceController"]
