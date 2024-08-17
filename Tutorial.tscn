@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://bt0afdbck7xn6"]
+[gd_scene load_steps=28 format=3 uid="uid://bt0afdbck7xn6"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_xepuw"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_nrcir"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="4_l2u68"]
 [ext_resource type="Texture2D" uid="uid://dt68j11id6qf" path="res://assets/textures/WoodPlanks029/WoodPlanks029_COL_VAR1_1K.jpg" id="4_lqgir"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_lqppd"]
+[ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="6_847dh"]
 [ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="6_df2gx"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="6_w6uad"]
 [ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="8_md1vn"]
@@ -32,6 +33,15 @@ uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
 size = Vector3(8, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrwvb"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+emission_energy_multiplier = 4.68
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
+size = Vector3(26.5, 1.1, 5)
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_6v0sx"]
 panorama = ExtResource("6_w6uad")
@@ -194,7 +204,7 @@ shape = SubResource("BoxShape3D_uye4o")
 
 [node name="CSGBox3D6" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 2.99972, -3.48794, -26.4499)
-material_override = SubResource("StandardMaterial3D_ef2uv")
+material_override = SubResource("StandardMaterial3D_nrwvb")
 use_collision = true
 size = Vector3(29.5, 1, 4.5)
 
@@ -204,6 +214,16 @@ collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D6/Area3D"]
 shape = SubResource("BoxShape3D_uye4o")
+
+[node name="KillOnTouch" type="Area3D" parent="Node3D/CSGBox3D6"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("6_847dh")
+DAMAGE = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D6/KillOnTouch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75, 0.05, 0)
+shape = SubResource("BoxShape3D_skmko")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6559, 4.99176, 4.10916)

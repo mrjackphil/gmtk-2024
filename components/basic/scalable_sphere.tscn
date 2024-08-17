@@ -4,6 +4,7 @@
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_qi1jp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_djkx4"]
+radius = 0.55
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlso5"]
 albedo_texture = ExtResource("1_rml4r")
