@@ -7,12 +7,12 @@
 material = ExtResource("1_yci3v")
 size = Vector3(2, 1, 2)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rxock"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_eda4e"]
 size = Vector3(2, 1, 2)
 
 [node name="ScalableBox" type="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)
-collision_layer = 9
+collision_mask = 0
 axis_lock_linear_x = true
 axis_lock_linear_y = true
 axis_lock_linear_z = true
@@ -24,12 +24,12 @@ mesh = SubResource("BoxMesh_6itdj")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_rxock")
+shape = SubResource("BoxShape3D_eda4e")
 
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("2_e1kjn")
 MAX_SCALE = 5.0
-SCALE_VELOCITY = Vector3(0, 2, 0)
+SCALE_VELOCITY = Vector3(0, 1, 0)
 SCALE_SLOWNESS = 10.0
 SHRINK_SLOWNESS = 3.0
 
@@ -39,4 +39,4 @@ collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_rxock")
+shape = SubResource("BoxShape3D_eda4e")
