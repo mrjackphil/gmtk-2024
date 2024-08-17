@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://waehjm8y7u5b"]
+
+[ext_resource type="PackedScene" uid="uid://dx46s1ptpg31o" path="res://scenes/enemy/walkable.tscn" id="1_dwbgl"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sk5u2"]
+radius = 0.61031
+height = 2.90527
+
+[node name="Test" type="RigidBody3D"]
+
+[node name="Walkable" parent="." instance=ExtResource("1_dwbgl")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45264, 0)
+shape = SubResource("CapsuleShape3D_sk5u2")

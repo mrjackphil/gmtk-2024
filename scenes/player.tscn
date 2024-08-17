@@ -1,10 +1,9 @@
-[gd_scene load_steps=23 format=3 uid="uid://cide4w7urra1m"]
+[gd_scene load_steps=22 format=3 uid="uid://cide4w7urra1m"]
 
 [ext_resource type="ArrayMesh" uid="uid://dnvrpa2axk42i" path="res://assets/models/SA_Wep_SMG.obj" id="1_kinyt"]
 [ext_resource type="Script" path="res://components/basic/CameraMouseMoveComponent.gd" id="1_ukkef"]
 [ext_resource type="Texture2D" uid="uid://ipoukni3x81q" path="res://assets/textures/SimpleApocalypse_Texture.png" id="2_nku4k"]
 [ext_resource type="Script" path="res://components/basic/MovementComponent.gd" id="3_x5up6"]
-[ext_resource type="Texture2D" uid="uid://46p0sgepkf8y" path="res://assets/sprites/cursor.png" id="4_ysp4u"]
 [ext_resource type="Script" path="res://components/basic/HealthComponent.gd" id="5_kuavu"]
 [ext_resource type="Texture2D" uid="uid://bn1wwj25xft5n" path="res://assets/sprites/shadow.png" id="6_2c8yv"]
 [ext_resource type="Script" path="res://components/basic/CombatComponent.gd" id="6_7oddd"]
@@ -211,14 +210,7 @@ target_position = Vector3(0, 0, -100)
 collision_mask = 8
 
 [node name="Bullet placement" type="Marker3D" parent="Yaw/RHand"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386142, 0.103466, -1.15502)
-
-[node name="Sprite3D" type="Sprite3D" parent="Yaw/RHand/Bullet placement"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0399525, 0.149105, 0)
-billboard = 2
-no_depth_test = true
-texture_filter = 0
-texture = ExtResource("4_ysp4u")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0648677, 0.0173811, -1.15502)
 
 [node name="Hurtbox" type="Area3D" parent="Yaw" groups=["player_weapon"]]
 
