@@ -7,7 +7,6 @@ class_name EnemyRotationComponent
 
 var _rotation_vector: Vector3 = Vector3.ZERO
 
-
 func set_rotation_vector(vect: Vector3):
 	_rotation_vector = vect
 
@@ -17,10 +16,12 @@ func _physics_process(delta: float) -> void:
 		return
 
 	var current_direction: Vector3 = rotation_body.global_transform.basis.z.normalized()
-	var vect: Vector3 = current_direction.lerp(_rotation_vector, rotation_speed * delta)
-	rotation_body.look_at(_rotation_vector)
+	var vect: Vector3 = current_direction.lerp(_rotation_vector, 0.01)
+	
+	#rotation_body.rotation = vect
 	#var tr: Transform3D = rotation_body.global_transform
 
-	#var tr: Transform3D = rotation_body.global_transform.looking_at(vect, Vector3.UP)
+	var player: CharacterBody3D = get_node("/root/World/Player")
+	var tr: Transform3D = rotation_body.global_transform.looking_at(player.global_position, Vector3.UP)
 	#rotation_body.global_transform = tr
-	#rotation_body.global_transform = rotation_body.global_transform.interpolate_with(tr, rotation_speed * delta)
+	rotation_body.global_transform = rotation_body.global_transform.interpolate_with(tr, 0.1)
