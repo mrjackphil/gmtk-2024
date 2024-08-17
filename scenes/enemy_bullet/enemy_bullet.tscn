@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsqvc73t8kngf"]
+[gd_scene load_steps=7 format=3 uid="uid://bsqvc73t8kngf"]
 
 [ext_resource type="Shader" uid="uid://c1sbofapoimcq" path="res://scenes/bullet/bullet_gdshader.tres" id="1_pkt0y"]
+[ext_resource type="Script" path="res://scenes/bullet/bullet_area.gd" id="1_vavb6"]
 [ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="2_pdfcs"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hvcqh"]
@@ -8,10 +9,19 @@ render_priority = 0
 shader = ExtResource("1_pkt0y")
 shader_parameter/ColorParameter = Color(1, 0.0862745, 0, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_bjfu1"]
+radius = 0.2
+
 [sub_resource type="SphereShape3D" id="SphereShape3D_8b5wc"]
 radius = 0.16571
 
-[node name="EnemyBullet" type="Node3D"]
+[node name="EnemyBullet" type="RigidBody3D"]
+top_level = true
+collision_layer = 8
+collision_mask = 9
+gravity_scale = 0.0
+script = ExtResource("1_vavb6")
+SPEED = 10
 
 [node name="CSGSphere3D" type="CSGSphere3D" parent="."]
 transform = Transform3D(0.99943, 0, 0.0337483, 0, 1, 0, -0.0337483, 0, 0.99943, 0, 0, 0)
@@ -26,6 +36,9 @@ metadata/_edit_lock_ = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 light_color = Color(1, 0.0666667, 0.0392157, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_bjfu1")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_layer = 0
