@@ -1,0 +1,107 @@
+[gd_scene load_steps=19 format=3 uid="uid://bcvain0t1trb1"]
+
+[ext_resource type="Texture2D" uid="uid://2yqu6pviaxa2" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_COL_1K.jpg" id="1_3abrb"]
+[ext_resource type="Material" uid="uid://ry26xh38jxl1" path="res://assets/materials/ScalableBoxTex.tres" id="1_emhwd"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_cf7bf"]
+[ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="3_yirj6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7lq5"]
+albedo_texture = ExtResource("1_3abrb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_6itdj"]
+material = ExtResource("1_emhwd")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxock"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yru0m"]
+albedo_texture = ExtResource("1_3abrb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_ndi1h"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xa2uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i3w7a"]
+albedo_texture = ExtResource("1_3abrb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_p2u6w"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hsnaw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fl8on"]
+albedo_texture = ExtResource("1_3abrb")
+
+[sub_resource type="BoxMesh" id="BoxMesh_sub65"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n8q7q"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdujo"]
+albedo_texture = ExtResource("3_yirj6")
+
+[sub_resource type="BoxMesh" id="BoxMesh_2513s"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="ScalableBox" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)
+collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -1.06581e-14)
+material_override = SubResource("StandardMaterial3D_x7lq5")
+mesh = SubResource("BoxMesh_6itdj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, -5.32905e-15)
+shape = SubResource("BoxShape3D_rxock")
+
+[node name="ScaleComponent" type="Node" parent="ScalableBox"]
+script = ExtResource("2_cf7bf")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(2, 2, 2)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="ScalableBox"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ScalableBox/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rxock")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+material_override = SubResource("StandardMaterial3D_yru0m")
+mesh = SubResource("BoxMesh_ndi1h")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1)
+shape = SubResource("BoxShape3D_xa2uc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 1.59872e-14)
+material_override = SubResource("StandardMaterial3D_i3w7a")
+mesh = SubResource("BoxMesh_p2u6w")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("BoxShape3D_hsnaw")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+material_override = SubResource("StandardMaterial3D_fl8on")
+mesh = SubResource("BoxMesh_sub65")
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="ScalableBox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -1)
+shape = SubResource("BoxShape3D_n8q7q")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_cdujo")
+mesh = SubResource("BoxMesh_2513s")
+skeleton = NodePath("../ScalableBox")
