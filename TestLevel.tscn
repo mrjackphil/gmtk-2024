@@ -1,10 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://cb6yvk3e2adv2"]
+[gd_scene load_steps=18 format=3 uid="uid://cb6yvk3e2adv2"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_trmvs"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_1bfqr"]
-[ext_resource type="Script" path="res://components/basic/InteractableComponent.gd" id="3_23upn"]
-[ext_resource type="Script" path="res://components/interactions/interaction.gd" id="4_1ubei"]
-[ext_resource type="Script" path="res://components/interactions/slider.gd" id="5_6xtfp"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_0mso6"]
 [ext_resource type="Script" path="res://scripts/shrink.gd" id="6_kwmrk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdm6l"]
@@ -15,10 +13,6 @@ texture_filter = 0
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_8rpxn"]
 size = Vector3(8, 1, 4)
-
-[sub_resource type="Resource" id="Resource_sym71"]
-script = ExtResource("5_6xtfp")
-relative_position = Vector3(0, 0, -1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n0oo6"]
 size = Vector3(1, 1, 4)
@@ -82,8 +76,6 @@ collision_mask = 5
 size = Vector3(1, 1, 4)
 
 [node name="InteractableComponent" type="Node3D" parent="Node3D/CSGBox3D22"]
-script = ExtResource("3_23upn")
-interations = Array[ExtResource("4_1ubei")]([SubResource("Resource_sym71")])
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D22/InteractableComponent"]
 collision_layer = 6
@@ -178,7 +170,7 @@ collision_mask = 4
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D19" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.5, -12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.5, -17.0551)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
@@ -189,19 +181,6 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D19/Area3D"]
-shape = SubResource("BoxShape3D_oxmx2")
-
-[node name="CSGBox3D11" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, -10)
-material_override = SubResource("StandardMaterial3D_fdm6l")
-use_collision = true
-size = Vector3(2, 1, 2)
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D11"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D11/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Node3D"]
@@ -325,6 +304,10 @@ shape = SubResource("BoxShape3D_uye4o")
 [node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D2"]
 script = ExtResource("6_kwmrk")
 
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D2"]
+script = ExtResource("4_0mso6")
+SCALE_ENABLE = Vector3(0, 1, 0)
+
 [node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -18.9937, 6.70222, 0.0976755)
 collision_layer = 9
@@ -337,15 +320,22 @@ use_collision = true
 size = Vector3(2, 1, 2)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 0)
+transform = Transform3D(0.968, 0, 0, 0, 0.968, 2.50557e-23, -2.51992e-20, 8.08462e-23, 0.3, -5.96046e-08, 0.5, 0)
 shape = SubResource("BoxShape3D_uye4o")
 
 [node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D3"]
 script = ExtResource("6_kwmrk")
 
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D3"]
+script = ExtResource("4_0mso6")
+SCALE_ENABLE = Vector3(0, 1, 0)
+
 [node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.993697, 0.702224, -4.90232)
 collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D4"]
@@ -360,6 +350,35 @@ shape = SubResource("BoxShape3D_uye4o")
 
 [node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("6_kwmrk")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
+script = ExtResource("4_0mso6")
+SCALE_ENABLE = Vector3(0, 1, 0)
+
+[node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.9937, 0.702224, -9.90232)
+collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D5"]
+transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 15)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D5"]
+script = ExtResource("6_kwmrk")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
+script = ExtResource("4_0mso6")
+SCALE_ENABLE = Vector3(0, 1, 0)
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.02393, 2.33221, -7.18048)
