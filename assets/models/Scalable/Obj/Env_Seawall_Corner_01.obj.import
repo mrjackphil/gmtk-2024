@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c1vylcodv4aom"
+path="res://.godot/imported/Env_Seawall_Corner_01.obj-cef90f08c2e0d81e5a4d900b6d84332c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Seawall_Corner_01.obj-cef90f08c2e0d81e5a4d900b6d84332c.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Seawall_Corner_01.obj"
+dest_files=["res://.godot/imported/Env_Seawall_Corner_01.obj-cef90f08c2e0d81e5a4d900b6d84332c.mesh", "res://.godot/imported/Env_Seawall_Corner_01.obj-cef90f08c2e0d81e5a4d900b6d84332c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

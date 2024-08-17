@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dewkufh3w4jx5"
+path="res://.godot/imported/road_bend_right_mesh.obj-914438536670d1e1551765970a7f6339.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_bend_right_mesh.obj-914438536670d1e1551765970a7f6339.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/road_bend_right_mesh.obj"
+dest_files=["res://.godot/imported/road_bend_right_mesh.obj-914438536670d1e1551765970a7f6339.mesh", "res://.godot/imported/road_bend_right_mesh.obj-914438536670d1e1551765970a7f6339.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

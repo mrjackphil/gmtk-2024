@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://clwy5cksdwflc"
+path="res://.godot/imported/fence_short_spike.obj-d9652f227debe3bbbb842aff8d08ca55.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fence_short_spike.obj-d9652f227debe3bbbb842aff8d08ca55.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/fence_short_spike.obj"
+dest_files=["res://.godot/imported/fence_short_spike.obj-d9652f227debe3bbbb842aff8d08ca55.mesh", "res://.godot/imported/fence_short_spike.obj-d9652f227debe3bbbb842aff8d08ca55.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

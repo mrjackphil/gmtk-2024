@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://on5ucgvrnsy4"]
+[gd_scene load_steps=7 format=3 uid="uid://on5ucgvrnsy4"]
 
+[ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_1tf2m"]
 [ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="1_rml4r"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_qi1jp"]
 
@@ -13,6 +14,7 @@ albedo_texture = ExtResource("1_rml4r")
 material = SubResource("StandardMaterial3D_wlso5")
 
 [node name="ScalableSphere" type="RigidBody3D"]
+script = ExtResource("1_1tf2m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_djkx4")
