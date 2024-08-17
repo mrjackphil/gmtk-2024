@@ -27,7 +27,7 @@ shape = SubResource("BoxShape3D_rxock")
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("1_8smmx")
 MAX_SCALE = 5.0
-SCALE_VELOCITY = Vector3(0, 2, 0)
+SCALE_VELOCITY = Vector3(0.5, 2, 0.5)
 SCALE_SLOWNESS = 10.0
 SHRINK_SLOWNESS = 3.0
 

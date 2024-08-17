@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dd5ny76s6npco"]
+
+[ext_resource type="Texture2D" uid="uid://50bashwgnqsx" path="res://components/basic/ScalablePlatformTexture.png" id="1_cp2t5"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_v8jrx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5g4o2"]
+size = Vector3(0.1, 1, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2sal0"]
+albedo_texture = ExtResource("1_cp2t5")
+
+[sub_resource type="BoxMesh" id="BoxMesh_jdqnv"]
+size = Vector3(0.1, 1, 0.1)
+
+[node name="ScalableBox" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0, 0)
+collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+metadata/_edit_group_ = true
+
+[node name="ScaleComponent" type="Node" parent="."]
+script = ExtResource("2_v8jrx")
+MAX_SCALE = 40.0
+SCALE_VELOCITY = Vector3(39, 0, 39)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_5g4o2")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 5.32905e-15)
+material_override = SubResource("StandardMaterial3D_2sal0")
+mesh = SubResource("BoxMesh_jdqnv")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_5g4o2")
