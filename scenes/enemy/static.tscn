@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmh3xus3tte1r"]
+[gd_scene load_steps=11 format=3 uid="uid://v52tv8iv7k02"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kunne"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="2_rkdnn"]
 [ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="3_einfi"]
+[ext_resource type="Script" path="res://components/composed/ShootAtPlayer.gd" id="4_6k8w1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_upgu3"]
 radius = 0.4
@@ -17,6 +18,9 @@ radius = 4.96864
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ta1uo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qt5iv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s58tg"]
+radius = 5.5
 
 [node name="Static" type="CharacterBody3D"]
 script = ExtResource("1_kunne")
@@ -49,6 +53,14 @@ skeleton = NodePath("../..")
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
 transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.44555, -0.427416)
 mesh = SubResource("CapsuleMesh_qt5iv")
+
+[node name="ShootAtPlayer" type="Area3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+collision_layer = 0
+script = ExtResource("4_6k8w1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/ShootAtPlayer"]
+shape = SubResource("SphereShape3D_s58tg")
 
 [node name="Components" type="Node3D" parent="."]
 
