@@ -11,7 +11,7 @@ class_name PlayerCombatComponent
 @export var camera_root: Node3D
 # @export var inventory_component: InventoryComponent
 
-@onready var bullet = preload("res://scenes/bullet.tscn")
+@onready var bullet = preload("res://scenes/bullet/bullet.tscn")
 
 
 var animations := {
@@ -37,7 +37,6 @@ func shoot() -> void:
 	#collider.scale *= 2
 	var b = bullet.instantiate()
 	b.transform = bullet_placement.global_transform
-	b.linear_velocity = bullet_placement.global_transform.basis.z * -1 * 30
 	bullet_placement.add_child(b)
 	
 	print("bullet_placement", camera_root.rotation)
