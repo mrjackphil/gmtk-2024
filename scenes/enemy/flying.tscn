@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://rhddg00ramae"]
 
 [ext_resource type="Script" path="res://scripts/flying.gd" id="1_exqcc"]
+[ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="2_1174t"]
 [ext_resource type="Script" path="res://components/enemy/EnemyMovementComponent.gd" id="4_0f71l"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="4_ctg1j"]
-[ext_resource type="Script" path="res://components/enemy/FlyingBehaviorComponent.gd" id="4_whi5r"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l8exn"]
 
@@ -57,12 +57,13 @@ script = ExtResource("4_0f71l")
 char_body = NodePath("../..")
 nav = NodePath("../../NavigationAgent3D")
 
-[node name="FlyingBehaviorComponent" type="Node" parent="Components" node_paths=PackedStringArray("movement_component", "rotation_component", "player_detection_area", "enemy")]
-script = ExtResource("4_whi5r")
+[node name="EnemyBehaviorComponent" type="Node" parent="Components" node_paths=PackedStringArray("movement_component", "rotation_component", "player_detection_area", "enemy")]
+script = ExtResource("2_1174t")
 movement_component = NodePath("../EnemyMovementComponent")
 rotation_component = NodePath("../EnemyRotationComponent")
 player_detection_area = NodePath("../../PlayerDetectionArea")
 enemy = NodePath("../..")
+flying_enemy = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true

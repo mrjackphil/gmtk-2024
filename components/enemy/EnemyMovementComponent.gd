@@ -43,7 +43,7 @@ func _physics_process(delta: float) -> void:
 	else:
 		char_body.velocity.x = move_toward(char_body.velocity.x, 0, speed)
 		char_body.velocity.z = move_toward(char_body.velocity.z, 0, speed)
-		char_body.velocity.y = move_toward(char_body.velocity.y, 0, speed)
+		#char_body.velocity.y = move_toward(char_body.velocity.y, 0, speed)
 
 	char_body.move_and_slide()
 	for col_idx in char_body.get_slide_collision_count():
