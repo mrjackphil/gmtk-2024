@@ -21,7 +21,7 @@ size = Vector3(1, 1, 4)
 size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
-size = Vector3(2, 1, 4.50732)
+size = Vector3(2, 0.92659, 4.49863)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqx02"]
 
@@ -31,10 +31,6 @@ points = PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, -1, 0, 0, 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h3es"]
 albedo_color = Color(1, 0, 0.329412, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_c0t6y"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_8xyjl"]
-
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gl8hn"]
 
 [sub_resource type="Sky" id="Sky_00ngy"]
@@ -43,6 +39,10 @@ sky_material = SubResource("PhysicalSkyMaterial_gl8hn")
 [sub_resource type="Environment" id="Environment_aynux"]
 background_mode = 2
 sky = SubResource("Sky_00ngy")
+
+[sub_resource type="SphereMesh" id="SphereMesh_ewm2i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3qum"]
 
 [node name="World" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388498, -0.187797, 0.0791359)
@@ -101,6 +101,20 @@ shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 4, -11.5)
+material_override = SubResource("StandardMaterial3D_fdm6l")
+use_collision = true
+size = Vector3(19, 8, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 4, -21.5)
+material_override = SubResource("StandardMaterial3D_fdm6l")
+use_collision = true
+size = Vector3(19, 8, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 4, -21.5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(19, 8, 1)
@@ -181,6 +195,20 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D19/Area3D"]
+shape = SubResource("BoxShape3D_oxmx2")
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.5, -29.0551)
+material_override = SubResource("StandardMaterial3D_fdm6l")
+use_collision = true
+size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D20"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D20/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Node3D"]
@@ -340,15 +368,17 @@ use_collision = true
 size = Vector3(2, 1, 15)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.65317)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55938, 1.64495)
 shape = SubResource("BoxShape3D_uye4o")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("4_0mso6")
-SHRINK_TIMEOUT = 2000
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 1, 0)
+SCALE_SLOWNESS = 10.0
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.9937, 0.702224, -9.90232)
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -24.1211)
 collision_layer = 9
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -362,29 +392,29 @@ use_collision = true
 size = Vector3(2, 1, 15)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248474, 0.820862)
 shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D5"]
-script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
 script = ExtResource("4_0mso6")
+MAX_SCALE = 6.0
+SCALE_VELOCITY = Vector3(0, 1, 0)
+SCALE_SLOWNESS = 10.0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.02393, 2.33221, -7.18048)
-mass = 0.2
+[node name="Node3D" type="Node3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44761, 2.36393, -5.40304)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_c0t6y")
+[node name="CSGBox3D34" type="CSGBox3D" parent="Node3D/Node3D"]
+transform = Transform3D(0.968, 0, 0, 0, -4.23126e-08, 0.3, 0, -0.968, -1.31134e-08, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 15)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_8xyjl")
-
-[node name="ScaleComponent" type="Node" parent="RigidBody3D"]
+[node name="ScaleComponent" type="Node" parent="Node3D/Node3D/CSGBox3D34"]
 script = ExtResource("4_0mso6")
-MAX_SCALE = 10.0
-SCALE_SLOWNESS = 0.01
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 1, 0)
+SCALE_SLOWNESS = 10.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")
@@ -392,3 +422,16 @@ environment = SubResource("Environment_aynux")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.866025, 0.12941, 0.482963, -0.5, 0.224144, 0.836516, 0, -0.965926, 0.258819, 0, 6, 0)
 shadow_enabled = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04931, 2.60108, -22.6223)
+collision_layer = 9
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_ewm2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_u3qum")
+
+[node name="ScaleComponent" type="Node" parent="RigidBody3D"]
+script = ExtResource("4_0mso6")
