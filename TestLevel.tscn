@@ -1,8 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cb6yvk3e2adv2"]
+[gd_scene load_steps=23 format=3 uid="uid://cb6yvk3e2adv2"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_trmvs"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_1bfqr"]
+[ext_resource type="Texture2D" uid="uid://2yqu6pviaxa2" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_COL_1K.jpg" id="3_d0pbg"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_0mso6"]
+[ext_resource type="Texture2D" uid="uid://iw3vgp7mri8c" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_NRM_1K.jpg" id="4_hcg52"]
+[ext_resource type="Texture2D" uid="uid://7yl5f4mghh65" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_AO_1K.jpg" id="4_ndyqb"]
 [ext_resource type="Script" path="res://scripts/shrink.gd" id="6_kwmrk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdm6l"]
@@ -19,6 +22,18 @@ size = Vector3(1, 1, 4)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
 size = Vector3(2, 1, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c4f1h"]
+albedo_texture = ExtResource("3_d0pbg")
+normal_enabled = true
+normal_texture = ExtResource("4_hcg52")
+ao_enabled = true
+ao_light_affect = 0.49
+ao_texture = ExtResource("4_ndyqb")
+uv1_scale = Vector3(0.1, 0.1, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqsna"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
 size = Vector3(2, 0.92659, 4.49863)
@@ -129,9 +144,10 @@ metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -4.5)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+material_override = SubResource("StandardMaterial3D_c4f1h")
 use_collision = true
 size = Vector3(52, 5, 1)
+material = SubResource("StandardMaterial3D_jqsna")
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="Node3D"]
@@ -209,6 +225,20 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D20/Area3D"]
+shape = SubResource("BoxShape3D_oxmx2")
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9.5, -29.0551)
+material_override = SubResource("StandardMaterial3D_fdm6l")
+use_collision = true
+size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D23"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D23/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D12" type="CSGBox3D" parent="Node3D"]
@@ -374,11 +404,12 @@ shape = SubResource("BoxShape3D_uye4o")
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("4_0mso6")
 MAX_SCALE = 5.0
-SCALE_VELOCITY = Vector3(0, 1, 0)
+SCALE_VELOCITY = Vector3(0, 5, 0)
 SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -24.1211)
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -23.5226)
 collision_layer = 9
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -386,20 +417,21 @@ axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_0h3es")
 use_collision = true
 size = Vector3(2, 1, 15)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248474, 0.820862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_uye4o")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
 script = ExtResource("4_0mso6")
-MAX_SCALE = 6.0
-SCALE_VELOCITY = Vector3(0, 1, 0)
+MAX_SCALE = 9.0
+SCALE_VELOCITY = Vector3(0, 4, 0)
 SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
 
 [node name="Node3D" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44761, 2.36393, -5.40304)
@@ -410,7 +442,7 @@ material_override = SubResource("StandardMaterial3D_0h3es")
 use_collision = true
 size = Vector3(2, 1, 15)
 
-[node name="ScaleComponent" type="Node" parent="Node3D/Node3D/CSGBox3D34"]
+[node name="ScaleComponent" type="Node" parent="Node3D/Node3D"]
 script = ExtResource("4_0mso6")
 MAX_SCALE = 5.0
 SCALE_VELOCITY = Vector3(0, 1, 0)
@@ -424,7 +456,7 @@ transform = Transform3D(0.866025, 0.12941, 0.482963, -0.5, 0.224144, 0.836516, 0
 shadow_enabled = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04931, 2.60108, -22.6223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04931, 1.60108, -9.13905)
 collision_layer = 9
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
