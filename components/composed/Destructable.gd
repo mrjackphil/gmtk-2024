@@ -7,7 +7,7 @@ func _ready() -> void:
 	area_entered.connect(_destruction)
 	
 func _destruction(area: Area3D) -> void:
-	print(area.scale)
+	print(area.get_parent().scale)
 	if _check_scale(area.get_parent()):
 		queue_free()
 

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://5frd48gmd2ml"
+path="res://.godot/imported/ST_Veh_Rubbish_Truck_Z.obj-72e5868f3e3d24a877fc4eb0a61863e8.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ST_Veh_Rubbish_Truck_Z.obj-72e5868f3e3d24a877fc4eb0a61863e8.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ST_Veh_Rubbish_Truck_Z.obj"
+dest_files=["res://.godot/imported/ST_Veh_Rubbish_Truck_Z.obj-72e5868f3e3d24a877fc4eb0a61863e8.mesh", "res://.godot/imported/ST_Veh_Rubbish_Truck_Z.obj-72e5868f3e3d24a877fc4eb0a61863e8.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

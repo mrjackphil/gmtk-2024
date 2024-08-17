@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxrnlf5pg1vfd"
+path="res://.godot/imported/ST_Veh_Bus_Grey_Z.obj-ae00ecb454bff80116d982d274edd7df.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ST_Veh_Bus_Grey_Z.obj-ae00ecb454bff80116d982d274edd7df.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ST_Veh_Bus_Grey_Z.obj"
+dest_files=["res://.godot/imported/ST_Veh_Bus_Grey_Z.obj-ae00ecb454bff80116d982d274edd7df.mesh", "res://.godot/imported/ST_Veh_Bus_Grey_Z.obj-ae00ecb454bff80116d982d274edd7df.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

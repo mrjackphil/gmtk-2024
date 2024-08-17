@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c2qyspqiugpxs"
+path="res://.godot/imported/ariel_mesh.obj-45db0feceb6b8adb2e95f341d7ed9205.mesh"
+
+[deps]
+
+files=["res://.godot/imported/ariel_mesh.obj-45db0feceb6b8adb2e95f341d7ed9205.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/ariel_mesh.obj"
+dest_files=["res://.godot/imported/ariel_mesh.obj-45db0feceb6b8adb2e95f341d7ed9205.mesh", "res://.godot/imported/ariel_mesh.obj-45db0feceb6b8adb2e95f341d7ed9205.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://belq4gy0qdpq1"
+path="res://.godot/imported/Building_Cinema.obj-3308dfd6270ef25d97f00e81b6a0c46f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Building_Cinema.obj-3308dfd6270ef25d97f00e81b6a0c46f.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Building_Cinema.obj"
+dest_files=["res://.godot/imported/Building_Cinema.obj-3308dfd6270ef25d97f00e81b6a0c46f.mesh", "res://.godot/imported/Building_Cinema.obj-3308dfd6270ef25d97f00e81b6a0c46f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

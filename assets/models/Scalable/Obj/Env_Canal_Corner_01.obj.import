@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://rpapksd12eag"
+path="res://.godot/imported/Env_Canal_Corner_01.obj-79dfc1267955ebefa3b499d176d6c856.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Env_Canal_Corner_01.obj-79dfc1267955ebefa3b499d176d6c856.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Env_Canal_Corner_01.obj"
+dest_files=["res://.godot/imported/Env_Canal_Corner_01.obj-79dfc1267955ebefa3b499d176d6c856.mesh", "res://.godot/imported/Env_Canal_Corner_01.obj-79dfc1267955ebefa3b499d176d6c856.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

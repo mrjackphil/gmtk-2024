@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b6vxmib3lii8t"
+path="res://.godot/imported/road_crossing_center_mesh.obj-abb3ae901118bc760bde449cf2e14ba1.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_crossing_center_mesh.obj-abb3ae901118bc760bde449cf2e14ba1.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/road_crossing_center_mesh.obj"
+dest_files=["res://.godot/imported/road_crossing_center_mesh.obj-abb3ae901118bc760bde449cf2e14ba1.mesh", "res://.godot/imported/road_crossing_center_mesh.obj-abb3ae901118bc760bde449cf2e14ba1.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

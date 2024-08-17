@@ -1028,3 +1028,6 @@ mesh = SubResource("BoxMesh_ev4nb")
 
 [node name="ScalableSphere" parent="." instance=ExtResource("10_0160p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 14, -35.5)
+
+[node name="ScalableSphere2" parent="." instance=ExtResource("10_0160p")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 14, -35.5)

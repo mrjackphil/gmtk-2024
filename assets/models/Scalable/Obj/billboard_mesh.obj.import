@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dp8fengxq3pmj"
+path="res://.godot/imported/billboard_mesh.obj-4ba870142bf993d7d85c7cecbab7ca7b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/billboard_mesh.obj-4ba870142bf993d7d85c7cecbab7ca7b.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/billboard_mesh.obj"
+dest_files=["res://.godot/imported/billboard_mesh.obj-4ba870142bf993d7d85c7cecbab7ca7b.mesh", "res://.godot/imported/billboard_mesh.obj-4ba870142bf993d7d85c7cecbab7ca7b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

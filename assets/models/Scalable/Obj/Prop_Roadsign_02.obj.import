@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://deejsekwl4n35"
+path="res://.godot/imported/Prop_Roadsign_02.obj-02b4d27be1f8a28b937dc45188fd9bb9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Prop_Roadsign_02.obj-02b4d27be1f8a28b937dc45188fd9bb9.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/Prop_Roadsign_02.obj"
+dest_files=["res://.godot/imported/Prop_Roadsign_02.obj-02b4d27be1f8a28b937dc45188fd9bb9.mesh", "res://.godot/imported/Prop_Roadsign_02.obj-02b4d27be1f8a28b937dc45188fd9bb9.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

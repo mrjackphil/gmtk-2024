@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dgnxc4lixgjdf"
+path="res://.godot/imported/dumpster_mesh.obj-b318927d959be99a1b449a833a2d390f.mesh"
+
+[deps]
+
+files=["res://.godot/imported/dumpster_mesh.obj-b318927d959be99a1b449a833a2d390f.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/dumpster_mesh.obj"
+dest_files=["res://.godot/imported/dumpster_mesh.obj-b318927d959be99a1b449a833a2d390f.mesh", "res://.godot/imported/dumpster_mesh.obj-b318927d959be99a1b449a833a2d390f.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

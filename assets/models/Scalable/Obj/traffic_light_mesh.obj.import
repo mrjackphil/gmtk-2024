@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c52fevbnhwcjw"
+path="res://.godot/imported/traffic_light_mesh.obj-8b7b8f5d1322c9f2f6adc1b9a314bfcb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/traffic_light_mesh.obj-8b7b8f5d1322c9f2f6adc1b9a314bfcb.mesh"]
+
+source_file="res://assets/models/Scalable/Obj/traffic_light_mesh.obj"
+dest_files=["res://.godot/imported/traffic_light_mesh.obj-8b7b8f5d1322c9f2f6adc1b9a314bfcb.mesh", "res://.godot/imported/traffic_light_mesh.obj-8b7b8f5d1322c9f2f6adc1b9a314bfcb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
