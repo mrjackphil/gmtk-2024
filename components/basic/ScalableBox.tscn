@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://4xf5fsbl5yur"]
+
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="1_8smmx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h3es"]
+albedo_color = Color(1, 0, 0.329412, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxock"]
+
+[node name="StaticBody3D18" type="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -7.9937, 0.702224, 10.4774)
+collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rxock")
+
+[node name="ScaleComponent" type="Node" parent="."]
+script = ExtResource("1_8smmx")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(4, 1, 4)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rxock")
