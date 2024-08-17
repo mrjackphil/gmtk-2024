@@ -1,10 +1,8 @@
 [gd_resource type="VisualShader" load_steps=10 format=3 uid="uid://c1sbofapoimcq"]
 
-[sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_h8wny"]
+[sub_resource type="VisualShaderNodeColorConstant" id="VisualShaderNodeColorConstant_tnuhu"]
 expanded_output_ports = [0]
-parameter_name = "ColorParameter"
-default_value_enabled = true
-default_value = Color(1, 1, 0, 1)
+constant = Color(1, 1, 0, 1)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_6q4sg"]
 noise_type = 0
@@ -43,7 +41,6 @@ op_type = 0
 code = "shader_type spatial;
 render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx, unshaded, fog_disabled;
 
-uniform vec4 ColorParameter : source_color = vec4(1.000000, 1.000000, 0.000000, 1.000000);
 uniform sampler2D tex_frg_3;
 
 
@@ -57,8 +54,8 @@ vec3 hash_noise_range( vec3 p ) {
 
 
 void fragment() {
-// ColorParameter:2
-	vec4 n_out2p0 = ColorParameter;
+// ColorConstant:2
+	vec4 n_out2p0 = vec4(1.000000, 1.000000, 0.000000, 1.000000);
 
 
 // Input:5
@@ -102,7 +99,7 @@ graph_offset = Vector2(-332.044, -17.0646)
 flags/unshaded = true
 flags/fog_disabled = true
 nodes/fragment/0/position = Vector2(1040, 440)
-nodes/fragment/2/node = SubResource("VisualShaderNodeColorParameter_h8wny")
+nodes/fragment/2/node = SubResource("VisualShaderNodeColorConstant_tnuhu")
 nodes/fragment/2/position = Vector2(-140, 40)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_e5ax4")
 nodes/fragment/3/position = Vector2(0, 360)
