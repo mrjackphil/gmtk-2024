@@ -15,10 +15,10 @@ func _physics_process(_delta: float) -> void:
 	if body.velocity.x == 0 and not forward_movement: return
 	if is_crouch: return
 
-	var overlapped_areas := ground_check.get_overlapping_areas()
-	var empty_areas := space_check.get_overlapping_areas()
+	var overlapped_areas := ground_check.has_overlapping_areas()
+	var empty_areas := space_check.has_overlapping_areas()
 
-	if overlapped_areas.size() == 0 or empty_areas.size() > 0:
+	if not overlapped_areas or empty_areas:
 		return
 
 	body.position.y += 0.15

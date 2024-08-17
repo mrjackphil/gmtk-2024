@@ -207,6 +207,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0302372, -0.0200138, 0.035
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -8)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D"]
@@ -220,6 +222,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0.5, -6)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D16"]
@@ -233,6 +237,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0.5, -12)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D17"]
@@ -246,6 +252,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2.5, -12)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D18"]
@@ -259,6 +267,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 4.5, -12)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D19"]
@@ -272,6 +282,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 1.5, -4)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D3"]
@@ -285,6 +297,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.5, -3.5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(8, 7, 11)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D6"]
@@ -298,6 +312,8 @@ shape = SubResource("BoxShape3D_x8d5i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 3.5, 11.5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(8, 7, 11)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D7"]
@@ -311,6 +327,8 @@ shape = SubResource("BoxShape3D_x8d5i")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 6.5, 4)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 4)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D8"]
@@ -324,6 +342,8 @@ shape = SubResource("BoxShape3D_8rpxn")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, 4)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(8, 1, 4)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D21"]
@@ -358,6 +378,8 @@ shape = SubResource("BoxShape3D_n0oo6")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 0.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D9"]
@@ -371,18 +393,24 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.5, 4, -11.5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(11, 8, 1)
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 4, -8)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(1, 8, 6)
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 1.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D10"]
@@ -396,6 +424,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16, 2.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D11"]
@@ -409,6 +439,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D12"]
@@ -422,6 +454,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D13"]
@@ -435,6 +469,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5.5, -8)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D14"]
@@ -449,6 +485,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6.5, -6)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D15"]
@@ -462,6 +500,8 @@ shape = SubResource("BoxShape3D_oxmx2")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2.5, -2)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D4"]
@@ -475,6 +515,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0.5, 4)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D23"]
@@ -488,6 +530,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D24"]
@@ -501,6 +545,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1.5, 2)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D25"]
@@ -514,6 +560,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 2)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D26"]
@@ -527,6 +575,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2.5, 5)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D27"]
@@ -540,6 +590,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, -2)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D2"]
@@ -553,6 +605,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 4.5, -2)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(2, 1, 2)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D20"]
@@ -566,6 +620,8 @@ shape = SubResource("BoxShape3D_uye4o")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, -0.5, -2.45)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
+collision_layer = 5
+collision_mask = 5
 size = Vector3(63, 1, 57)
 
 [node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D5"]
@@ -622,9 +678,6 @@ shape = SubResource("ConvexPolygonShape3D_nx4es")
 [node name="StaticBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.03741, -0.0200137, 12.9646)
 collision_layer = 9
-
-[node name="ShrinkComponent" type="Node" parent="StaticBody3D"]
-script = ExtResource("7_ogecx")
 
 [node name="SdPropBrazier02" type="MeshInstance3D" parent="StaticBody3D"]
 mesh = ExtResource("8_83kdj")
@@ -703,7 +756,6 @@ shape = SubResource("ConvexPolygonShape3D_xnmxn")
 [node name="ScaleComponent" type="Node" parent="StaticBody3D"]
 script = ExtResource("12_835oq")
 SCALE_MULTIPLIER = 1.0
-SCALE_ENABLE = Vector3(0, 3, 0)
 
 [node name="Rigidbody" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 11)
@@ -717,8 +769,8 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Rigidbody"]
 shape = SubResource("ConvexPolygonShape3D_7n3bj")
 
-[node name="ShrinkComponent" type="Node" parent="Rigidbody"]
-script = ExtResource("7_ogecx")
+[node name="ScaleComponent" type="Node" parent="Rigidbody"]
+script = ExtResource("12_835oq")
 
 [node name="Bullet" parent="." instance=ExtResource("14_eafn0")]
 transform = Transform3D(0.0535449, 0.947512, -0.315204, -0.158684, 0.31972, 0.93413, 0.985876, -2.98023e-08, 0.167474, -1.86197, 0.369878, 4.20604)
