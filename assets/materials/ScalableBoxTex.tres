@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://ry26xh38jxl1"]
+
+[ext_resource type="Texture2D" uid="uid://cpnm01vhw3f5m" path="res://assets/textures/ScalableBoxTexture.png" id="1_xrhps"]
+
+[resource]
+albedo_texture = ExtResource("1_xrhps")

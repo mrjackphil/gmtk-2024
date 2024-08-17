@@ -1,21 +1,30 @@
 extends Node
 class_name HealthComponent
 
-@export var hp: int = 10
+var _hp: int = 10
+@export var hp: int:
+	get:
+		return _hp
+	set(v):
+		_hp = v
+		hp_changed.emit(_hp)
+
+		if _hp <= 0:
+			hp_end.emit()
+
+@export var gun: Node3D
+@export var main_camera: Camera3D
+@export var death_camera: Camera3D
+
+@export var movement_component: MovementComponent
 
 signal hp_changed(hp: int)
 signal hp_end
 
-func heal(points: int) -> int:
-	hp += points
-	hp_changed.emit(hp)
-	return hp
+func _ready() -> void:
+	hp_end.connect(_dead)
 
-func hurt(damage: int) -> int:
-	hp -= damage
-	hp_changed.emit(hp)
-
-	if hp <= 0:
-		hp_end.emit()
-
-	return hp
+func _dead() -> void:
+	gun.visible = false
+	death_camera.make_current()
+	movement_component.process_mode = Node.PROCESS_MODE_DISABLED

@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2x5da362mkoy"]
+
+[ext_resource type="Script" path="res://scenes/bullet/bullet_area.gd" id="1_j1ecd"]
+[ext_resource type="Shader" uid="uid://c1sbofapoimcq" path="res://scenes/bullet/bullet_gdshader.tres" id="1_vp8fn"]
+[ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="1_vxxdv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p73w1"]
+render_priority = 0
+shader = ExtResource("1_vp8fn")
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nyqxe"]
+radius = 0.25
+
+[node name="Bullet" type="RigidBody3D"]
+top_level = true
+collision_layer = 0
+gravity_scale = 0.0
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 2
+script = ExtResource("1_j1ecd")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.99943, 0, 0.0337483, 0, 1, 0, -0.0337483, 0, 0.99943, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_p73w1")
+cast_shadow = 0
+calculate_tangents = false
+collision_layer = 2
+radius = 0.2
+radial_segments = 8
+rings = 4
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+light_color = Color(1, 1, 0.0392157, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_nyqxe")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_vxxdv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_nyqxe")

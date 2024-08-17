@@ -11,37 +11,40 @@ class_name PlayerCombatComponent
 @export var camera_root: Node3D
 # @export var inventory_component: InventoryComponent
 
-@onready var bullet = preload("res://scenes/bullet.tscn")
+@onready var bullet = preload("res://scenes/bullet/bullet.tscn")
 
+const SHOOT_TIMEOUT := 14
+var shoot_timeout := 0
 
 var animations := {
 	"attack": "player_anims/1h_attack",
 	"idle": "player_anims/idle",
+	"shoot": "player_anims/shoot"
 }
 
 func _ready() -> void:
 	rhand_anim_player.connect("animation_finished", _idle)
 
-func _process(_delta: float) -> void:
-	if Input.is_action_just_pressed("combat_attack"):
+func _process(delta: float) -> void:
+	if shoot_timeout >= 0: shoot_timeout -= (1 * delta)
+	
+	if Input.is_action_pressed("combat_attack"):
 		attack()
 
 func _idle(_anim_string: String) -> void:
 	rhand_anim_player.play(animations.idle)
 
 func shoot() -> void:
+	if shoot_timeout > 0:
+		return
 	
-	#var collider := shoot_raycast.get_collider()
-	
-	#if not collider: return
-	#collider.scale *= 2
+	shoot_timeout = SHOOT_TIMEOUT
+	rhand_anim_player.stop()
+	rhand_anim_player.play(animations.shoot)
+
 	var b = bullet.instantiate()
 	b.transform = bullet_placement.global_transform
-	b.linear_velocity = bullet_placement.global_transform.basis.z * -1 * 30
 	bullet_placement.add_child(b)
-	
-	print("bullet_placement", camera_root.rotation)
-	print("bullet", b.rotation)
 
 func attack() -> void:
 	shoot()

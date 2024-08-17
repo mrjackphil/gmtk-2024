@@ -1,9 +1,13 @@
-[gd_scene load_steps=18 format=3 uid="uid://cb6yvk3e2adv2"]
+[gd_scene load_steps=24 format=3 uid="uid://cb6yvk3e2adv2"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_trmvs"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_1bfqr"]
+[ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="3_pccgs"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_0mso6"]
-[ext_resource type="Script" path="res://scripts/shrink.gd" id="6_kwmrk"]
+[ext_resource type="PackedScene" uid="uid://4xf5fsbl5yur" path="res://components/basic/ScalableBox.tscn" id="5_ko2dv"]
+[ext_resource type="PackedScene" uid="uid://8i4o3cedrbte" path="res://components/basic/ScalableBoxAlt.tscn" id="6_uwcba"]
+[ext_resource type="PackedScene" uid="uid://l48iuhccdaep" path="res://components/basic/ScalableBoxAlt2x1.tscn" id="7_g0amo"]
+[ext_resource type="PackedScene" uid="uid://bsyoiupd441ng" path="res://components/basic/ScalableBox2x1.tscn" id="8_wvgui"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fdm6l"]
 albedo_texture = ExtResource("2_1bfqr")
@@ -11,29 +15,20 @@ uv1_triplanar = true
 uv1_world_triplanar = true
 texture_filter = 0
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_8rpxn"]
-size = Vector3(8, 1, 4)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n0oo6"]
-size = Vector3(1, 1, 4)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
 size = Vector3(2, 1, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqsna"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
-size = Vector3(2, 1, 15)
+size = Vector3(8, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_jqx02"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_sqbq0"]
-points = PackedVector3Array(0, 0, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0, -1, 0, 0, -1, 1, 1, -1, 1, 0, -1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0h3es"]
 albedo_color = Color(1, 0, 0.329412, 1)
 
-[sub_resource type="SphereMesh" id="SphereMesh_c0t6y"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_8xyjl"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_rxock"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_gl8hn"]
 
@@ -44,46 +39,22 @@ sky_material = SubResource("PhysicalSkyMaterial_gl8hn")
 background_mode = 2
 sky = SubResource("Sky_00ngy")
 
+[sub_resource type="SphereMesh" id="SphereMesh_ewm2i"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_u3qum"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_buavg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltnmf"]
+
+[sub_resource type="MeshLibrary" id="MeshLibrary_6dpxh"]
+
 [node name="World" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0388498, -0.187797, 0.0791359)
 
 [node name="Player" parent="." instance=ExtResource("1_trmvs")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.83959, 1, -9.63727)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4599, 2.5, 17.1806)
 
 [node name="Node3D" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0302372, -0.0200138, 0.03512)
-
-[node name="CSGBox3D21" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 1.5, 4)
-material_override = SubResource("StandardMaterial3D_fdm6l")
-use_collision = true
-size = Vector3(8, 1, 4)
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D21"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D21/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000499725, 0, 0)
-shape = SubResource("BoxShape3D_8rpxn")
-
-[node name="CSGBox3D22" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 0.5, 4)
-material_override = SubResource("StandardMaterial3D_fdm6l")
-use_collision = true
-collision_layer = 5
-collision_mask = 5
-size = Vector3(1, 1, 4)
-
-[node name="InteractableComponent" type="Node3D" parent="Node3D/CSGBox3D22"]
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D22/InteractableComponent"]
-collision_layer = 6
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D22/InteractableComponent/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000499725, 0, 0)
-shape = SubResource("BoxShape3D_n0oo6")
 
 [node name="CSGBox3D9" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.00351, 0.513482, -10.0178)
@@ -101,35 +72,50 @@ shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D28" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5, 4, -11.5)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+material_override = ExtResource("3_pccgs")
+use_collision = true
+size = Vector3(19, 8, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.5, 4, -21.5)
+material_override = ExtResource("3_pccgs")
+use_collision = true
+size = Vector3(19, 8, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.5, 4, -21.5)
+material_override = ExtResource("3_pccgs")
 use_collision = true
 size = Vector3(19, 8, 1)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D31" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5, 4, -11.5)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+material_override = ExtResource("3_pccgs")
 use_collision = true
 size = Vector3(19, 8, 1)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2.5, -4.5)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 4, -4.5)
+material_override = ExtResource("3_pccgs")
 use_collision = true
-size = Vector3(52, 5, 1)
+size = Vector3(52, 8, 1)
+material = SubResource("StandardMaterial3D_jqsna")
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D29" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.5, 4, -8)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.5, 4, -8)
+material_override = ExtResource("3_pccgs")
 use_collision = true
 size = Vector3(1, 8, 6)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D10" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 1.5, -10)
-material_override = SubResource("StandardMaterial3D_fdm6l")
+material_override = ExtResource("3_pccgs")
 use_collision = true
 size = Vector3(2, 1, 2)
 metadata/_edit_group_ = true
@@ -156,7 +142,7 @@ collision_mask = 4
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D18" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8, 3.5, -6)
+transform = Transform3D(0.999746, 0.0225303, 0, -0.0225303, 0.999746, 0, 0, 0, 1, -8, 3.5, -6)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
@@ -183,70 +169,46 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D19/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
-[node name="CSGBox3D12" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3.5, -10)
+[node name="CSGBox3D20" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 4.5, -29.0551)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D12"]
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D20"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D12/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D20/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
-[node name="CSGBox3D13" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 4.5, -10)
+[node name="CSGBox3D23" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9.5, -29.0551)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D13"]
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D23"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D13/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D23/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
-[node name="CSGBox3D14" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 5.5, -8)
+[node name="CSGBox3D24" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9.5, -48.0551)
 material_override = SubResource("StandardMaterial3D_fdm6l")
 use_collision = true
 size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
 
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D14"]
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D24"]
 collision_layer = 4
 collision_mask = 4
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D14/Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0, 0)
-shape = SubResource("BoxShape3D_oxmx2")
-
-[node name="CSGBox3D15" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6.5, -6)
-material_override = SubResource("StandardMaterial3D_fdm6l")
-use_collision = true
-size = Vector3(2, 1, 2)
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D15"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D15/Area3D"]
-shape = SubResource("BoxShape3D_oxmx2")
-
-[node name="CSGBox3D16" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20, 6.5, 5.0873)
-material_override = SubResource("StandardMaterial3D_fdm6l")
-use_collision = true
-size = Vector3(2, 1, 8)
-
-[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D16"]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D16/Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D24/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Node3D"]
@@ -269,94 +231,220 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6559, 4.99176, 4.10916)
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
 shape = SubResource("BoxShape3D_jqx02")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -14.0045, 2.02734, 2.68976)
-collision_layer = 9
-metadata/_edit_group_ = true
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D"]
-script = ExtResource("6_kwmrk")
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Node3D/StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
-layers = 9
-polygon = PackedVector2Array(0, 0, 0, 0, 1, 1, 1, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0.5, 0)
-shape = SubResource("ConvexPolygonShape3D_sqbq0")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -19.9348, 6.70222, -4.96014)
-collision_layer = 9
-metadata/_edit_group_ = true
-
-[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D2"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 0)
-material_override = SubResource("StandardMaterial3D_0h3es")
-use_collision = true
-size = Vector3(2, 1, 2)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D2"]
-script = ExtResource("6_kwmrk")
-
-[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D2"]
-script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
-
-[node name="StaticBody3D3" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -18.9937, 6.70222, 0.0976755)
-collision_layer = 9
-metadata/_edit_group_ = true
-
-[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D3"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 0)
-material_override = SubResource("StandardMaterial3D_0h3es")
-use_collision = true
-size = Vector3(2, 1, 2)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D3"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 2.50557e-23, -2.51992e-20, 8.08462e-23, 0.3, -5.96046e-08, 0.5, 0)
-shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D3"]
-script = ExtResource("6_kwmrk")
-
-[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D3"]
-script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
-
 [node name="StaticBody3D4" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.993697, 0.702224, -4.90232)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.993697, 2.70222, -4.90232)
 collision_layer = 9
-axis_lock_linear_x = true
-axis_lock_linear_y = true
-axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D4"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_0h3es")
 use_collision = true
-size = Vector3(2, 1, 15)
+size = Vector3(2, 1, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D4"]
-script = ExtResource("6_kwmrk")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D4"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D4/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D8" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, 4.37114e-08, 1.91069e-15, -8.20962, 2.70222, 11.009)
+collision_layer = 9
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D8"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D8"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D8"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D8/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D10" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -13.1096, 2.70222, 11.009)
+collision_layer = 9
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D10"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D10"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D10"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D10/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D29" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(4.37114e-08, 1.44795e-14, -1, -8.74228e-08, 1, 1.06581e-14, 1, 8.74228e-08, 4.37114e-08, -12.6596, 3.24749, 11.009)
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D29"]
+transform = Transform3D(4, 4.07287e-29, 0, 1.62915e-28, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D29"]
+transform = Transform3D(1, 4.07287e-29, 0, 4.07287e-29, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D29"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D29"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D29/Area3D"]
+transform = Transform3D(1, 4.07287e-29, 0, 4.07287e-29, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D30" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, -8.74228e-08, 1, 1.06581e-14, 3.82137e-15, 1.06581e-14, -1, -0.993697, 3.24749, 12.5977)
+collision_layer = 8
+collision_mask = 0
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D30"]
+transform = Transform3D(4, 4.07287e-29, 0, 1.62915e-28, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D30"]
+transform = Transform3D(1, 4.07287e-29, 0, 4.07287e-29, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D30"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D30"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D30/Area3D"]
+transform = Transform3D(1, 4.07287e-29, 0, 4.07287e-29, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D11" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1.31134e-07, -1, -4.37114e-08, 0, -4.37114e-08, 1, -1, -1.31134e-07, -5.73206e-15, 4.0063, 2.70222, 10.0977)
+collision_layer = 9
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D11"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D11"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D11"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D11/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="StaticBody3D9" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(-4.37114e-08, -1.06581e-14, 1, 0, 1, 1.06581e-14, -1, 4.65882e-22, -4.37114e-08, -10.6964, 0.702224, 11.009)
+collision_layer = 9
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D9"]
+transform = Transform3D(4, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
+size = Vector3(2, 1, 3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D9"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="Node3D/StaticBody3D9"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D9/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_uye4o")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.9937, 0.702224, -9.90232)
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -23.5226)
 collision_layer = 9
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -364,30 +452,369 @@ axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_0h3es")
 use_collision = true
-size = Vector3(2, 1, 15)
+size = Vector3(2, 1, 3)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.3, 0, 0.5, 1.65)
-shape = SubResource("BoxShape3D_uye4o")
-
-[node name="ShrinkComponent" type="Node" parent="Node3D/StaticBody3D5"]
-script = ExtResource("6_kwmrk")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rxock")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
 script = ExtResource("4_0mso6")
-SCALE_ENABLE = Vector3(0, 1, 0)
+MAX_SCALE = 9.0
+SCALE_VELOCITY = Vector3(0, 4, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
 
-[node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.02393, 2.33221, -7.18048)
+[node name="StaticBody3D6" type="StaticBody3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 8.70222, -34.5226)
+collision_layer = 9
+axis_lock_linear_x = true
+axis_lock_linear_y = true
+axis_lock_linear_z = true
+metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
-mesh = SubResource("SphereMesh_c0t6y")
+[node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = SubResource("StandardMaterial3D_0h3es")
+use_collision = true
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
-shape = SubResource("SphereShape3D_8xyjl")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_rxock")
+
+[node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D6"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(4, 0, 4)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="ScalableBoxAlt" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 17)
+
+[node name="ScalableBoxAlt2" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 17)
+
+[node name="ScalableBoxAlt5" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 17)
+
+[node name="ScalableBoxAlt3" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 18)
+
+[node name="ScalableBoxAlt6" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 18)
+
+[node name="ScalableBoxAlt4" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 18)
+
+[node name="ScalableBoxAlt7" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 19)
+
+[node name="ScalableBoxAlt8" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 19)
+
+[node name="ScalableBoxAlt9" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 19)
+
+[node name="ScalableBoxAlt10" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 20)
+
+[node name="ScalableBoxAlt11" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 20)
+
+[node name="ScalableBoxAlt12" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 20)
+
+[node name="ScalableBoxAlt13" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 21)
+
+[node name="ScalableBoxAlt14" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 21)
+
+[node name="ScalableBoxAlt15" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 21)
+
+[node name="ScalableBoxAlt16" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 22)
+
+[node name="ScalableBoxAlt17" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 22)
+
+[node name="ScalableBoxAlt18" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 22)
+
+[node name="ScalableBoxAlt19" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 23)
+
+[node name="ScalableBoxAlt20" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 23)
+
+[node name="ScalableBoxAlt21" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 23)
+
+[node name="ScalableBoxAlt22" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 24)
+
+[node name="ScalableBoxAlt23" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 24)
+
+[node name="ScalableBoxAlt24" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 24)
+
+[node name="ScalableBoxAlt25" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 25)
+
+[node name="ScalableBoxAlt26" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 25)
+
+[node name="ScalableBoxAlt27" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 25)
+
+[node name="ScalableBoxAlt28" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 26)
+
+[node name="ScalableBoxAlt29" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 26)
+
+[node name="ScalableBoxAlt30" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 26)
+
+[node name="ScalableBoxAlt31" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 27)
+
+[node name="ScalableBoxAlt32" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 27)
+
+[node name="ScalableBoxAlt33" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 27)
+
+[node name="ScalableBoxAlt34" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 28)
+
+[node name="ScalableBoxAlt35" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 28)
+
+[node name="ScalableBoxAlt36" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 28)
+
+[node name="ScalableBoxAlt37" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 17)
+
+[node name="ScalableBoxAlt38" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 17)
+
+[node name="ScalableBoxAlt39" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 17)
+
+[node name="ScalableBoxAlt40" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 18)
+
+[node name="ScalableBoxAlt41" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 18)
+
+[node name="ScalableBoxAlt42" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 18)
+
+[node name="ScalableBoxAlt43" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 19)
+
+[node name="ScalableBoxAlt44" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 19)
+
+[node name="ScalableBoxAlt45" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 19)
+
+[node name="ScalableBoxAlt46" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 20)
+
+[node name="ScalableBoxAlt47" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 20)
+
+[node name="ScalableBoxAlt48" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 20)
+
+[node name="ScalableBoxAlt49" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 21)
+
+[node name="ScalableBoxAlt50" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 21)
+
+[node name="ScalableBoxAlt51" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 21)
+
+[node name="ScalableBoxAlt52" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 22)
+
+[node name="ScalableBoxAlt53" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 22)
+
+[node name="ScalableBoxAlt54" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 22)
+
+[node name="ScalableBoxAlt55" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 23)
+
+[node name="ScalableBoxAlt56" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 23)
+
+[node name="ScalableBoxAlt57" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 23)
+
+[node name="ScalableBoxAlt58" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 24)
+
+[node name="ScalableBoxAlt59" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 24)
+
+[node name="ScalableBoxAlt60" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 24)
+
+[node name="ScalableBoxAlt61" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 25)
+
+[node name="ScalableBoxAlt62" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 25)
+
+[node name="ScalableBoxAlt63" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 25)
+
+[node name="ScalableBoxAlt64" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 26)
+
+[node name="ScalableBoxAlt65" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 26)
+
+[node name="ScalableBoxAlt66" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 26)
+
+[node name="ScalableBoxAlt67" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 27)
+
+[node name="ScalableBoxAlt68" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 27)
+
+[node name="ScalableBoxAlt69" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 27)
+
+[node name="ScalableBoxAlt70" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 28)
+
+[node name="ScalableBoxAlt71" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 28)
+
+[node name="ScalableBoxAlt72" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 28)
+
+[node name="ScalableBoxAlt73" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 28)
+
+[node name="ScalableBoxAlt74" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 28)
+
+[node name="ScalableBoxAlt75" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 28)
+
+[node name="ScalableBoxAlt76" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 27)
+
+[node name="ScalableBoxAlt77" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 27)
+
+[node name="ScalableBoxAlt78" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 27)
+
+[node name="ScalableBoxAlt79" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 26)
+
+[node name="ScalableBoxAlt80" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 26)
+
+[node name="ScalableBoxAlt81" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 26)
+
+[node name="ScalableBoxAlt82" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 25)
+
+[node name="ScalableBoxAlt83" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 25)
+
+[node name="ScalableBoxAlt84" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 25)
+
+[node name="ScalableBoxAlt85" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 24)
+
+[node name="ScalableBoxAlt86" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 24)
+
+[node name="ScalableBoxAlt87" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 24)
+
+[node name="ScalableBoxAlt88" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 23)
+
+[node name="ScalableBoxAlt89" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 23)
+
+[node name="ScalableBoxAlt90" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 23)
+
+[node name="ScalableBoxAlt91" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 22)
+
+[node name="ScalableBoxAlt92" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 22)
+
+[node name="ScalableBoxAlt93" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 22)
+
+[node name="ScalableBoxAlt94" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 21)
+
+[node name="ScalableBoxAlt95" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 21)
+
+[node name="ScalableBoxAlt96" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 21)
+
+[node name="ScalableBoxAlt97" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 20)
+
+[node name="ScalableBoxAlt98" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 20)
+
+[node name="ScalableBoxAlt99" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 20)
+
+[node name="ScalableBoxAlt100" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 19)
+
+[node name="ScalableBoxAlt101" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 19)
+
+[node name="ScalableBoxAlt102" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 19)
+
+[node name="ScalableBoxAlt103" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 18)
+
+[node name="ScalableBoxAlt104" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 18)
+
+[node name="ScalableBoxAlt105" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 18)
+
+[node name="ScalableBoxAlt106" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 17)
+
+[node name="ScalableBoxAlt107" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 17)
+
+[node name="ScalableBoxAlt108" parent="Node3D" instance=ExtResource("6_uwcba")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 17)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")
@@ -395,3 +822,475 @@ environment = SubResource("Environment_aynux")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.866025, 0.12941, 0.482963, -0.5, 0.224144, 0.836516, 0, -0.965926, 0.258819, 0, 6, 0)
 shadow_enabled = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.442, 1.77346, 31.9302)
+collision_layer = 9
+continuous_cd = true
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_ewm2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+transform = Transform3D(0.999985, -0.00113844, -0.00538059, 0.00110501, 0.99998, -0.00620635, 0.00538755, 0.00620031, 0.999966, 0, 0, 0)
+shape = SubResource("SphereShape3D_u3qum")
+
+[node name="ScaleComponent" type="Node" parent="RigidBody3D"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(4, 4, 4)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="RigidBody3D2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.3747, 1.60108, 35.861)
+collision_layer = 9
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D2"]
+mesh = SubResource("BoxMesh_buavg")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D2"]
+shape = SubResource("BoxShape3D_ltnmf")
+
+[node name="ScaleComponent" type="Node" parent="RigidBody3D2"]
+script = ExtResource("4_0mso6")
+MAX_SCALE = 5.0
+SCALE_VELOCITY = Vector3(4, 4, 4)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="GridMap" type="GridMap" parent="."]
+mesh_library = SubResource("MeshLibrary_6dpxh")
+
+[node name="ScalableBox" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 17)
+
+[node name="ScalableBox3" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 17)
+
+[node name="ScalableBox2" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 17)
+
+[node name="ScalableBox4" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 18)
+
+[node name="ScalableBox5" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 18)
+
+[node name="ScalableBox6" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 18)
+
+[node name="ScalableBox7" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 19)
+
+[node name="ScalableBox8" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 19)
+
+[node name="ScalableBox9" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 19)
+
+[node name="ScalableBox10" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 20)
+
+[node name="ScalableBox11" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 20)
+
+[node name="ScalableBox12" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 20)
+
+[node name="ScalableBox13" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 21)
+
+[node name="ScalableBox14" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 21)
+
+[node name="ScalableBox15" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 21)
+
+[node name="ScalableBox16" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 22)
+
+[node name="ScalableBox17" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 22)
+
+[node name="ScalableBox18" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 22)
+
+[node name="ScalableBox19" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 23)
+
+[node name="ScalableBox20" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 23)
+
+[node name="ScalableBox21" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 23)
+
+[node name="ScalableBox22" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 24)
+
+[node name="ScalableBox23" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 24)
+
+[node name="ScalableBox24" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 24)
+
+[node name="ScalableBox25" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 25)
+
+[node name="ScalableBox26" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 25)
+
+[node name="ScalableBox27" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 25)
+
+[node name="ScalableBox28" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 26)
+
+[node name="ScalableBox29" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 26)
+
+[node name="ScalableBox30" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 26)
+
+[node name="ScalableBox31" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -11, 1, 27)
+
+[node name="ScalableBox32" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -13, 1, 27)
+
+[node name="ScalableBox33" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -9, 1, 27)
+
+[node name="ScalableBox34" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10, 1, 28)
+
+[node name="ScalableBox35" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12, 1, 28)
+
+[node name="ScalableBox36" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8, 1, 28)
+
+[node name="ScalableBox37" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 17)
+
+[node name="ScalableBox38" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 17)
+
+[node name="ScalableBox39" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 17)
+
+[node name="ScalableBox40" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 18)
+
+[node name="ScalableBox41" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 18)
+
+[node name="ScalableBox42" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 18)
+
+[node name="ScalableBox43" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 19)
+
+[node name="ScalableBox44" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 19)
+
+[node name="ScalableBox45" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 19)
+
+[node name="ScalableBox46" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 20)
+
+[node name="ScalableBox47" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 20)
+
+[node name="ScalableBox48" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 20)
+
+[node name="ScalableBox49" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 21)
+
+[node name="ScalableBox50" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 21)
+
+[node name="ScalableBox51" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 21)
+
+[node name="ScalableBox52" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 22)
+
+[node name="ScalableBox53" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 22)
+
+[node name="ScalableBox54" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 22)
+
+[node name="ScalableBox55" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 23)
+
+[node name="ScalableBox56" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 23)
+
+[node name="ScalableBox57" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 23)
+
+[node name="ScalableBox58" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 24)
+
+[node name="ScalableBox59" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 24)
+
+[node name="ScalableBox60" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 24)
+
+[node name="ScalableBox61" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 25)
+
+[node name="ScalableBox62" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 25)
+
+[node name="ScalableBox63" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 25)
+
+[node name="ScalableBox64" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 26)
+
+[node name="ScalableBox65" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 26)
+
+[node name="ScalableBox66" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 26)
+
+[node name="ScalableBox67" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 5.5, 27)
+
+[node name="ScalableBox68" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 7.5, 27)
+
+[node name="ScalableBox69" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 3.5, 27)
+
+[node name="ScalableBox70" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4.5, 28)
+
+[node name="ScalableBox71" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6.5, 28)
+
+[node name="ScalableBox72" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2.5, 28)
+
+[node name="ScalableBox73" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 28)
+
+[node name="ScalableBox74" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 28)
+
+[node name="ScalableBox75" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 28)
+
+[node name="ScalableBox76" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 27)
+
+[node name="ScalableBox77" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 27)
+
+[node name="ScalableBox78" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 27)
+
+[node name="ScalableBox79" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 26)
+
+[node name="ScalableBox80" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 26)
+
+[node name="ScalableBox81" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 26)
+
+[node name="ScalableBox82" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 25)
+
+[node name="ScalableBox83" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 25)
+
+[node name="ScalableBox84" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 25)
+
+[node name="ScalableBox85" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 24)
+
+[node name="ScalableBox86" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 24)
+
+[node name="ScalableBox87" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 24)
+
+[node name="ScalableBox88" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 23)
+
+[node name="ScalableBox89" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 23)
+
+[node name="ScalableBox90" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 23)
+
+[node name="ScalableBox91" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 22)
+
+[node name="ScalableBox92" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 22)
+
+[node name="ScalableBox93" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 22)
+
+[node name="ScalableBox94" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 21)
+
+[node name="ScalableBox95" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 21)
+
+[node name="ScalableBox96" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 21)
+
+[node name="ScalableBox97" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 20)
+
+[node name="ScalableBox98" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 20)
+
+[node name="ScalableBox99" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 20)
+
+[node name="ScalableBox100" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 19)
+
+[node name="ScalableBox101" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 19)
+
+[node name="ScalableBox102" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 19)
+
+[node name="ScalableBox103" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 5.5, 18)
+
+[node name="ScalableBox104" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 7.5, 18)
+
+[node name="ScalableBox105" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 3.5, 18)
+
+[node name="ScalableBox106" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 4.5, 17)
+
+[node name="ScalableBox107" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 6.5, 17)
+
+[node name="ScalableBox108" parent="." instance=ExtResource("5_ko2dv")]
+transform = Transform3D(4.37114e-08, -1, 0, -1, -4.37114e-08, -8.47033e-22, -3.55271e-15, 0, -1, -6.5, 2.5, 17)
+
+[node name="ScalableBoxAlt" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10.5, 0, 29.5)
+
+[node name="ScalableBoxAlt3" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8.5, 0, 31.5)
+
+[node name="ScalableBoxAlt2" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.5, 0, 31.5)
+
+[node name="ScalableBox109" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.5, 0, 29.5)
+
+[node name="ScalableBox110" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8.5, 0, 29.5)
+
+[node name="ScalableBox111" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10.5, 0, 31.5)
+
+[node name="ScalableBoxAlt4" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10.5, 0, 33.5)
+
+[node name="ScalableBoxAlt5" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8.5, 0, 35.5)
+
+[node name="ScalableBoxAlt6" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.5, 0, 35.5)
+
+[node name="ScalableBox112" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -12.5, 0, 33.5)
+
+[node name="ScalableBox113" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -8.5, 0, 33.5)
+
+[node name="ScalableBox114" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -10.5, 0, 35.5)
+
+[node name="ScalableBoxAlt7" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4, 29.5)
+
+[node name="ScalableBoxAlt8" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2, 31.5)
+
+[node name="ScalableBoxAlt9" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6, 31.5)
+
+[node name="ScalableBox115" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6, 29.5)
+
+[node name="ScalableBox116" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2, 29.5)
+
+[node name="ScalableBox117" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4, 31.5)
+
+[node name="ScalableBoxAlt10" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4, 33.5)
+
+[node name="ScalableBoxAlt11" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2, 35.5)
+
+[node name="ScalableBoxAlt12" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6, 35.5)
+
+[node name="ScalableBox118" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 6, 33.5)
+
+[node name="ScalableBox119" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 2, 33.5)
+
+[node name="ScalableBox120" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(-4.37114e-08, 1, 1.06581e-14, -1, -4.37114e-08, -4.6588e-22, 0, -1.06581e-14, 1, -14.5, 4, 35.5)
+
+[node name="ScalableBoxAlt13" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 4, 35.5)
+
+[node name="ScalableBoxAlt14" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 2, 33.5)
+
+[node name="ScalableBoxAlt15" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 6, 33.5)
+
+[node name="ScalableBox121" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 6, 35.5)
+
+[node name="ScalableBox122" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 2, 35.5)
+
+[node name="ScalableBox123" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 4, 33.5)
+
+[node name="ScalableBoxAlt16" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 4, 31.5)
+
+[node name="ScalableBoxAlt17" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 2, 29.5)
+
+[node name="ScalableBoxAlt18" parent="." instance=ExtResource("7_g0amo")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 6, 29.5)
+
+[node name="ScalableBox124" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 6, 31.5)
+
+[node name="ScalableBox125" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 2, 31.5)
+
+[node name="ScalableBox126" parent="." instance=ExtResource("8_wvgui")]
+transform = Transform3D(4.37114e-08, -1, 8.9407e-08, -1, -4.37114e-08, -9.31761e-22, 2.66454e-15, -8.9407e-08, -1, -6.5, 4, 29.5)

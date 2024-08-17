@@ -1,9 +1,10 @@
-[gd_scene load_steps=20 format=3 uid="uid://cide4w7urra1m"]
+[gd_scene load_steps=22 format=3 uid="uid://cide4w7urra1m"]
 
 [ext_resource type="ArrayMesh" uid="uid://dnvrpa2axk42i" path="res://assets/models/SA_Wep_SMG.obj" id="1_kinyt"]
 [ext_resource type="Script" path="res://components/basic/CameraMouseMoveComponent.gd" id="1_ukkef"]
 [ext_resource type="Texture2D" uid="uid://ipoukni3x81q" path="res://assets/textures/SimpleApocalypse_Texture.png" id="2_nku4k"]
 [ext_resource type="Script" path="res://components/basic/MovementComponent.gd" id="3_x5up6"]
+[ext_resource type="Script" path="res://components/basic/HealthComponent.gd" id="5_kuavu"]
 [ext_resource type="Texture2D" uid="uid://bn1wwj25xft5n" path="res://assets/sprites/shadow.png" id="6_2c8yv"]
 [ext_resource type="Script" path="res://components/basic/CombatComponent.gd" id="6_7oddd"]
 [ext_resource type="PackedScene" uid="uid://ccx4kj8vk2l12" path="res://components/composed/PlayerUIComponent.tscn" id="7_i87mi"]
@@ -112,6 +113,8 @@ _data = {
 [sub_resource type="BoxShape3D" id="BoxShape3D_jskvt"]
 size = Vector3(2, 1, 1)
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_eb7hu"]
+
 [sub_resource type="SeparationRayShape3D" id="SeparationRayShape3D_8vrei"]
 length = 0.4
 
@@ -219,6 +222,13 @@ disabled = true
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.878894, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(0.14, 0, 0, 0, 0.14, 0, 0, 0, 0.14, 0, 0, 0)
+shape = SubResource("SphereShape3D_eb7hu")
+
 [node name="Components" type="Node3D" parent="."]
 
 [node name="MovementHelperComponent" type="Node3D" parent="Components" node_paths=PackedStringArray("ground_check", "space_check", "body")]
@@ -230,7 +240,7 @@ body = NodePath("../..")
 [node name="GroundController" type="Area3D" parent="Components/MovementHelperComponent"]
 disable_mode = 1
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Components/MovementHelperComponent/GroundController"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.18557e-08, 0.1, -0.25)
@@ -239,7 +249,7 @@ shape = SubResource("SeparationRayShape3D_8vrei")
 [node name="SpaceController" type="Area3D" parent="Components/MovementHelperComponent"]
 disable_mode = 1
 collision_layer = 0
-collision_mask = 4
+collision_mask = 12
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Components/MovementHelperComponent/SpaceController"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 3.49691e-08, 1.5, -0.6)
@@ -273,6 +283,13 @@ crouch_collision = NodePath("../../CrouchCollision")
 ceiling_check = NodePath("../../CeilingCheck")
 camera_root = NodePath("../../Yaw")
 
+[node name="HealthComponent" type="Node" parent="Components" node_paths=PackedStringArray("gun", "main_camera", "death_camera", "movement_component")]
+script = ExtResource("5_kuavu")
+gun = NodePath("../../Yaw/RHand")
+main_camera = NodePath("../../Yaw/Camera3D")
+death_camera = NodePath("../../DeathCamera")
+movement_component = NodePath("../MovementComponent")
+
 [node name="UI" parent="." instance=ExtResource("7_i87mi")]
 
 [node name="Decal" type="Decal" parent="."]
@@ -282,3 +299,6 @@ texture_albedo = ExtResource("6_2c8yv")
 modulate = Color(0, 0, 0, 1)
 distance_fade_enabled = true
 distance_fade_begin = 100.0
+
+[node name="DeathCamera" type="Camera3D" parent="."]
+transform = Transform3D(0.28985, 0.957072, 0, -0.957072, 0.28985, 0, 0, 0, 1, 0, 0.385642, 0)
