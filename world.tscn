@@ -776,3 +776,4 @@ transform = Transform3D(1, 0, 0, 0, 0.156228, 0.987721, 0, -0.987721, 0.156228, 
 
 [node name="Flying" parent="." instance=ExtResource("7_q51nr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08313, 4.02611, 22.7183)
+speed_modificator = -400.0

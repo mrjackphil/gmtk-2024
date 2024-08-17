@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://bmh3xus3tte1r"]
+[gd_scene load_steps=10 format=3 uid="uid://bmh3xus3tte1r"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kunne"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="2_rkdnn"]
 [ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="3_einfi"]
+[ext_resource type="PackedScene" path="res://components/composed/ShootAtPlayer.tscn" id="4_f3bmg"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_upgu3"]
 radius = 0.4
@@ -61,3 +62,5 @@ script = ExtResource("3_einfi")
 rotation_component = NodePath("../EnemyRotationComponent")
 player_detection_area = NodePath("../../PlayerDetectionArea")
 enemy = NodePath("../..")
+
+[node name="ShootAtPlayer" parent="." instance=ExtResource("4_f3bmg")]
