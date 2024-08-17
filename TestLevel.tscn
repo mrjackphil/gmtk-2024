@@ -227,6 +227,20 @@ collision_mask = 4
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D20/Area3D"]
 shape = SubResource("BoxShape3D_oxmx2")
 
+[node name="CSGBox3D23" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 9.5, -29.0551)
+material_override = SubResource("StandardMaterial3D_fdm6l")
+use_collision = true
+size = Vector3(2, 1, 2)
+metadata/_edit_group_ = true
+
+[node name="Area3D" type="Area3D" parent="Node3D/CSGBox3D23"]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D23/Area3D"]
+shape = SubResource("BoxShape3D_oxmx2")
+
 [node name="CSGBox3D12" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 3.5, -10)
 material_override = SubResource("StandardMaterial3D_fdm6l")
@@ -390,10 +404,12 @@ shape = SubResource("BoxShape3D_uye4o")
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D4"]
 script = ExtResource("4_0mso6")
 MAX_SCALE = 5.0
-SCALE_VELOCITY = Vector3(0, 1, 0)
+SCALE_VELOCITY = Vector3(0, 5, 0)
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -24.1211)
+transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, -0.9937, 0.702224, -23.5226)
 collision_layer = 9
 axis_lock_linear_x = true
 axis_lock_linear_y = true
@@ -401,20 +417,21 @@ axis_lock_linear_z = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D30" type="CSGBox3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 1.65)
+transform = Transform3D(0.968, 0, 0, 0, 0.968, 0, 0, 0, 0.3, 0, 0.5, 0)
 material_override = SubResource("StandardMaterial3D_0h3es")
 use_collision = true
 size = Vector3(2, 1, 15)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.248474, 0.820862)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_uye4o")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/StaticBody3D5"]
 script = ExtResource("4_0mso6")
-MAX_SCALE = 6.0
-SCALE_VELOCITY = Vector3(0, 1, 0)
+MAX_SCALE = 9.0
+SCALE_VELOCITY = Vector3(0, 4, 0)
 SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
 
 [node name="Node3D" type="Node3D" parent="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44761, 2.36393, -5.40304)
@@ -439,7 +456,7 @@ transform = Transform3D(0.866025, 0.12941, 0.482963, -0.5, 0.224144, 0.836516, 0
 shadow_enabled = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04931, 2.60108, -22.6223)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04931, 1.60108, -9.13905)
 collision_layer = 9
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
