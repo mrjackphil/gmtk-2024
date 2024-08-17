@@ -12,7 +12,10 @@ func _ready() -> void:
 	die_timer.timeout.connect(queue_free)
 	
 	COLLIDER_AREA.body_entered.connect(_collide)
-	
+	COLLIDER_AREA.area_entered.connect(_collide)
+	body_entered.connect(_collide)
+
+
 func _physics_process(delta: float) -> void:
 	var move_vect: Vector3 = Vector3(0, 0, -1).normalized().rotated(Vector3.UP, rotation.y).rotated(Vector3.FORWARD, rotation.x) * SPEED * delta
 	#position += move_vect
