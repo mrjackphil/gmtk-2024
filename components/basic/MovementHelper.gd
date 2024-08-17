@@ -28,4 +28,3 @@ func _get_configuration_warnings() -> PackedStringArray:
 	if not space_check or not ground_check:
 		return ["ground_check or space_check are not set"]
 	return [""]
-	

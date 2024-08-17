@@ -28,16 +28,16 @@ func _vec_more_each(vec1: Vector3, vec2: Vector3) -> bool:
 	var x = vec1.x > vec2.x
 	var y = vec1.y > vec2.y
 	var z = vec1.z > vec2.z
-	
+
 	return x and y and z
 
 func _physics_process(delta: float) -> void:
 	if _vec_more_each(parent.scale, target_scale * 0.95):
 		_scaling_up = false
-		
+
 	if _scaling_up:
 		parent.scale = lerp(parent.scale, target_scale, SCALE_SLOWNESS * delta)
-		
+
 	if  not _scaling_up and _timeout > 0:
 		_timeout -= 1 * delta
 		return

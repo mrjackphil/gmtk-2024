@@ -6,7 +6,7 @@ class_name MovementComponent
 func _ready() -> void:
 	coyote_timer.one_shot = true
 	coyote_timer.timeout.connect(_unallow_jump)
-	char_body.add_child.call_deferred(coyote_timer) 
+	char_body.add_child.call_deferred(coyote_timer)
 
 func _unallow_jump() -> void:
 	can_jump = false
@@ -36,6 +36,11 @@ func _physics_process(delta: float) -> void:
 	_crouch_handler(delta)
 	_jump_handler(delta)
 	char_body.move_and_slide()
+	for col_idx in char_body.get_slide_collision_count():
+		var col := char_body.get_slide_collision(col_idx)
+		if col.get_collider() is RigidBody3D:
+			col.get_collider().apply_central_impulse(-col.get_normal() * 0.3)
+			col.get_collider().apply_impulse(-col.get_normal() * 0.01, col.get_position())
 
 ###########################################################
 
@@ -59,7 +64,7 @@ func _sprint_handler(delta: float) -> int:
 		camera.fov = lerp(camera.fov, CAMERA_FOV_SPRINT, 0.1)
 	else:
 		camera.fov = lerp(camera.fov, CAMERA_FOV_DEFAULT, 0.1)
-	
+
 	return int(speed)
 
 ###########################################################
@@ -75,7 +80,7 @@ var is_crouching := false
 func _crouch_handler(delta: float) -> void:
 	if Input.is_action_pressed("move_crouch"):
 		is_crouching = true
-	elif ceiling_check.get_overlapping_areas().size() == 0: 
+	elif ceiling_check.get_overlapping_areas().size() == 0:
 		is_crouching = false
 
 	if is_crouching:
