@@ -89,7 +89,7 @@ func _crouch_handler(delta: float) -> void:
 
 ###########################################################
 
-var JUMP_STRENGTH: int = 5
+var JUMP_STRENGTH: int = 8
 var COYOTE_TIME: float = 0.1
 
 var can_jump := true
