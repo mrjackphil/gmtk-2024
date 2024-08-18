@@ -65,7 +65,6 @@ offset_bottom = 144.0
 grow_horizontal = 0
 
 [node name="AudioButtonOn" type="TextureButton" parent="Control/MarginContainer2"]
-visible = false
 layout_mode = 2
 texture_normal = ExtResource("2_j0al7")
 texture_hover = ExtResource("3_1ts55")

@@ -1,7 +1,7 @@
 extends Node2D
 
-@onready var mute_btn: TextureButton = $MarginContainer2/AudioButtonOff
-@onready var sound_btn: TextureButton = $MarginContainer2/AudioButtonOn
+@onready var mute_btn: TextureButton = $Control/MarginContainer2/AudioButtonOff
+@onready var sound_btn: TextureButton = $Control/MarginContainer2/AudioButtonOn
 
 var first_scene = "res://world.tscn"
 
