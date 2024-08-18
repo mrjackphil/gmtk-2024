@@ -1,6 +1,6 @@
 extends RigidBody3D
 
-@export var SPEED := 30
+@export var SPEED := 60
 
 func _ready() -> void:
 	linear_velocity = global_transform.basis.z * -1 * SPEED
