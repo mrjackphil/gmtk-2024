@@ -29,7 +29,7 @@ func _ready() -> void:
 func _get_collider() -> Node3D:
 	if target:
 		return target
-		
+
 	return parent
 
 func collide() -> void:
