@@ -208,6 +208,7 @@ autoplay = "idle"
 [node name="RayCast3D" type="RayCast3D" parent="Yaw/RHand"]
 target_position = Vector3(0, 0, -100)
 collision_mask = 8
+collide_with_areas = true
 
 [node name="Bullet placement" type="Marker3D" parent="Yaw/RHand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386142, 0.103466, -1.15502)
@@ -261,7 +262,7 @@ _root = NodePath("../..")
 _yaw = NodePath("../../Yaw")
 _camera = NodePath("../../Yaw/Camera3D")
 
-[node name="CombatComponent" type="Node" parent="Components" node_paths=PackedStringArray("rhand_anim_player", "movement_component", "raycast", "shoot_raycast", "bullet_placement", "camera_root")]
+[node name="CombatComponent" type="Node" parent="Components" node_paths=PackedStringArray("rhand_anim_player", "movement_component", "raycast", "shoot_raycast", "bullet_placement", "camera_root", "ui")]
 script = ExtResource("6_7oddd")
 rhand_anim_player = NodePath("../../Yaw/RHand/RightHandAnimation")
 movement_component = NodePath("../MovementComponent")
@@ -269,6 +270,7 @@ raycast = NodePath("../../Yaw/RayCast3D")
 shoot_raycast = NodePath("../../Yaw/RHand/RayCast3D")
 bullet_placement = NodePath("../../Yaw/RHand/Bullet placement")
 camera_root = NodePath("../../Yaw")
+ui = NodePath("../../UI")
 
 [node name="InteractionComponent" type="Node" parent="Components" node_paths=PackedStringArray("raycast")]
 script = SubResource("GDScript_ak7i4")
