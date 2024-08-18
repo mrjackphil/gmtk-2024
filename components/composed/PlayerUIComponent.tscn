@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ccx4kj8vk2l12"]
+[gd_scene load_steps=3 format=3 uid="uid://ccx4kj8vk2l12"]
 
 [ext_resource type="Script" path="res://components/composed/PlayerUIComponent.gd" id="1_lad45"]
+[ext_resource type="Texture2D" uid="uid://46p0sgepkf8y" path="res://assets/sprites/cursor.png" id="2_o1vv7"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_lad45")
@@ -13,3 +14,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+layout_mode = 2
+texture = ExtResource("2_o1vv7")
