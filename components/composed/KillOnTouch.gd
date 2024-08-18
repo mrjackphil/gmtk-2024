@@ -15,3 +15,6 @@ func _collide(collider: Node3D) -> void:
 			hp_component.hp = 0
 		else:
 			hp_component.hp -= DAMAGE
+
+	if collider.owner.is_in_group("npc"):
+		collider.owner.queue_free()
