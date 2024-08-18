@@ -3,11 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_xepuw"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="3_vwbmh"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_lqppd"]
-[ext_resource type="Material" uid="uid://dylnhn6t4gtw3" path="res://assets/materials/FloorTex.tres" id="4_uaci5"]
+[ext_resource type="Material" path="res://assets/materials/FloorTex.tres" id="4_uaci5"]
 [ext_resource type="Texture2D" uid="uid://dxoax4h70dhd8" path="res://assets/models/Scalable/Textures/Props_Billboard_Tutorial1.png" id="5_43biw"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="6_1xuex"]
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="6_847dh"]
-[ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="6_df2gx"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalablePlatform.tscn" id="6_df2gx"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="6_w6uad"]
 [ext_resource type="Texture2D" uid="uid://b0gxqy2sspbw1" path="res://assets/textures/Billboard_Tutorial_2.png" id="8_hyjcy"]
 [ext_resource type="Texture2D" uid="uid://cmvn6beyf44fi" path="res://assets/textures/Props_Billboard_Tutorial_Final.png" id="9_rp77c"]
@@ -86,7 +86,7 @@ size = Vector3(2, 1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_eda4e"]
 size = Vector3(2, 1, 2)
 
-[node name="World" type="Node3D"]
+[node name="World3" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xepuw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0401, 5.5, -8.3194)

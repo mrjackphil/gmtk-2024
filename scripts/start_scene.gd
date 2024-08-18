@@ -6,13 +6,13 @@ extends Node2D
 @export var first_scene: PackedScene
 
 func _on_audio_button_on_pressed():
-	# TODO: stop sounds
+	Music.stop()
 	mute_btn.visible = true
 	sound_btn.visible = false
 
 
 func _on_audio_button_off_pressed():
-	# TODO: start sounds
+	Music.play()
 	mute_btn.visible = false
 	sound_btn.visible = true
 

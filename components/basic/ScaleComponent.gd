@@ -36,10 +36,10 @@ func collide(scale_down: bool = false) -> void:
 	stream_player.play()
 	_scaling_up = true
 	_timeout = SHRINK_TIMEOUT
-	
+
 	var _modificator = 1
 	if scale_down: _modificator = -1
-	
+
 	target_scale.x = clamp(_get_collider().scale.x + (SCALE_VELOCITY.x * _modificator), MIN_SCALE, MAX_SCALE)
 	target_scale.y = clamp(_get_collider().scale.y + (SCALE_VELOCITY.y * _modificator), MIN_SCALE, MAX_SCALE)
 	target_scale.z = clamp(_get_collider().scale.z + (SCALE_VELOCITY.z * _modificator), MIN_SCALE, MAX_SCALE)
