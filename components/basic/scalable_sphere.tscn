@@ -1,11 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://on5ucgvrnsy4"]
+[gd_scene load_steps=9 format=3 uid="uid://on5ucgvrnsy4"]
 
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_1tf2m"]
 [ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="1_rml4r"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_qi1jp"]
+[ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="2_wuxbt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_djkx4"]
 radius = 0.55
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lmrh2"]
+albedo_texture = ExtResource("2_wuxbt")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wlso5"]
 albedo_texture = ExtResource("1_rml4r")
@@ -23,6 +27,7 @@ script = ExtResource("1_1tf2m")
 shape = SubResource("SphereShape3D_djkx4")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_lmrh2")
 mesh = SubResource("SphereMesh_86xjf")
 
 [node name="Area3D" type="Area3D" parent="."]
@@ -34,7 +39,6 @@ shape = SubResource("SphereShape3D_djkx4")
 
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("2_qi1jp")
-MAX_SCALE = 10.0
-SCALE_VELOCITY = Vector3(2, 2, 2)
-SCALE_SLOWNESS = 10.0
+SCALE_SLOWNESS = 5.0
 SHRINK_TIMEOUT = 30
+SHRINK_SLOWNESS = 3.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://dt0gavdyjon25"]
+[gd_scene load_steps=43 format=3 uid="uid://dt0gavdyjon25"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_uk2pn"]
 [ext_resource type="PackedScene" uid="uid://drqufsbqmj65b" path="res://scenes/objects/destructable_obstacle.tscn" id="2_rjyre"]
@@ -15,9 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://vdvyos4mpave" path="res://scenes/objects/example_rigidbody_dest.tscn" id="10_0ktge"]
 [ext_resource type="PackedScene" uid="uid://di7ho8e7tpbrx" path="res://scenes/objects/scalable_box_push_2x_1.tscn" id="10_2pahu"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="11_5fk3t"]
-[ext_resource type="PackedScene" uid="uid://rhddg00ramae" path="res://scenes/enemy/flying.tscn" id="11_gx6gj"]
 [ext_resource type="PackedScene" uid="uid://bcvain0t1trb1" path="res://components/basic/ScalableWindow.tscn" id="11_p6q53"]
-[ext_resource type="PackedScene" uid="uid://v52tv8iv7k02" path="res://scenes/enemy/static.tscn" id="12_bqlg1"]
 [ext_resource type="PackedScene" uid="uid://on5ucgvrnsy4" path="res://components/basic/scalable_sphere.tscn" id="12_g6chd"]
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="13_txxod"]
 [ext_resource type="PackedScene" uid="uid://dw2r8phpv08pm" path="res://scenes/objects/scalable_crate.tscn" id="16_2dk5e"]
@@ -92,7 +90,7 @@ margin = 0.1
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_uk2pn")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -80.4599, 26.5, -9.8194)
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.5401, 19.5, -9.8194)
 
 [node name="Objects" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
@@ -558,12 +556,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 0, -2)
 
 [node name="Enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
-
-[node name="Flying" parent="Enemies" instance=ExtResource("11_gx6gj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 1, 3.5)
-
-[node name="Static" parent="Enemies" instance=ExtResource("12_bqlg1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.5)
 
 [node name="Turret10" parent="Enemies" instance=ExtResource("17_fsgji")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.5, 1.5, -10.5)
