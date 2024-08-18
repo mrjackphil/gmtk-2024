@@ -16,6 +16,11 @@ run/main_scene="res://scenes/menu/start_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/sprites/sword.png"
 
+[autoload]
+
+DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
+Common="*res://scripts/common.gd"
+
 [compression]
 
 formats/mode=0
@@ -137,6 +142,7 @@ combat_defense={
 
 [physics]
 
+3d/run_on_separate_thread=true
 3d/physics_engine="JoltPhysics3D"
 
 [rendering]
