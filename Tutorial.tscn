@@ -86,7 +86,7 @@ size = Vector3(2, 1, 2)
 [sub_resource type="BoxShape3D" id="BoxShape3D_eda4e"]
 size = Vector3(2, 1, 2)
 
-[node name="World" type="Node3D"]
+[node name="World3" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_xepuw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 31.0401, 5.5, -8.3194)
