@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://dt0gavdyjon25"]
+[gd_scene load_steps=61 format=3 uid="uid://dt0gavdyjon25"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_uk2pn"]
 [ext_resource type="PackedScene" uid="uid://drqufsbqmj65b" path="res://scenes/objects/destructable_obstacle.tscn" id="2_rjyre"]
@@ -114,7 +114,16 @@ emission = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
 margin = 0.1
-size = Vector3(1.87845, 1, 0.419434)
+size = Vector3(0.893921, 1, 0.985291)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s776m"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7qwhc"]
+margin = 0.1
+size = Vector3(1.87271, 1, 0.426544)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v7in4"]
 albedo_color = Color(1, 0, 0, 1)
@@ -994,15 +1003,41 @@ collision_mask = 0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("BoxShape3D_d5638")
 
-[node name="DeathZone" parent="." instance=ExtResource("3_o4oqm")]
+[node name="DeathZone" type="CSGBox3D" parent="."]
 transform = Transform3D(-3.0598e-07, 0, -18.75, 0, 1, 0, 7, 0, -8.19589e-07, -10.75, 15.5, -9)
+material_override = SubResource("StandardMaterial3D_i8y2v")
+use_collision = true
 
-[node name="DeathZone2" parent="." instance=ExtResource("3_o4oqm")]
+[node name="KillOnTouch" type="Area3D" parent="DeathZone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("20_1uwh2")
+DAMAGE = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone/KillOnTouch"]
+transform = Transform3D(1, 0, -2.84217e-14, 0, 1, 0, 0, 0, 0.999999, -0.0683362, 0.1, 0.00820899)
+shape = SubResource("BoxShape3D_skmko")
+
+[node name="DeathZone2" type="CSGBox3D" parent="."]
 transform = Transform3D(-1.96701e-07, 0, -12.96, 4.5, -4.37114e-08, -5.665e-07, -1.96701e-07, -1, 2.47625e-14, -41.75, 14, -3)
+material_override = SubResource("StandardMaterial3D_i8y2v")
+use_collision = true
+
+[node name="KillOnTouch" type="Area3D" parent="DeathZone2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("20_1uwh2")
+DAMAGE = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone2/KillOnTouch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+shape = SubResource("BoxShape3D_skmko")
 
 [node name="DeathZone5" type="CSGBox3D" parent="."]
 transform = Transform3D(-5.50764e-07, 0, -13.42, 0, 1, 0, 12.6, 0, -5.86607e-07, -41.75, 11.5, -9)
-material_override = SubResource("StandardMaterial3D_i8y2v")
+material_override = SubResource("StandardMaterial3D_s776m")
 use_collision = true
 
 [node name="KillOnTouch" type="Area3D" parent="DeathZone5"]
@@ -1013,12 +1048,12 @@ script = ExtResource("20_1uwh2")
 DAMAGE = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone5/KillOnTouch"]
-transform = Transform3D(0.999913, 0, 2.84217e-14, 0, 0.999941, 0, 7.10543e-14, 0, 1, 0.0232091, 0.1, 0.0263674)
-shape = SubResource("BoxShape3D_skmko")
+transform = Transform3D(0.999881, 0, 2.84217e-14, 0, 0.999919, 0, 7.10543e-14, 0, 1, 0.0276716, 0.1, 0.0267946)
+shape = SubResource("BoxShape3D_7qwhc")
 
 [node name="DeathZone6" type="CSGBox3D" parent="."]
 transform = Transform3D(-5.50764e-07, 0, -13.42, 0, 1, 0, 12.6, 0, -5.86607e-07, -66.8937, 20.6935, -9.38914)
-material_override = SubResource("StandardMaterial3D_i8y2v")
+material_override = SubResource("StandardMaterial3D_s776m")
 use_collision = true
 size = Vector3(0.449463, 1, 2.17792)
 
@@ -1030,11 +1065,24 @@ script = ExtResource("20_1uwh2")
 DAMAGE = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone6/KillOnTouch"]
-transform = Transform3D(0.99988, 0, 2.84217e-14, 0, 0.999919, 0, 8.52651e-14, 0, 1, -0.0958095, 0.1, -0.0051263)
-shape = SubResource("BoxShape3D_skmko")
+transform = Transform3D(0.999861, 0, 2.84217e-14, 0, 0.999906, 0, 4.9738e-14, 0, 1, -0.0925593, 0.1, -0.00620961)
+shape = SubResource("BoxShape3D_7qwhc")
 
-[node name="DeathZone3" parent="." instance=ExtResource("3_o4oqm")]
+[node name="DeathZone3" type="CSGBox3D" parent="."]
 transform = Transform3D(1.8031e-07, 0.999999, 1.96295e-06, 4.125, -4.37114e-08, -5.68248e-07, -1.8031e-07, 1.50996e-07, -13, -47.75, 14, -9.25)
+material_override = SubResource("StandardMaterial3D_i8y2v")
+use_collision = true
+
+[node name="KillOnTouch" type="Area3D" parent="DeathZone3"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("20_1uwh2")
+DAMAGE = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone3/KillOnTouch"]
+transform = Transform3D(1, 3.0731e-13, -3.55271e-15, 2.27374e-13, 1, -1.48682e-14, 0, -5.88589e-15, 1, 0.0107956, 0.0999985, 4.76837e-07)
+shape = SubResource("BoxShape3D_skmko")
 
 [node name="DeathZone4" type="CSGBox3D" parent="."]
 transform = Transform3D(1.8031e-07, -1.3411e-07, 13, 4.125, -4.37114e-08, -5.68248e-07, 1.8031e-07, 0.999999, 1.66893e-06, -41.75, 14, -15.75)
