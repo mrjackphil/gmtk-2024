@@ -1,9 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://rhddg00ramae"]
+[gd_scene load_steps=12 format=3 uid="uid://rhddg00ramae"]
 
 [ext_resource type="Script" path="res://scripts/flying.gd" id="1_exqcc"]
 [ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="2_1174t"]
 [ext_resource type="Script" path="res://components/enemy/EnemyMovementComponent.gd" id="4_0f71l"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="4_ctg1j"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="5_8gxg1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_l8exn"]
 
@@ -17,6 +18,8 @@ radius = 4.96864
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_r0ebn"]
 radius = 0.2
 height = 1.0
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_3wpgg"]
 
 [node name="Flying" type="CharacterBody3D"]
 script = ExtResource("1_exqcc")
@@ -67,3 +70,18 @@ flying_enemy = true
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
+
+[node name="ScaleComponent" type="Node" parent="." node_paths=PackedStringArray("target")]
+script = ExtResource("5_8gxg1")
+MAX_SCALE = 5.0
+SCALE_SLOWNESS = 5.0
+SHRINK_TIMEOUT = 500
+SHRINK_SLOWNESS = 3.0
+target = NodePath("..")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_3wpgg")
