@@ -12,7 +12,7 @@ var hp: int:
 		if _hp <= 0:
 			dead.emit()
 			_dead()
-			
+
 func _dead() -> void:
 	get_parent().queue_free()
 
