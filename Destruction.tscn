@@ -20,7 +20,7 @@
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="17_28uf5"]
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="17_us0kj"]
 [ext_resource type="Texture2D" uid="uid://cdpjfiybd8m36" path="res://assets/textures/Props_Billboard_Destruction.png" id="19_wxue6"]
-[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="21_8ljp8"]
+[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="21_8ljp8"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_ftx48"]
 [ext_resource type="PackedScene" uid="uid://dt0gavdyjon25" path="res://TurretTutorial.tscn" id="22_mrlpi"]
 

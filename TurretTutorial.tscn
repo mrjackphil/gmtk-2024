@@ -913,22 +913,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0)
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 1.5, -10.5)
 can_sleep = false
 
-[node name="Explosion" parent="Enemies/Turret10" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02891, 0)
-
 [node name="Turret11" parent="Enemies" instance=ExtResource("17_fsgji")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 1.5, -9)
 can_sleep = false
 
-[node name="Explosion" parent="Enemies/Turret11" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02891, 0)
-
 [node name="Turret12" parent="Enemies" instance=ExtResource("17_fsgji")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -16, 1.5, -7.5)
 can_sleep = false
-
-[node name="Explosion" parent="Enemies/Turret12" index="6"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02891, 0)
 
 [node name="Turret4" parent="Enemies" instance=ExtResource("17_fsgji")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -44.5, -2.5, -9.5)
