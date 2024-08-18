@@ -19,7 +19,7 @@ signal shoot_signal
 signal force_signal
 
 const FORCE_POWER = 0.1
-const SHOOT_TIMEOUT := 14
+const SHOOT_TIMEOUT := 14.0
 var shoot_timeout := 0.0
 
 var animations := {
@@ -31,8 +31,8 @@ var animations := {
 func _ready() -> void:
 	rhand_anim_player.connect("animation_finished", _idle)
 
-func _process(delta: float) -> void:
-	if shoot_timeout >= 0.0: shoot_timeout -= (1.0 * delta)
+func _process(_delta: float) -> void:
+	if shoot_timeout >= 0: shoot_timeout -= 1.0
 	
 	ui.grab = shoot_raycast.is_colliding()
 	
