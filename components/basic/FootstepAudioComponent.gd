@@ -1,7 +1,6 @@
 extends AudioStreamPlayer
 
 @export var movement_component: MovementComponent
-@export var combat_component: PlayerCombatComponent
 
 var STEP_TIMER := 25
 var RUN_TIMER := 15

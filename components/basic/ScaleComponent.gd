@@ -18,6 +18,14 @@ var target_scale := Vector3.ONE
 @export var target: Node3D
 @onready var parent: Node3D = get_parent()
 
+@export var sfx: AudioStream = preload("res://assets/sounds/sci-fi_weapon_ray_gun_laser_small_fun_01.wav")
+var stream_player := AudioStreamPlayer.new()
+
+func _ready() -> void:
+	stream_player.stream = sfx
+	stream_player.volume_db = -10
+	add_child(stream_player)
+
 func _get_collider() -> Node3D:
 	if target:
 		return target
@@ -25,6 +33,7 @@ func _get_collider() -> Node3D:
 	return parent
 
 func collide() -> void:
+	stream_player.play()
 	_scaling_up = true
 	_timeout = SHRINK_TIMEOUT
 	target_scale.x = clamp(_get_collider().scale.x + SCALE_VELOCITY.x, MIN_SCALE, MAX_SCALE)
