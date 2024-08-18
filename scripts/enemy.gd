@@ -3,7 +3,7 @@ class_name Enemy
 
 var _gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor() or position.y > 0:
 		velocity.y -= _gravity * delta

@@ -11,11 +11,11 @@ const _path_finding_minimum_distance: float = 3
 
 var _destination: Vector3
 
-func set_destination(dest: Vector3):
+func set_destination(dest: Vector3) -> void:
 	_destination = dest
 
 
-func _ready():
+func _ready() -> void:
 	_destination = char_body.global_transform.origin
 
 

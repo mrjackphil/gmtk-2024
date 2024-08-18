@@ -11,11 +11,11 @@ class_name ScaleComponent
 @export var SHRINK_TIMEOUT := 100
 @export var SHRINK_SLOWNESS := 0.5
 
-var _timeout := 0
+var _timeout := 0.0
 var _scaling_up := false
 var target_scale := Vector3.ONE
 
-@onready var parent = get_parent()
+@onready var parent: Node3D = get_parent()
 
 func collide() -> void:
 	_scaling_up = true
@@ -25,9 +25,9 @@ func collide() -> void:
 	target_scale.z = clamp(parent.scale.z + SCALE_VELOCITY.z, MIN_SCALE, MAX_SCALE)
 
 func _vec_more_each(vec1: Vector3, vec2: Vector3) -> bool:
-	var x = vec1.x > vec2.x
-	var y = vec1.y > vec2.y
-	var z = vec1.z > vec2.z
+	var x := vec1.x > vec2.x
+	var y := vec1.y > vec2.y
+	var z := vec1.z > vec2.z
 
 	return x and y and z
 
@@ -38,9 +38,9 @@ func _physics_process(delta: float) -> void:
 	if _scaling_up:
 		parent.scale = lerp(parent.scale, target_scale, SCALE_SLOWNESS * delta)
 
-	if  not _scaling_up and _timeout > 0:
-		_timeout -= 1 * delta
+	if  not _scaling_up and _timeout > 0.0:
+		_timeout -= 1.0 * delta
 		return
 
-	if not _scaling_up and _timeout <= 0:
+	if not _scaling_up and _timeout <= 0.0:
 		parent.scale = lerp(parent.scale, Vector3.ONE, SHRINK_SLOWNESS * delta)

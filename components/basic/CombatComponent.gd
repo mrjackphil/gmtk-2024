@@ -13,14 +13,14 @@ class_name PlayerCombatComponent
 
 @export var ui: PlayerUIComponent
 
-@onready var bullet = preload("res://scenes/bullet/bullet.tscn")
+@onready var bullet := preload("res://scenes/bullet/bullet.tscn")
 
 signal shoot_signal
 signal force_signal
 
 const FORCE_POWER = 0.1
 const SHOOT_TIMEOUT := 14
-var shoot_timeout := 0
+var shoot_timeout := 0.0
 
 var animations := {
 	"attack": "player_anims/1h_attack",
@@ -32,7 +32,7 @@ func _ready() -> void:
 	rhand_anim_player.connect("animation_finished", _idle)
 
 func _process(delta: float) -> void:
-	if shoot_timeout >= 0: shoot_timeout -= (1 * delta)
+	if shoot_timeout >= 0.0: shoot_timeout -= (1.0 * delta)
 	
 	ui.grab = shoot_raycast.is_colliding()
 	
@@ -54,7 +54,7 @@ func shoot() -> void:
 	rhand_anim_player.play(animations.shoot)
 	shoot_signal.emit()
 
-	var b = bullet.instantiate()
+	var b := bullet.instantiate()
 	b.transform = bullet_placement.global_transform
 	bullet_placement.add_child(b)
 

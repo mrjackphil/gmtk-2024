@@ -6,9 +6,9 @@ extends Enemy
 @onready var _behavior_component: EnemyBehaviorComponent = $Components/EnemyBehaviorComponent
 @onready var _movement_component: EnemyMovementComponent = $Components/EnemyMovementComponent
 
-func _ready():
+func _ready() -> void:
 	_behavior_component.looses_player = looses_player
 	_movement_component.speed_modificator = speed_modificator
 
-func _physics_process(delta):
+func _physics_process(_delta: float) -> void:
 	pass

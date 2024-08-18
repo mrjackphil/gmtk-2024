@@ -7,6 +7,7 @@ class_name MovementComponent
 signal move_signal(is_on_floor: bool, is_crouching: bool, is_sprinting: bool)
 
 func _ready() -> void:
+	coyote_timer.autostart = true
 	coyote_timer.one_shot = true
 	coyote_timer.timeout.connect(_unallow_jump)
 	char_body.add_child.call_deferred(coyote_timer)
@@ -116,7 +117,7 @@ func _jump_handler(delta: float) -> void:
 		char_body.velocity.y -= gravity * delta
 
 		# Start "coyote timer"
-		if coyote_timer.is_stopped():
+		if coyote_timer.get_parent() == char_body and coyote_timer.is_stopped():
 			coyote_timer.start(COYOTE_TIME)
 
 	elif char_body.is_on_floor():
