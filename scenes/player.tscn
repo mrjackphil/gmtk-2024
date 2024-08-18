@@ -142,8 +142,6 @@ func interact() -> void:
 	if not collider: return
 	if not raycast.is_colliding(): return
 
-	var collider_parent: Node3D = collider.get_parent()
-
 func _ready() -> void:
 	# _input_component.interact.connect(_interact)
 	pass
@@ -196,6 +194,12 @@ collide_with_areas = true
 collide_with_bodies = false
 debug_shape_thickness = 1
 
+[node name="RayCast3D2" type="RayCast3D" parent="Yaw"]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -0.0028263, -0.305165, -0.53055)
+target_position = Vector3(0, 0, -100)
+collision_mask = 8
+collide_with_areas = true
+
 [node name="RHand" type="Node3D" parent="Yaw"]
 transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, 0.4, -0.500239, -0.5)
 
@@ -212,11 +216,6 @@ libraries = {
 "player_anims": ExtResource("9_v3f1i")
 }
 autoplay = "idle"
-
-[node name="RayCast3D" type="RayCast3D" parent="Yaw/RHand"]
-target_position = Vector3(0, 0, -100)
-collision_mask = 8
-collide_with_areas = true
 
 [node name="Bullet placement" type="Marker3D" parent="Yaw/RHand"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.386142, 0.103466, -1.15502)
@@ -275,7 +274,7 @@ script = ExtResource("6_7oddd")
 rhand_anim_player = NodePath("../../Yaw/RHand/RightHandAnimation")
 movement_component = NodePath("../MovementComponent")
 raycast = NodePath("../../Yaw/RayCast3D")
-shoot_raycast = NodePath("../../Yaw/RHand/RayCast3D")
+shoot_raycast = NodePath("../../Yaw/RayCast3D2")
 bullet_placement = NodePath("../../Yaw/RHand/Bullet placement")
 camera_root = NodePath("../../Yaw")
 ui = NodePath("../../UI")
