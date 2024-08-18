@@ -16,14 +16,14 @@
 [ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="11_sx77j"]
 [ext_resource type="PackedScene" uid="uid://dw2r8phpv08pm" path="res://scenes/objects/scalable_crate.tscn" id="12_hl0h0"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="15_h3rcx"]
-[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="16_sxkac"]
+[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="16_sxkac"]
 [ext_resource type="PackedScene" uid="uid://dntqto3b77k3" path="res://Destruction.tscn" id="18_wl0ag"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
 size = Vector3(2, 1, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
-size = Vector3(8, 1, 1)
+size = Vector3(26.2071, 1, 4.10327)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q81di"]
 albedo_texture = ExtResource("5_43biw")
@@ -485,6 +485,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Node3D/CSGBox3D6/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.70303, 0, -0.00524902)
 shape = SubResource("BoxShape3D_uye4o")
 
 [node name="KillOnTouch" type="Area3D" parent="Node3D/CSGBox3D6"]

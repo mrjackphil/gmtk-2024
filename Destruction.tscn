@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://dntqto3b77k3"]
+[gd_scene load_steps=62 format=3 uid="uid://dntqto3b77k3"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_4xli6"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_gf4qx"]
@@ -15,12 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://bcvain0t1trb1" path="res://components/basic/ScalableWindow.tscn" id="11_ie5nq"]
 [ext_resource type="Material" uid="uid://dylnhn6t4gtw3" path="res://assets/materials/FloorTex.tres" id="13_tf5m8"]
 [ext_resource type="Texture2D" uid="uid://2yqu6pviaxa2" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_COL_1K.jpg" id="14_17edp"]
-[ext_resource type="PackedScene" uid="uid://bl35qoneam738" path="res://scenes/objects/death_zone.tscn" id="15_i0ilm"]
 [ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="16_r8sek"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_rf1kv"]
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="17_28uf5"]
+[ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="17_us0kj"]
 [ext_resource type="Texture2D" uid="uid://cdpjfiybd8m36" path="res://assets/textures/Props_Billboard_Destruction.png" id="19_wxue6"]
-[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="21_8ljp8"]
+[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="21_8ljp8"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_ftx48"]
 [ext_resource type="PackedScene" uid="uid://dt0gavdyjon25" path="res://TurretTutorial.tscn" id="22_mrlpi"]
 
@@ -108,6 +108,15 @@ albedo_texture = ExtResource("14_17edp")
 albedo_texture = ExtResource("16_r8sek")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2513s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8y2v"]
+albedo_color = Color(1, 0, 0, 1)
+emission_enabled = true
+emission = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
+margin = 0.1
+size = Vector3(3, 1, 8.5)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5ydg"]
 albedo_texture = ExtResource("19_wxue6")
@@ -341,6 +350,20 @@ metadata/_edit_group_ = true
 
 [node name="CSGBox3D62" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-1.31134e-07, 0, 1, 0, 1, 0, -1, 0, -1.31134e-07, -12.25, 16, -39)
+material_override = ExtResource("2_gf4qx")
+use_collision = true
+size = Vector3(3, 3, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D68" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 1, 0, -1, 0, -1.31134e-07, -12.25, 9, -39)
+material_override = ExtResource("2_gf4qx")
+use_collision = true
+size = Vector3(3, 3, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D69" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(-1.31134e-07, 0, 1, 0, 1, 0, -1, 0, -1.31134e-07, -4.75, 9, -39)
 material_override = ExtResource("2_gf4qx")
 use_collision = true
 size = Vector3(3, 3, 0.5)
@@ -1136,9 +1159,22 @@ material_override = SubResource("StandardMaterial3D_6gd1y")
 mesh = SubResource("BoxMesh_2513s")
 skeleton = NodePath("../ScalableBox")
 
-[node name="DeathZone" parent="." instance=ExtResource("15_i0ilm")]
+[node name="DeathZone" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 14.5, -39)
+material_override = SubResource("StandardMaterial3D_i8y2v")
+use_collision = true
 size = Vector3(8, 1, 3)
+
+[node name="KillOnTouch" type="Area3D" parent="DeathZone"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("17_us0kj")
+DAMAGE = 10
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZone/KillOnTouch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0607758, 0.1, -0.0402832)
+shape = SubResource("BoxShape3D_skmko")
 
 [node name="ExampleRigidbody4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.25, 16.5, -40.5)
@@ -1246,5 +1282,3 @@ spot_angle = 24.32
 [node name="WinZone" parent="." instance=ExtResource("21_8ljp8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 3.69631, -37.5503)
 next_level = ExtResource("22_mrlpi")
-
-[editable path="DeathZone"]
