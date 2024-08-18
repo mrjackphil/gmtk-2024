@@ -12,11 +12,11 @@ func _ready() -> void:
 
 func _input(event: InputEvent) -> void:
 	if not _camera.current: return
-	
+
 	if event is InputEventMouseButton and Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-	
+
 	if event is InputEventMouseMotion:
 		if Input.mouse_mode != Input.MOUSE_MODE_CAPTURED:
 				return

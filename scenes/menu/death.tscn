@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://wy2qm73shl0w"]
+[gd_scene load_steps=4 format=3 uid="uid://wy2qm73shl0w"]
 
+[ext_resource type="Script" path="res://scripts/death.gd" id="1_5my50"]
 [ext_resource type="FontFile" uid="uid://dam3tnubqr18r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_n8t28"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jvhkl"]
 font = ExtResource("1_n8t28")
 font_size = 46
+outline_size = 16
+outline_color = Color(0, 0, 0, 1)
 
 [node name="Death" type="Control"]
 layout_mode = 3
@@ -13,6 +16,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_5my50")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 1
@@ -30,8 +34,10 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
-text = "YOU DIED"
+text = "YOU WAS RESCALED TO
+DEATH"
 label_settings = SubResource("LabelSettings_jvhkl")
+horizontal_alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -52,3 +58,5 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 text = "RESTART"
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]

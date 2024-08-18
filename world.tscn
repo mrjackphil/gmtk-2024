@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=4 uid="uid://b6ldmtigej1wc"]
+[gd_scene load_steps=60 format=4 uid="uid://b6ldmtigej1wc"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_34ioo"]
 [ext_resource type="Script" path="res://components/interactions/interaction.gd" id="4_sxlfi"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://v52tv8iv7k02" path="res://scenes/enemy/static.tscn" id="14_qhax4"]
 [ext_resource type="PackedScene" uid="uid://bsqvc73t8kngf" path="res://scenes/enemy_bullet/enemy_bullet.tscn" id="14_yu7cm"]
 [ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="16_qy862"]
+[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="17_ypay8"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1jxm"]
 
@@ -782,3 +783,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08313, 4.02611, 22.7183)
 
 [node name="Death" parent="CanvasLayer" instance=ExtResource("16_qy862")]
 visible = false
+
+[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen")]
+script = ExtResource("17_ypay8")
+DeathScreen = NodePath("../CanvasLayer/Death")
