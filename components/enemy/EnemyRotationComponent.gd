@@ -22,6 +22,8 @@ func _physics_process(_delta: float) -> void:
 	#var tr: Transform3D = rotation_body.global_transform
 	var tmp_scale := rotation_body.scale
 	var player: CharacterBody3D = get_node("/root/World/Player")
+	if not rotation_body: return
+	if not player: return
 	var tr_look: Transform3D = rotation_body.global_transform.looking_at(player.global_position, Vector3.UP)
 	#rotation_body.global_transform = tr
 	rotation_body.global_transform = rotation_body.global_transform.interpolate_with(tr_look, 0.1)

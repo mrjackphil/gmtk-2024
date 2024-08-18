@@ -1,4 +1,5 @@
 extends Area3D
+class_name DeadByBullet
 
 @export var _hp := 1
 

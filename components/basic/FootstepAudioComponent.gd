@@ -4,6 +4,7 @@ extends AudioStreamPlayer
 
 var STEP_TIMER := 25
 var RUN_TIMER := 15
+var CROUCH_TIMER := 45
 var _timer := 10
 
 func _ready() -> void:
@@ -19,4 +20,12 @@ func _step(is_on_floor: bool, is_crouching: bool, is_sprinting: bool) -> void:
 
 	elif _timer <= 0 and is_on_floor and not is_crouching and is_sprinting:
 		_timer = RUN_TIMER
+		play()
+		
+	elif _timer <= 0 and is_on_floor and is_crouching and not is_sprinting:
+		_timer = STEP_TIMER * 2
+		play()
+		
+	elif _timer <= 0 and is_on_floor and is_crouching and is_sprinting:
+		_timer = STEP_TIMER * 2.5
 		play()
