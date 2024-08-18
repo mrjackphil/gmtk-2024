@@ -1,6 +1,6 @@
 extends Area3D
 
-@export var _hp = 1
+@export var _hp := 1
 
 signal dead
 
@@ -13,7 +13,7 @@ var hp: int:
 			dead.emit()
 			_dead()
 			
-func _dead():
+func _dead() -> void:
 	get_parent().queue_free()
 
 func _ready() -> void:

@@ -3,7 +3,11 @@ class_name MovementComponent
 
 @export var char_body: CharacterBody3D
 
+## Sends each move signal
+signal move_signal(is_on_floor: bool, is_crouching: bool, is_sprinting: bool)
+
 func _ready() -> void:
+	coyote_timer.autostart = true
 	coyote_timer.one_shot = true
 	coyote_timer.timeout.connect(_unallow_jump)
 	char_body.add_child.call_deferred(coyote_timer)
@@ -16,10 +20,6 @@ func _physics_process(delta: float) -> void:
 	if not char_body.is_on_floor() or char_body.position.y > 0:
 		char_body.velocity.y -= gravity * delta
 
-	if char_body.position.y < 0:
-		char_body.velocity.y = 0
-		char_body.position.y = 0
-
 	var speed: int = _sprint_handler(delta)
 
 	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_backward", "move_forward")
@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	if move_vect:
 		char_body.velocity.x = move_vect.x
 		char_body.velocity.z = move_vect.z
+		move_signal.emit(char_body.is_on_floor(), is_crouching, is_sprinting)
 	# Deccelerate
 	else:
 		char_body.velocity.x = move_toward(char_body.velocity.x, 0, speed)
@@ -53,6 +54,8 @@ const CAMERA_FOV_DEFAULT: float = 75.0
 const CAMERA_FOV_SPRINT: float = 90.0
 @export var EXTERNAL_MODIFICATOR: int = 0
 
+var is_sprinting: bool = false
+
 func _sprint_handler(delta: float) -> int:
 	var speed := (MOVEMENT_SPEED + EXTERNAL_MODIFICATOR) * delta
 	var is_on_floor := char_body.is_on_floor() or char_body.position.y == 0
@@ -61,9 +64,11 @@ func _sprint_handler(delta: float) -> int:
 		speed *= CROUCH_MULTIPLIER
 	elif Input.is_action_pressed("move_sprint"):
 		speed *= SPRINT_MULTIPLIER
+		is_sprinting = true
 		camera.fov = lerp(camera.fov, CAMERA_FOV_SPRINT, 0.1)
 	else:
 		camera.fov = lerp(camera.fov, CAMERA_FOV_DEFAULT, 0.1)
+		is_sprinting = false
 
 	return int(speed)
 
@@ -108,20 +113,14 @@ func _jump_handler(delta: float) -> void:
 		char_body.velocity.y = JUMP_STRENGTH
 		can_jump = false
 		coyote_timer.stop()
-	elif char_body.position.y > 0 and not char_body.is_on_floor():
+	elif not char_body.is_on_floor():
 		char_body.velocity.y -= gravity * delta
 
 		# Start "coyote timer"
-		if coyote_timer.is_stopped():
+		if coyote_timer.get_parent() == char_body and coyote_timer.is_stopped():
 			coyote_timer.start(COYOTE_TIME)
 
-	elif char_body.position.y < 0:
-		char_body.position.y = 0
-		char_body.velocity.y = 0
-		coyote_timer.stop()
-		can_jump = true
-	else:
-		char_body.velocity.y = 0
+	elif char_body.is_on_floor():
 		coyote_timer.stop()
 		can_jump = true
 

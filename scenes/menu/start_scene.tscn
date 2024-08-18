@@ -1,0 +1,82 @@
+[gd_scene load_steps=8 format=3 uid="uid://dhm3c7d0ppgfr"]
+
+[ext_resource type="FontFile" uid="uid://dam3tnubqr18r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_lfepd"]
+[ext_resource type="Script" path="res://scripts/start_scene.gd" id="1_qpipd"]
+[ext_resource type="Texture2D" uid="uid://bymtmrysic8ti" path="res://assets/icons/sound_on.svg" id="2_j0al7"]
+[ext_resource type="Texture2D" uid="uid://bb0xog4vd7p8e" path="res://assets/icons/sound_on_filled.svg" id="3_1ts55"]
+[ext_resource type="Texture2D" uid="uid://5qhdjh4bjwyu" path="res://assets/icons/sound_off.svg" id="4_gjfne"]
+[ext_resource type="Texture2D" uid="uid://bcptg2gqwlap5" path="res://assets/icons/sound_off_filled.svg" id="5_2r5eu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rovlg"]
+font = ExtResource("1_lfepd")
+font_size = 118
+
+[node name="StartScene" type="Node2D"]
+script = ExtResource("1_qpipd")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="NameLabel" type="Label" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Pen Island"
+label_settings = SubResource("LabelSettings_rovlg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_constants/margin_bottom = 55
+
+[node name="StartButton" type="Button" parent="Control/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("1_lfepd")
+theme_override_font_sizes/font_size = 51
+text = "START"
+
+[node name="MarginContainer2" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 1008.0
+offset_right = 1152.0
+offset_bottom = 144.0
+grow_horizontal = 0
+
+[node name="AudioButtonOn" type="TextureButton" parent="Control/MarginContainer2"]
+layout_mode = 2
+texture_normal = ExtResource("2_j0al7")
+texture_hover = ExtResource("3_1ts55")
+stretch_mode = 0
+
+[node name="AudioButtonOff" type="TextureButton" parent="Control/MarginContainer2"]
+visible = false
+layout_mode = 2
+texture_normal = ExtResource("4_gjfne")
+texture_hover = ExtResource("5_2r5eu")
+stretch_mode = 0
+
+[connection signal="pressed" from="Control/MarginContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Control/MarginContainer2/AudioButtonOn" to="." method="_on_audio_button_on_pressed"]
+[connection signal="pressed" from="Control/MarginContainer2/AudioButtonOff" to="." method="_on_audio_button_off_pressed"]

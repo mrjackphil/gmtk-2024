@@ -17,8 +17,8 @@ radius = 0.16571
 
 [node name="EnemyBullet" type="RigidBody3D"]
 top_level = true
-collision_layer = 8
-collision_mask = 9
+collision_layer = 0
+collision_mask = 24
 gravity_scale = 0.0
 script = ExtResource("1_vavb6")
 SPEED = 10
