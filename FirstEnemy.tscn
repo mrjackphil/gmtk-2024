@@ -1,14 +1,14 @@
-[gd_scene load_steps=38 format=3 uid="uid://didluft6npphe"]
+[gd_scene load_steps=36 format=3 uid="uid://didluft6npphe"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_2jvn3"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_402ov"]
 [ext_resource type="Script" path="res://components/composed/Destructable.gd" id="3_q5srn"]
-[ext_resource type="Material" uid="uid://dylnhn6t4gtw3" path="res://assets/materials/FloorTex.tres" id="4_y08yh"]
+[ext_resource type="Material" path="res://assets/materials/FloorTex.tres" id="4_y08yh"]
 [ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="5_dv80g"]
-[ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="6_6yuip"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalablePlatform.tscn" id="6_6yuip"]
 [ext_resource type="PackedScene" uid="uid://rhddg00ramae" path="res://scenes/enemy/flying.tscn" id="6_30yrh"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="7_31p5h"]
-[ext_resource type="PackedScene" uid="uid://dvmt10ciqvx22" path="res://scenes/objects/amb_rigidbody.tscn" id="7_b15jm"]
+[ext_resource type="PackedScene" path="res://scenes/objects/amb_rigidbody.tscn" id="7_b15jm"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="8_jeiys"]
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="8_uecx4"]
 [ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="9_ucg0n"]
@@ -16,12 +16,10 @@
 [ext_resource type="Material" uid="uid://5w4lebe3ot2t" path="res://assets/materials/ScalableBoxAlt.tres" id="11_em46o"]
 [ext_resource type="PackedScene" uid="uid://on5ucgvrnsy4" path="res://components/basic/scalable_sphere.tscn" id="12_sbffb"]
 [ext_resource type="PackedScene" uid="uid://bcvain0t1trb1" path="res://components/basic/ScalableWindow.tscn" id="13_2qusn"]
-[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="14_slrxj"]
-[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="15_ixmfm"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_3rym8"]
 [ext_resource type="Texture2D" uid="uid://c3r8co6p4hrxu" path="res://assets/models/Scalable/Textures/Props_Billboard_Hint_EnemyChase1.png" id="16_je37j"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_6s3de"]
-[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="22_6b4f3"]
+[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="22_6b4f3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef2uv"]
 albedo_texture = ExtResource("5_dv80g")
@@ -1028,15 +1026,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4979, 16, -40.4604)
 [node name="Node3D5" parent="." instance=ExtResource("13_2qusn")]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -29.4979, 15.5, -40.4604)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="Death" parent="CanvasLayer" instance=ExtResource("14_slrxj")]
-visible = false
-
-[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen")]
-script = ExtResource("15_ixmfm")
-DeathScreen = NodePath("../CanvasLayer/Death")
-
 [node name="Flying" parent="." instance=ExtResource("6_30yrh")]
 transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -10.5, 17.5, -42)
 
@@ -1045,7 +1034,7 @@ transform = Transform3D(6.45239e-08, 0.25, -0.433013, -3.72529e-08, 0.433013, 0.
 material_override = SubResource("StandardMaterial3D_fqth4")
 mesh = ExtResource("16_3rym8")
 
-[node name="CanvasLayer2" parent="." instance=ExtResource("21_6s3de")]
+[node name="CanvasLayer" parent="." instance=ExtResource("21_6s3de")]
 
 [node name="WinZone" parent="." instance=ExtResource("22_6b4f3")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 12.5, -40.5)
