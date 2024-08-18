@@ -11,7 +11,7 @@ var _timeout = 0
 
 var bullet := preload("res://scenes/enemy_bullet/enemy_bullet.tscn")
 
-func _loose() -> void:
+func _loose(collider: Node3D) -> void:
 	target = null
 
 func _collide(collider: Node3D) -> void:
