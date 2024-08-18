@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://v52tv8iv7k02" path="res://scenes/enemy/static.tscn" id="14_qhax4"]
 [ext_resource type="PackedScene" uid="uid://bsqvc73t8kngf" path="res://scenes/enemy_bullet/enemy_bullet.tscn" id="14_yu7cm"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="16_r2y8k"]
-[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="17_bb5qg"]
+[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="17_bb5qg"]
 [ext_resource type="PackedScene" uid="uid://cb6yvk3e2adv2" path="res://TestLevel.tscn" id="18_mt3jm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1jxm"]

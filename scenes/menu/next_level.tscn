@@ -27,6 +27,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer2"]
+visible = false
 layout_mode = 2
 text = "YOU SCALED YOU WAY TO WIN"
 label_settings = SubResource("LabelSettings_in3hd")

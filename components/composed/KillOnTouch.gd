@@ -17,4 +17,9 @@ func _collide(collider: Node3D) -> void:
 			hp_component.hp -= DAMAGE
 
 	if collider.owner.is_in_group("npc"):
-		collider.owner.queue_free()
+		if collider.owner.has_node('Explosion'):
+			collider.owner.freeze = true
+			var explosion: Explosion = collider.owner.find_child('Explosion')
+			explosion.explode()
+		#else:
+			#collider.owner.queue_free()

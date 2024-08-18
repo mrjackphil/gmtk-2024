@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://v52tv8iv7k02"]
+[gd_scene load_steps=12 format=3 uid="uid://v52tv8iv7k02"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_kunne"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="2_rkdnn"]
+[ext_resource type="PackedScene" uid="uid://cer5vmnxvec7p" path="res://scenes/effects/explosion.tscn" id="2_vs1e6"]
 [ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="3_einfi"]
 [ext_resource type="Script" path="res://components/composed/ShootAtPlayer.gd" id="4_6k8w1"]
 
@@ -24,6 +25,9 @@ radius = 12.89
 
 [node name="Static" type="CharacterBody3D"]
 script = ExtResource("1_kunne")
+
+[node name="Explosion" parent="." node_paths=PackedStringArray("exploding_object") instance=ExtResource("2_vs1e6")]
+exploding_object = NodePath("..")
 
 [node name="CeilingCheck" type="Area3D" parent="."]
 collision_layer = 0
