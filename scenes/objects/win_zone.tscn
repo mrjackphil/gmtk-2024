@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://ck8dex7yvlwjc"]
+
+[ext_resource type="Script" path="res://scripts/win_zone.gd" id="1_yjxkb"]
+[ext_resource type="PackedScene" uid="uid://byr1pw777mj87" path="res://components/composed/WinOnTouch.tscn" id="2_pvmhm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8ryvm"]
+albedo_color = Color(0.0862745, 1, 0.376471, 1)
+
+[node name="WinZone" type="CSGBox3D"]
+material_override = SubResource("StandardMaterial3D_8ryvm")
+script = ExtResource("1_yjxkb")
+
+[node name="WinOnTouch" parent="." instance=ExtResource("2_pvmhm")]
+
+[editable path="WinOnTouch"]

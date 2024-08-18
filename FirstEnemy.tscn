@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://didluft6npphe"]
+[gd_scene load_steps=32 format=3 uid="uid://didluft6npphe"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_2jvn3"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_402ov"]
@@ -13,6 +13,10 @@
 [ext_resource type="Material" uid="uid://5w4lebe3ot2t" path="res://assets/materials/ScalableBoxAlt.tres" id="11_em46o"]
 [ext_resource type="PackedScene" uid="uid://on5ucgvrnsy4" path="res://components/basic/scalable_sphere.tscn" id="12_sbffb"]
 [ext_resource type="PackedScene" uid="uid://bcvain0t1trb1" path="res://components/basic/ScalableWindow.tscn" id="13_2qusn"]
+[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="14_slrxj"]
+[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="15_ixmfm"]
+[ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_3rym8"]
+[ext_resource type="Texture2D" uid="uid://c3r8co6p4hrxu" path="res://assets/models/Scalable/Textures/Props_Billboard_Hint_EnemyChase1.png" id="16_je37j"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmst6"]
 albedo_texture = ExtResource("5_dv80g")
@@ -58,6 +62,9 @@ size = Vector3(2, 1, 2)
 material = ExtResource("11_em46o")
 size = Vector3(2, 1, 2)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqth4"]
+albedo_texture = ExtResource("16_je37j")
+
 [node name="World" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2jvn3")]
@@ -102,10 +109,10 @@ size = Vector3(10, 0.5, 2.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D47" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -9.5, 10.75, -39.5)
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 10.75, -39.5)
 material_override = SubResource("StandardMaterial3D_wmst6")
 use_collision = true
-size = Vector3(2, 0.5, 10)
+size = Vector3(2, 0.5, 11)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D52" type="CSGBox3D" parent="Node3D"]
@@ -158,10 +165,31 @@ size = Vector3(10, 3.5, 1)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D44" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -9.5, 11.5, -40.75)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 12.25, -40.75)
 material_override = ExtResource("2_402ov")
 use_collision = true
-size = Vector3(10, 2, 0.5)
+size = Vector3(11, 0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="Node3D/CSGBox3D44"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 12.25, -40.75)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(11, 0.5, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D54" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 11, -40.75)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(11, 1, 0.5)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="Node3D/CSGBox3D54"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 12.25, -40.75)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(11, 0.5, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D48" type="CSGBox3D" parent="Node3D"]
@@ -172,10 +200,10 @@ size = Vector3(2.5, 4, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D45" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -9.5, 13.75, -40.75)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 13.75, -40.75)
 material_override = ExtResource("2_402ov")
 use_collision = true
-size = Vector3(10, 1.5, 0.5)
+size = Vector3(11, 1.5, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D46" type="CSGBox3D" parent="Node3D"]
@@ -186,24 +214,24 @@ size = Vector3(11, 4, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D49" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -9.5, 12.5, -38.25)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -10, 12.5, -38.25)
 material_override = ExtResource("2_402ov")
 use_collision = true
-size = Vector3(10, 4, 0.5)
+size = Vector3(11, 4, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D50" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -20.5, 12.5, -38.25)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -23.75, 12.5, -38.25)
 material_override = ExtResource("2_402ov")
 use_collision = true
-size = Vector3(10, 4, 0.5)
+size = Vector3(16.5, 4, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D53" type="CSGBox3D" parent="Node3D"]
-transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -20.5, 12.5, -43.25)
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -23.75, 12.5, -43.25)
 material_override = ExtResource("2_402ov")
 use_collision = true
-size = Vector3(10, 4, 0.5)
+size = Vector3(16.5, 4, 0.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D35" type="CSGBox3D" parent="Node3D"]
@@ -252,24 +280,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6559, 4.99176, 4.10916)
 
 [node name="ScalableBox" parent="Node3D" instance=ExtResource("6_6yuip")]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 3, 3, -40.5)
-
-[node name="Flying" parent="Node3D" instance=ExtResource("6_30yrh")]
-transform = Transform3D(-1, 0, -1.19209e-07, 0, 1, 0, 1.19209e-07, 0, -1, -11.5, 12.5, -42)
-
-[node name="Node3D" parent="Node3D" instance=ExtResource("13_2qusn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 12, -39.5)
-
-[node name="Node3D2" parent="Node3D" instance=ExtResource("13_2qusn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26, 12, -40.5)
-
-[node name="Node3D3" parent="Node3D" instance=ExtResource("13_2qusn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 12, -40.5)
-
-[node name="Node3D4" parent="Node3D" instance=ExtResource("13_2qusn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36.5, 12, -40.5)
-
-[node name="Node3D5" parent="Node3D" instance=ExtResource("13_2qusn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42.5, 12, -40.5)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_aynux")
@@ -856,3 +866,26 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 14, -35.5)
 
 [node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -22.5, 18.5, -37.5)
+
+[node name="Node3D4" parent="." instance=ExtResource("13_2qusn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -26.4979, 16, -40.4604)
+
+[node name="Node3D5" parent="." instance=ExtResource("13_2qusn")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -29.4979, 15.5, -40.4604)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Death" parent="CanvasLayer" instance=ExtResource("14_slrxj")]
+visible = false
+
+[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen")]
+script = ExtResource("15_ixmfm")
+DeathScreen = NodePath("../CanvasLayer/Death")
+
+[node name="Flying" parent="." instance=ExtResource("6_30yrh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 17.5, -42)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(6.45239e-08, 0.25, -0.433013, -3.72529e-08, 0.433013, 0.25, 0.5, 0, 7.45058e-08, -17.5, 17.5, -40.5)
+material_override = SubResource("StandardMaterial3D_fqth4")
+mesh = ExtResource("16_3rym8")

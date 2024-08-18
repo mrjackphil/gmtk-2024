@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dpahfvhcfk53x"]
+[gd_scene load_steps=3 format=3 uid="uid://cjqlys8lxc7y0"]
 
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="1_680qf"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bt0afdbck7xn6"]
+[gd_scene load_steps=32 format=3 uid="uid://bt0afdbck7xn6"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_xepuw"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_nrcir"]
@@ -13,6 +13,8 @@
 [ext_resource type="Material" uid="uid://ry26xh38jxl1" path="res://assets/materials/ScalableBoxTex.tres" id="9_yic5q"]
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="10_ep1a0"]
 [ext_resource type="PackedScene" uid="uid://dw2r8phpv08pm" path="res://scenes/objects/scalable_crate.tscn" id="12_hl0h0"]
+[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="14_0nhh2"]
+[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="15_5kuhe"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqsna"]
 
@@ -358,3 +360,12 @@ material_override = ExtResource("3_vwbmh")
 use_collision = true
 polygon = PackedVector2Array(0, 0, 0, 1, 1, 0, 1, 0)
 depth = 3.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Death" parent="CanvasLayer" instance=ExtResource("14_0nhh2")]
+visible = false
+
+[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen")]
+script = ExtResource("15_5kuhe")
+DeathScreen = NodePath("../CanvasLayer/Death")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://byr1pw777mj87"]
+
+[ext_resource type="Script" path="res://components/composed/WinOnTouch.gd" id="1_wu0vt"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ohjcs"]
+
+[node name="WinOnTouch" type="Area3D"]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("1_wu0vt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_ohjcs")

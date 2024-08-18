@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk46h04480huo"]
+
+[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="1_q708c"]
+[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="2_r4tu8"]
+[ext_resource type="PackedScene" uid="uid://d0hfmrx2imafg" path="res://scenes/menu/next_level.tscn" id="2_tt1sg"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Death" parent="." instance=ExtResource("1_q708c")]
+visible = false
+
+[node name="NextLevel" parent="." instance=ExtResource("2_tt1sg")]
+visible = false
+
+[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen", "NextLevelScreen")]
+script = ExtResource("2_r4tu8")
+DeathScreen = NodePath("../Death")
+NextLevelScreen = NodePath("../NextLevel")
