@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://bt0afdbck7xn6"]
+[gd_scene load_steps=29 format=3 uid="uid://bt0afdbck7xn6"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_xepuw"]
 [ext_resource type="Texture2D" uid="uid://clytqhyhgpp7i" path="res://assets/sprites/placeholder.png" id="2_nrcir"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="6_w6uad"]
 [ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="8_md1vn"]
 [ext_resource type="Material" uid="uid://ry26xh38jxl1" path="res://assets/materials/ScalableBoxTex.tres" id="9_yic5q"]
+[ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="10_ep1a0"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jqsna"]
 
@@ -240,6 +241,7 @@ shadow_enabled = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 6, -8.5)
+script = ExtResource("10_ep1a0")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
 material_override = SubResource("StandardMaterial3D_465i6")
@@ -258,6 +260,29 @@ collision_layer = 8
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D/Area3D"]
+shape = SubResource("BoxShape3D_kpx0t")
+
+[node name="RigidBody3D3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.5, 6, -10)
+script = ExtResource("10_ep1a0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D3"]
+material_override = SubResource("StandardMaterial3D_465i6")
+mesh = SubResource("BoxMesh_itbjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3"]
+shape = SubResource("BoxShape3D_kpx0t")
+
+[node name="ScaleComponent" type="Node" parent="RigidBody3D3"]
+script = ExtResource("4_lqppd")
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="RigidBody3D3"]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D3/Area3D"]
 shape = SubResource("BoxShape3D_kpx0t")
 
 [node name="RigidBody3D2" type="RigidBody3D" parent="."]
