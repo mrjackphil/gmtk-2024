@@ -21,5 +21,5 @@ func _collide(collider: Node3D) -> void:
 			collider.owner.freeze = true
 			var explosion: Explosion = collider.owner.find_child('Explosion')
 			explosion.explode()
-		#else:
-			#collider.owner.queue_free()
+		else:
+			collider.owner.queue_free()
