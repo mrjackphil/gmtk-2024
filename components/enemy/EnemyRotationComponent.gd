@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 
 	var current_direction: Vector3 = rotation_body.global_transform.basis.z.normalized()
 	var vect: Vector3 = current_direction.lerp(_rotation_vector, 0.01)
-	
+
 	#rotation_body.rotation = vect
 	#var tr: Transform3D = rotation_body.global_transform
 
