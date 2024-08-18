@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bq8k7cqi71aqy"]
+[gd_scene load_steps=15 format=3 uid="uid://d4klt216o8kvr"]
 
 [ext_resource type="Script" path="res://components/composed/ShootAtPlayer.gd" id="2_f4nx7"]
+[ext_resource type="PackedScene" uid="uid://cer5vmnxvec7p" path="res://scenes/effects/explosion.tscn" id="3_8b3vc"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="3_qg8mw"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_upgu3"]
@@ -94,3 +95,7 @@ collision_mask = 16
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("BoxShape3D_uc186")
+
+[node name="Explosion" parent="." node_paths=PackedStringArray("exploding_object") instance=ExtResource("3_8b3vc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02891, 0)
+exploding_object = NodePath("../Meshes")

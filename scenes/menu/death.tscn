@@ -34,7 +34,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="CenterContainer"]
 layout_mode = 2
-text = "YOU WAS RESCALED TO
+text = "YOU'VE BEEN RESCALED TO
 DEATH"
 label_settings = SubResource("LabelSettings_jvhkl")
 horizontal_alignment = 1

@@ -6,7 +6,7 @@ var music := preload("res://assets/sounds/music.mp3")
 func _ready():
 	stream = music
 	stream.set_loop(true)
-	volume_db = -20
+	volume_db = -40
 	play()
 
 
