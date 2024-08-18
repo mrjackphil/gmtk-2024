@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://dw2r8phpv08pm"]
 
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_m03ca"]
-[ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="2_xev6w"]
+[ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="2_p0opu"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="3_axnhj"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_465i6"]
-albedo_texture = ExtResource("2_xev6w")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qy6rc"]
+albedo_texture = ExtResource("2_p0opu")
 
 [sub_resource type="BoxMesh" id="BoxMesh_itbjp"]
 
@@ -15,7 +15,7 @@ albedo_texture = ExtResource("2_xev6w")
 script = ExtResource("1_m03ca")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_465i6")
+material_override = SubResource("StandardMaterial3D_qy6rc")
 mesh = SubResource("BoxMesh_itbjp")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

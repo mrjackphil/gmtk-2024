@@ -1,4 +1,4 @@
-extends CSGBox3D
+extends RigidBody3D
 
 @export var next_level: PackedScene
 

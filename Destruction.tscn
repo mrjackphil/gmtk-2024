@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_gf4qx"]
 [ext_resource type="Texture2D" uid="uid://dt68j11id6qf" path="res://assets/textures/WoodPlanks029/WoodPlanks029_COL_VAR1_1K.jpg" id="3_ey7r0"]
 [ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="3_x84p4"]
-[ext_resource type="PackedScene" path="res://components/basic/ScalablePlatform.tscn" id="4_0b5cy"]
+[ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="4_0b5cy"]
 [ext_resource type="Script" path="res://components/composed/Destructable.gd" id="4_7xj8k"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="5_xxlnn"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="6_lsqkw"]
