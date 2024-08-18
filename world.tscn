@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=4 uid="uid://b6ldmtigej1wc"]
+[gd_scene load_steps=59 format=4 uid="uid://b6ldmtigej1wc"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_34ioo"]
 [ext_resource type="Script" path="res://components/interactions/interaction.gd" id="4_sxlfi"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://dx46s1ptpg31o" path="res://scenes/enemy/walkable.tscn" id="14_jvv8u"]
 [ext_resource type="PackedScene" uid="uid://v52tv8iv7k02" path="res://scenes/enemy/static.tscn" id="14_qhax4"]
 [ext_resource type="PackedScene" uid="uid://bsqvc73t8kngf" path="res://scenes/enemy_bullet/enemy_bullet.tscn" id="14_yu7cm"]
+[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="16_qy862"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_p1jxm"]
 
@@ -776,3 +777,8 @@ transform = Transform3D(1, 0, 0, 0, 0.156228, 0.987721, 0, -0.987721, 0.156228, 
 
 [node name="Flying" parent="." instance=ExtResource("7_q51nr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.08313, 4.02611, 22.7183)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Death" parent="CanvasLayer" instance=ExtResource("16_qy862")]
+visible = false
