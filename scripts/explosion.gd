@@ -8,6 +8,7 @@ class_name Explosion
 @onready var _fire = $Fire
 
 func explode():
+	exploding_object.process_mode = Node.PROCESS_MODE_DISABLED
 	exploding_object.visible = false
 	_debris.emitting = true
 	_smoke.emitting = true
