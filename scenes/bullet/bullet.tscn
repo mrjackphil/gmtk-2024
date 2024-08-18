@@ -1,8 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2x5da362mkoy"]
+[gd_scene load_steps=7 format=3 uid="uid://b2x5da362mkoy"]
 
 [ext_resource type="Script" path="res://scenes/bullet/bullet_area.gd" id="1_j1ecd"]
 [ext_resource type="Shader" uid="uid://c1sbofapoimcq" path="res://scenes/bullet/bullet_gdshader.tres" id="1_vp8fn"]
 [ext_resource type="Script" path="res://scenes/bullet/bullet.gd" id="1_vxxdv"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6bxge"]
+rough = true
+absorbent = true
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_p73w1"]
 render_priority = 0
@@ -15,7 +19,12 @@ radius = 0.25
 [node name="Bullet" type="RigidBody3D"]
 top_level = true
 collision_layer = 0
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_6bxge")
 gravity_scale = 0.0
+lock_rotation = true
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 2
