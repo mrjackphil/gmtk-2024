@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://vdvyos4mpave"]
+
+[ext_resource type="Script" path="res://components/composed/Destructable.gd" id="1_wrgq2"]
+[ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_yo4ud"]
+[ext_resource type="Texture2D" uid="uid://dlnx1yr802ysf" path="res://assets/models/Scalable/Textures/Props.png" id="2_6jdft"]
+[ext_resource type="ArrayMesh" uid="uid://cufkam3sj1aqd" path="res://assets/models/Scalable/Obj/bin_mesh.obj" id="3_x05j6"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_bgg52"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s7lj"]
+albedo_texture = ExtResource("2_6jdft")
+
+[node name="ExampleRigidbodyDest" type="Node3D"]
+
+[node name="Destructable" type="Area3D" parent="."]
+script = ExtResource("1_wrgq2")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Destructable"]
+script = ExtResource("1_yo4ud")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Destructable/RigidBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5s7lj")
+mesh = ExtResource("3_x05j6")
+
+[node name="ScaleComponent" type="Node" parent="Destructable"]
+script = ExtResource("4_bgg52")
+
+[node name="Area3D" type="Area3D" parent="Destructable"]
+collision_layer = 0
+collision_mask = 8
