@@ -6,6 +6,7 @@ extends RigidBody3D
 func _ready() -> void:
 	body_entered.connect(_push)
 
-func _push(collider: RigidBody3D) -> void:
-	collider.apply_central_impulse(collider.position - global_position)
-	collider.apply_impulse((collider.position - global_position + VECTOR_TO_SUM) * POWER, collider.position)
+func _push(collider: Node3D) -> void:
+	if collider is RigidBody3D:
+		collider.apply_central_impulse(collider.position - global_position)
+		collider.apply_impulse((collider.position - global_position + VECTOR_TO_SUM) * POWER, collider.position)

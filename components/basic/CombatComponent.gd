@@ -11,8 +11,11 @@ class_name PlayerCombatComponent
 @export var camera_root: Node3D
 # @export var inventory_component: InventoryComponent
 
+@export var ui: PlayerUIComponent
+
 @onready var bullet = preload("res://scenes/bullet/bullet.tscn")
 
+const FORCE_POWER = 0.1
 const SHOOT_TIMEOUT := 14
 var shoot_timeout := 0
 
@@ -28,8 +31,13 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if shoot_timeout >= 0: shoot_timeout -= (1 * delta)
 	
+	ui.grab = shoot_raycast.is_colliding()
+	
 	if Input.is_action_pressed("combat_attack"):
 		attack()
+		
+	if Input.is_action_pressed("combat_defense"):
+		push()
 
 func _idle(_anim_string: String) -> void:
 	rhand_anim_player.play(animations.idle)
@@ -51,7 +59,12 @@ func attack() -> void:
 
 # Kick, push, bash
 func push() -> void:
-	rhand_anim_player.play("defense")
+	var collider := shoot_raycast.get_collider()
+	if collider and collider is RigidBody3D:
+		collider.apply_impulse((owner.global_position - collider.position) * FORCE_POWER, owner.global_position - collider.position)
+	
+	if collider and collider.owner is RigidBody3D:
+		collider.owner.apply_impulse((owner.global_position - collider.owner.position) * FORCE_POWER, owner.global_position - collider.owner.position)
 
 func dash() -> void: 
 	rhand_anim_player.play("defense")

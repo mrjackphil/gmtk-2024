@@ -16,10 +16,6 @@ run/main_scene="res://world.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/sprites/sword.png"
 
-[autoload]
-
-DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
-
 [compression]
 
 formats/mode=0
