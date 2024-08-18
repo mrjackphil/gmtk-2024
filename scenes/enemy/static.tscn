@@ -13,14 +13,14 @@ radius = 0.52282
 height = 2.00842
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y0u6d"]
-radius = 4.96864
+radius = 14.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ta1uo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_qt5iv"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s58tg"]
-radius = 5.5
+radius = 12.89
 
 [node name="Static" type="CharacterBody3D"]
 script = ExtResource("1_kunne")

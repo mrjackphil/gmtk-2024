@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://dw2r8phpv08pm"]
+
+[ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_m03ca"]
+[ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="2_xev6w"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="3_axnhj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_465i6"]
+albedo_texture = ExtResource("2_xev6w")
+
+[sub_resource type="BoxMesh" id="BoxMesh_itbjp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kpx0t"]
+
+[node name="ScalableCrate" type="RigidBody3D"]
+script = ExtResource("1_m03ca")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_465i6")
+mesh = SubResource("BoxMesh_itbjp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_kpx0t")
+
+[node name="ScaleComponent" type="Node" parent="."]
+script = ExtResource("3_axnhj")
+SCALE_SLOWNESS = 10.0
+SHRINK_SLOWNESS = 3.0
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_kpx0t")

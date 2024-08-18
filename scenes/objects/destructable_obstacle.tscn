@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://drqufsbqmj65b"]
+
+[ext_resource type="Texture2D" uid="uid://dt68j11id6qf" path="res://assets/textures/WoodPlanks029/WoodPlanks029_COL_VAR1_1K.jpg" id="1_b8hld"]
+[ext_resource type="Script" path="res://components/composed/Destructable.gd" id="1_iuse3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hamea"]
+albedo_texture = ExtResource("1_b8hld")
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
+
+[node name="Destructable" type="Area3D"]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("1_iuse3")
+
+[node name="DestructableObstacle" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_hamea")
+use_collision = true
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_oxmx2")

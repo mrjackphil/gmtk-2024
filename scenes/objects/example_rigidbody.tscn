@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://c0yr13xcpw7ph"]
+
+[ext_resource type="ArrayMesh" uid="uid://cufkam3sj1aqd" path="res://assets/models/Scalable/Obj/bin_mesh.obj" id="1_lfkgf"]
+[ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="1_wargt"]
+[ext_resource type="Texture2D" uid="uid://dlnx1yr802ysf" path="res://assets/models/Scalable/Textures/Props.png" id="2_4n7kl"]
+[ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="4_52oty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5s7lj"]
+albedo_texture = ExtResource("2_4n7kl")
+
+[node name="ExampleRigidbody" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+script = ExtResource("1_wargt")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RigidBody3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+material_override = SubResource("StandardMaterial3D_5s7lj")
+mesh = ExtResource("1_lfkgf")
+
+[node name="ScaleComponent" type="Node" parent="."]
+script = ExtResource("4_52oty")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 8
