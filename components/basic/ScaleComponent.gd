@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		parent.scale = lerp(parent.scale, target_scale, SCALE_SLOWNESS * delta)
 
 	if  not _scaling_up and _timeout > 0.0:
-		_timeout -= 1.0 * delta
+		_timeout -= 1.0
 		return
 
 	if not _scaling_up and _timeout <= 0.0:
