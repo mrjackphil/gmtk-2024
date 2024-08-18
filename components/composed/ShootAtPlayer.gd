@@ -5,7 +5,7 @@ func _ready() -> void:
 	area_entered.connect(_collide)
 	area_exited.connect(_loose)
 
-var target: CharacterBody3D
+var target: Node3D
 @export var SHOOT_TIMEOUT := 100
 var _timeout := 0
 
@@ -20,7 +20,11 @@ func _collide(collider: Node3D) -> void:
 
 func _physics_process(_delta: float) -> void:
 	if target and _timeout <= 0:
-		look_at(target.position)
+		var t := target.find_child("Target")
+		if t:
+			target = t
+
+		look_at(target.global_position)
 		var instnance := bullet.instantiate()
 		instnance.transform = global_transform
 		add_child(instnance)
