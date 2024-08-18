@@ -21,7 +21,7 @@
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_3rym8"]
 [ext_resource type="Texture2D" uid="uid://c3r8co6p4hrxu" path="res://assets/models/Scalable/Textures/Props_Billboard_Hint_EnemyChase1.png" id="16_je37j"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_6s3de"]
-[ext_resource type="PackedScene" path="res://Heaven.tscn" id="21_rsb0p"]
+[ext_resource type="PackedScene" uid="uid://co12brfe3m37" path="res://Heaven.tscn" id="21_rsb0p"]
 [ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="22_6b4f3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef2uv"]
