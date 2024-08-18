@@ -7,6 +7,7 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hvcqh"]
 render_priority = 0
 shader = ExtResource("1_pkt0y")
+shader_parameter/ColorParameter = Color(1, 0.0862745, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_bjfu1"]
 radius = 0.2

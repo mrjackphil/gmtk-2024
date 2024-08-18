@@ -1,7 +1,5 @@
 extends Area3D
 
-@export var SPEED := 1
-
 func _ready() -> void:
 	var die_timer: SceneTreeTimer = get_tree().create_timer(3.0)
 	die_timer.timeout.connect(owner.queue_free)
