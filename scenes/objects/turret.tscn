@@ -11,7 +11,7 @@ radius = 0.4
 size = Vector3(1, 2, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_y0u6d"]
-radius = 14.0
+radius = 17.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkbfg"]
 albedo_color = Color(1, 0, 0, 1)
