@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0ne7mig513gh"]
+
+[ext_resource type="Script" path="res://scripts/timer.gd" id="1_6hfln"]
+[ext_resource type="FontFile" uid="uid://dam3tnubqr18r" path="res://assets/fonts/LilitaOne-Regular.ttf" id="1_t4l8m"]
+[ext_resource type="Texture2D" uid="uid://coj5bfi1rohcf" path="res://assets/icons/hourglass.svg" id="2_16kpd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_m0cpe"]
+font = ExtResource("1_t4l8m")
+font_size = 30
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Timer" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6hfln")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_16kpd")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "00:00"
+label_settings = SubResource("LabelSettings_m0cpe")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

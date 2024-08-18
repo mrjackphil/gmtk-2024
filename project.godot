@@ -20,6 +20,7 @@ config/icon="res://assets/sprites/sword.png"
 
 DebugCam="*res://addons/debug_camera/scripts/DebugCamAutoload.gd"
 Common="*res://scripts/common.gd"
+Music="*res://scripts/music.gd"
 
 [compression]
 

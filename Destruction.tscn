@@ -1,10 +1,10 @@
-[gd_scene load_steps=57 format=3 uid="uid://dntqto3b77k3"]
+[gd_scene load_steps=60 format=3 uid="uid://dntqto3b77k3"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_4xli6"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_gf4qx"]
 [ext_resource type="Texture2D" uid="uid://dt68j11id6qf" path="res://assets/textures/WoodPlanks029/WoodPlanks029_COL_VAR1_1K.jpg" id="3_ey7r0"]
 [ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="3_x84p4"]
-[ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="4_0b5cy"]
+[ext_resource type="PackedScene" path="res://components/basic/ScalablePlatform.tscn" id="4_0b5cy"]
 [ext_resource type="Script" path="res://components/composed/Destructable.gd" id="4_7xj8k"]
 [ext_resource type="Texture2D" uid="uid://dvibs5kg0h8wq" path="res://assets/textures/HdrOutdoorFieldAfternoonCloudy003/HdrOutdoorFieldAfternoonCloudy003_JPG_2K.jpg" id="5_xxlnn"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="6_lsqkw"]
@@ -13,13 +13,16 @@
 [ext_resource type="Material" uid="uid://5w4lebe3ot2t" path="res://assets/materials/ScalableBoxAlt.tres" id="9_vsp7m"]
 [ext_resource type="PackedScene" uid="uid://on5ucgvrnsy4" path="res://components/basic/scalable_sphere.tscn" id="10_pj0d7"]
 [ext_resource type="PackedScene" uid="uid://bcvain0t1trb1" path="res://components/basic/ScalableWindow.tscn" id="11_ie5nq"]
-[ext_resource type="Material" uid="uid://dylnhn6t4gtw3" path="res://assets/materials/FloorTex.tres" id="13_tf5m8"]
+[ext_resource type="Material" path="res://assets/materials/FloorTex.tres" id="13_tf5m8"]
 [ext_resource type="Texture2D" uid="uid://2yqu6pviaxa2" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_COL_1K.jpg" id="14_17edp"]
 [ext_resource type="PackedScene" uid="uid://bl35qoneam738" path="res://scenes/objects/death_zone.tscn" id="15_i0ilm"]
 [ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="16_r8sek"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_rf1kv"]
 [ext_resource type="Script" path="res://components/basic/RigidBodyPush.gd" id="17_28uf5"]
-[ext_resource type="Texture2D" uid="uid://cmvn6beyf44fi" path="res://assets/textures/Props_Billboard_Tutorial_Final.png" id="18_q70q3"]
+[ext_resource type="Texture2D" uid="uid://cdpjfiybd8m36" path="res://assets/textures/Props_Billboard_Destruction.png" id="19_wxue6"]
+[ext_resource type="PackedScene" uid="uid://djiiakrfu31xl" path="res://scenes/objects/win_zone.tscn" id="21_8ljp8"]
+[ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_ftx48"]
+[ext_resource type="PackedScene" uid="uid://dt0gavdyjon25" path="res://TurretTutorial.tscn" id="22_mrlpi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_373hl"]
 size = Vector3(3, 3, 1)
@@ -106,8 +109,8 @@ albedo_texture = ExtResource("16_r8sek")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2513s"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_quli0"]
-albedo_texture = ExtResource("18_q70q3")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5ydg"]
+albedo_texture = ExtResource("19_wxue6")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1ayv5"]
 points = PackedVector3Array(2.17706, 5.10419, 1.15666, 1.89757, 1.53814, 0.6978, 1.8902, 1.51524, 0.9116, 2.5253, 1.57387, 0.90951, 2.0891, 5.00948, 0.576303, 2.57882, 4.38014, 0.67445, 2.17706, -0.0396869, 1.15666, 1.95842, 4.89887, 1.1342, 2.5253, 1.57387, 0.704181, 2.57882, 4.38014, 0.915443, 1.93597, 5.10419, 0.594045, 1.93597, -0.0396869, 0.915443, 1.95842, 0.165634, 1.1342, 1.8902, 4.203, 0.9116, 2.17706, -0.0396869, 0.915443, 2.0967, 5.10419, 0.594045, 1.89757, 4.16537, 0.6978, 2.17706, 5.10419, 0.915443, 1.93597, 4.8625, 0.594045)
@@ -127,7 +130,7 @@ points = PackedVector3Array(-1.8422, 5.10419, 1.15666, -2.50467, 1.53814, 0.6978
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ogvlq"]
 points = PackedVector3Array(-1.84209, 5.10407, 0.593817, -2.14404, 3.95721, -1.08825, -1.78122, 3.95721, -1.08825, -2.08317, 4.62176, -0.611582, -2.08317, 4.86286, 0.593817, -1.76168, 4.46127, -0.77236, -1.76168, 3.89859, -0.932964, -2.08317, 5.10407, 0.19196, -2.16359, 3.89859, -0.932964, -1.84209, 4.86286, 0.593817, -2.16359, 4.05944, -1.17422, -1.84209, 5.10407, 0.19196, -2.16359, 4.46127, -0.77236, -1.76168, 4.05944, -1.17422, -2.08317, 5.10407, 0.593817, -2.16359, 4.30054, -0.53128, -1.76168, 4.30054, -0.53128, -1.84209, 4.78249, -0.370502, -2.08317, 5.02359, 0.0311822)
 
-[node name="World" type="Node3D"]
+[node name="World2" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("1_4xli6")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.9599, 16, -38.8194)
@@ -1063,7 +1066,7 @@ depth = 3.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 16, -39)
 
 [node name="Node3D4" parent="." instance=ExtResource("11_ie5nq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 16, -39)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.5, 16, -39)
 
 [node name="Node3D3" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, -22.5, 18.5, -37.5)
@@ -1137,9 +1140,6 @@ skeleton = NodePath("../ScalableBox")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.5, 14.5, -39)
 size = Vector3(8, 1, 3)
 
-[node name="CollisionShape3D" parent="DeathZone/KillOnTouch" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-
 [node name="ExampleRigidbody4" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.25, 16.5, -40.5)
 metadata/_edit_group_ = true
@@ -1151,7 +1151,7 @@ script = ExtResource("17_28uf5")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="ExampleRigidbody4/RigidBody3D"]
 transform = Transform3D(9.73536e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, 9.73536e-08, 1, 0, 0)
-material_override = SubResource("StandardMaterial3D_quli0")
+material_override = SubResource("StandardMaterial3D_j5ydg")
 mesh = ExtResource("16_rf1kv")
 
 [node name="CollisionShape3D6" type="CollisionShape3D" parent="ExampleRigidbody4/RigidBody3D"]
@@ -1234,5 +1234,17 @@ transform = Transform3D(-4.37114e-08, -0.866025, 0.5, 7.57103e-08, -0.5, -0.8660
 light_energy = 12.831
 spot_range = 5.595
 spot_angle = 24.32
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="."]
+transform = Transform3D(2.26267e-08, 0.965926, -0.258819, -8.44439e-08, 0.258819, 0.965926, 1, -1.11341e-14, 8.74227e-08, -18, 5.5, -37.5)
+light_energy = 12.831
+spot_range = 5.595
+spot_angle = 24.32
+
+[node name="CanvasLayer" parent="." instance=ExtResource("21_ftx48")]
+
+[node name="WinZone" parent="." instance=ExtResource("21_8ljp8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.5, 3.69631, -37.5503)
+next_level = ExtResource("22_mrlpi")
 
 [editable path="DeathZone"]
