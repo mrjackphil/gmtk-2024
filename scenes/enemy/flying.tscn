@@ -1,7 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://rhddg00ramae"]
+[gd_scene load_steps=17 format=3 uid="uid://rhddg00ramae"]
 
 [ext_resource type="Script" path="res://scripts/flying.gd" id="1_exqcc"]
 [ext_resource type="Script" path="res://components/enemy/BehaviorComponent.gd" id="2_1174t"]
+[ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="2_k7mug"]
 [ext_resource type="Script" path="res://components/enemy/EnemyMovementComponent.gd" id="4_0f71l"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="4_ctg1j"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="5_8gxg1"]
@@ -13,11 +14,22 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_s6jxj"]
 radius = 4.96864
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4f5in"]
+albedo_texture = ExtResource("2_k7mug")
+
 [sub_resource type="SphereMesh" id="SphereMesh_vhk5s"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_r0ebn"]
-radius = 0.2
-height = 1.0
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4tlym"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_2v8nh"]
+material = SubResource("StandardMaterial3D_4tlym")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pkhoa"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ew4jr"]
+material = SubResource("StandardMaterial3D_pkhoa")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_3wpgg"]
 
@@ -42,12 +54,21 @@ shape = SubResource("SphereShape3D_s6jxj")
 [node name="Meshes" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes"]
+material_override = SubResource("StandardMaterial3D_4f5in")
 mesh = SubResource("SphereMesh_vhk5s")
 skeleton = NodePath("../..")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, -0.296443)
-mesh = SubResource("CapsuleMesh_r0ebn")
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0.2, 0.2, -0.446443)
+mesh = SubResource("CylinderMesh_2v8nh")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, -0.15, 0.2, -0.446443)
+mesh = SubResource("CylinderMesh_2v8nh")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.2, 0, 0, 0, 0.141421, -0.141421, 0, 0.141421, 0.141421, 1.11759e-08, -0.05, -0.496443)
+mesh = SubResource("BoxMesh_ew4jr")
 
 [node name="Components" type="Node3D" parent="."]
 

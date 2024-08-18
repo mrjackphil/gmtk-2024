@@ -9,7 +9,7 @@ emission = Color(1, 0, 0, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
 margin = 0.1
-size = Vector3(3, 1, 8)
+size = Vector3(1.87845, 1, 0.419434)
 
 [node name="DeathZone" type="CSGBox3D"]
 material_override = SubResource("StandardMaterial3D_i8y2v")
