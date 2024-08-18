@@ -325,3 +325,6 @@ playback_type = 1
 script = ExtResource("13_tgypl")
 movement_component = NodePath("../Components/MovementComponent")
 combat_component = NodePath("../Components/CombatComponent")
+
+[node name="Target" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.55258, 0)
