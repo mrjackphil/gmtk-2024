@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://2yqu6pviaxa2" path="res://assets/textures/BricksNewSavannaGrey002/BricksNewSavannaGrey002_COL_1K.jpg" id="1_3abrb"]
 [ext_resource type="Material" uid="uid://ry26xh38jxl1" path="res://assets/materials/ScalableBoxTex.tres" id="1_emhwd"]
 [ext_resource type="Script" path="res://components/basic/ScaleComponent.gd" id="2_cf7bf"]
-[ext_resource type="Texture2D" uid="uid://bfi3shf2do0tp" path="res://assets/textures/FabricCanvas001/FabricCanvas001_COL_VAR1_2K.jpg" id="3_yirj6"]
+[ext_resource type="Texture2D" uid="uid://b6vahffnmkquh" path="res://assets/textures/ScalableTexture.png" id="3_6xf5f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7lq5"]
 albedo_texture = ExtResource("1_3abrb")
@@ -34,8 +34,8 @@ albedo_texture = ExtResource("1_3abrb")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n8q7q"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cdujo"]
-albedo_texture = ExtResource("3_yirj6")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_08mro"]
+albedo_texture = ExtResource("3_6xf5f")
 
 [sub_resource type="BoxMesh" id="BoxMesh_2513s"]
 
@@ -87,7 +87,7 @@ shape = SubResource("BoxShape3D_n8q7q")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 1.06581e-14, 0, -1.06581e-14, 1, 0, 0.5, 0)
-material_override = SubResource("StandardMaterial3D_cdujo")
+material_override = SubResource("StandardMaterial3D_08mro")
 mesh = SubResource("BoxMesh_2513s")
 skeleton = NodePath("../ScalableBox")
 
@@ -102,8 +102,8 @@ shape = SubResource("BoxShape3D_nl7mk")
 
 [node name="ScaleComponent" type="Node" parent="MeshInstance3D5" node_paths=PackedStringArray("target")]
 script = ExtResource("2_cf7bf")
-MAX_SCALE = 5.0
 SCALE_VELOCITY = Vector3(2, 2, 2)
 SCALE_SLOWNESS = 10.0
+SHRINK_TIMEOUT = 500
 SHRINK_SLOWNESS = 3.0
 target = NodePath("../../ScalableBox")
