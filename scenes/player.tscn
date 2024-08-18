@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://cide4w7urra1m"]
+[gd_scene load_steps=28 format=3 uid="uid://cide4w7urra1m"]
 
 [ext_resource type="ArrayMesh" uid="uid://dnvrpa2axk42i" path="res://assets/models/SA_Wep_SMG.obj" id="1_kinyt"]
 [ext_resource type="Script" path="res://components/basic/CameraMouseMoveComponent.gd" id="1_ukkef"]
@@ -13,6 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://5pa2f5xdb4rx" path="res://assets/sounds/Footsteps_Casual_Stone_10.ogg" id="11_pncdo"]
 [ext_resource type="AudioStream" uid="uid://cyduq4pr0w2lm" path="res://assets/sounds/Footsteps_Casual_Stone_11.ogg" id="12_c6b4e"]
 [ext_resource type="Script" path="res://components/basic/FootstepAudioComponent.gd" id="13_tgypl"]
+[ext_resource type="AudioStream" uid="uid://b13djyemvg4k3" path="res://assets/sounds/gun_machinegun_auto_heavy_shot_00_first_01.wav" id="14_jgk6g"]
+[ext_resource type="Script" path="res://components/basic/AudioShotComponent.gd" id="15_gskc1"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ngi6h"]
 radius = 0.4
@@ -320,11 +322,16 @@ combat_component = NodePath("../../Components/CombatComponent")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_mj3uu")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("movement_component", "combat_component")]
+[node name="Footsteps" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("movement_component")]
 stream = SubResource("AudioStreamRandomizer_th42j")
 playback_type = 1
 script = ExtResource("13_tgypl")
 movement_component = NodePath("../Components/MovementComponent")
+
+[node name="Shoots" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("combat_component")]
+stream = ExtResource("14_jgk6g")
+volume_db = -15.0
+script = ExtResource("15_gskc1")
 combat_component = NodePath("../Components/CombatComponent")
 
 [node name="Target" type="Marker3D" parent="."]
