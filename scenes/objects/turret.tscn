@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://bq8k7cqi71aqy"]
+
+[ext_resource type="Script" path="res://components/composed/ShootAtPlayer.gd" id="2_f4nx7"]
+[ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="3_qg8mw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_upgu3"]
+radius = 0.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v1h4s"]
+size = Vector3(1, 2, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_y0u6d"]
+radius = 14.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ta1uo"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qt5iv"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_s58tg"]
+radius = 12.89
+
+[sub_resource type="PrismMesh" id="PrismMesh_nctml"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_uc186"]
+size = Vector3(1.1, 2.1, 1.1)
+
+[node name="Turret" type="RigidBody3D" groups=["npc"]]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.5, -1.5, -10)
+disable_mode = 2
+
+[node name="CeilingCheck" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CeilingCheck"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0)
+shape = SubResource("SphereShape3D_upgu3")
+
+[node name="WalkCollision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00886, 0)
+shape = SubResource("BoxShape3D_v1h4s")
+
+[node name="PlayerDetectionArea" type="Area3D" parent="."]
+
+[node name="PlayerCollision" type="CollisionShape3D" parent="PlayerDetectionArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.50092, 0)
+shape = SubResource("SphereShape3D_y0u6d")
+
+[node name="Meshes" type="Node3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes" groups=["npc"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00846, 0)
+mesh = SubResource("CapsuleMesh_ta1uo")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.44555, -0.427416)
+mesh = SubResource("CapsuleMesh_qt5iv")
+
+[node name="ShootAtPlayer" type="Area3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)
+collision_layer = 0
+script = ExtResource("2_f4nx7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Meshes/ShootAtPlayer"]
+shape = SubResource("SphereShape3D_s58tg")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Meshes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+mesh = SubResource("PrismMesh_nctml")
+
+[node name="Components" type="Node3D" parent="."]
+
+[node name="EnemyRotationComponent" type="Node" parent="Components" node_paths=PackedStringArray("rotation_body")]
+script = ExtResource("3_qg8mw")
+rotation_body = NodePath("../../Meshes")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("BoxShape3D_uc186")

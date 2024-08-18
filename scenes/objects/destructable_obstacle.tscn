@@ -8,6 +8,7 @@ albedo_texture = ExtResource("1_b8hld")
 uv1_triplanar = true
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
+size = Vector3(4.5, 1, 0.5)
 
 [node name="Destructable" type="Area3D"]
 collision_layer = 0

@@ -1,38 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://bl35qoneam738"]
+[gd_scene load_steps=4 format=3 uid="uid://bl35qoneam738"]
 
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="1_cjhmw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrwvb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8y2v"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 4.68
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uye4o"]
-size = Vector3(8, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
-size = Vector3(30, 1.1, 5)
+margin = 0.1
 
 [node name="DeathZone" type="CSGBox3D"]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_nrwvb")
+material_override = SubResource("StandardMaterial3D_i8y2v")
 use_collision = true
-metadata/_edit_group_ = true
-
-[node name="Area3D" type="Area3D" parent="."]
-collision_layer = 4
-collision_mask = 4
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-shape = SubResource("BoxShape3D_uye4o")
 
 [node name="KillOnTouch" type="Area3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("1_cjhmw")
 DAMAGE = 10
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="KillOnTouch"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 shape = SubResource("BoxShape3D_skmko")

@@ -61,6 +61,10 @@ variables={}
 
 enabled=PackedStringArray("res://addons/anthonyec.camera_preview/plugin.cfg")
 
+[global_group]
+
+npc=""
+
 [input]
 
 move_forward={
