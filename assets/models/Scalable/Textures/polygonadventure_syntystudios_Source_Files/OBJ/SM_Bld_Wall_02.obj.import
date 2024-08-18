@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddthbr62fkm2s"
+path="res://.godot/imported/SM_Bld_Wall_02.obj-cd9d139c94198f42000d073f79fa3f6b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Bld_Wall_02.obj-cd9d139c94198f42000d073f79fa3f6b.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Bld_Wall_02.obj"
+dest_files=["res://.godot/imported/SM_Bld_Wall_02.obj-cd9d139c94198f42000d073f79fa3f6b.mesh", "res://.godot/imported/SM_Bld_Wall_02.obj-cd9d139c94198f42000d073f79fa3f6b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

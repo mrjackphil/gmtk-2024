@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wua85jcvr6d1"
+path="res://.godot/imported/SM_Env_Tree_07_Snow.obj-92cc227bde87d6c734127b21e2b0b593.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Env_Tree_07_Snow.obj-92cc227bde87d6c734127b21e2b0b593.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Env_Tree_07_Snow.obj"
+dest_files=["res://.godot/imported/SM_Env_Tree_07_Snow.obj-92cc227bde87d6c734127b21e2b0b593.mesh", "res://.godot/imported/SM_Env_Tree_07_Snow.obj-92cc227bde87d6c734127b21e2b0b593.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

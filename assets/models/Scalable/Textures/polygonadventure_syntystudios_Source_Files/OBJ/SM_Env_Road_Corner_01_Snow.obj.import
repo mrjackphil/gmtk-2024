@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b1fo4n25jvydh"
+path="res://.godot/imported/SM_Env_Road_Corner_01_Snow.obj-0e88f24f967fd13f3e032f5eb73e0d8d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Env_Road_Corner_01_Snow.obj-0e88f24f967fd13f3e032f5eb73e0d8d.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Env_Road_Corner_01_Snow.obj"
+dest_files=["res://.godot/imported/SM_Env_Road_Corner_01_Snow.obj-0e88f24f967fd13f3e032f5eb73e0d8d.mesh", "res://.godot/imported/SM_Env_Road_Corner_01_Snow.obj-0e88f24f967fd13f3e032f5eb73e0d8d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

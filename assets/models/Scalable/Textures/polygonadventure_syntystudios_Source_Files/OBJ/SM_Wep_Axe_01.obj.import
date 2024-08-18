@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://djac3itps3i4h"
+path="res://.godot/imported/SM_Wep_Axe_01.obj-268d0efd282f4f01c04207f4aecbdb1c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Wep_Axe_01.obj-268d0efd282f4f01c04207f4aecbdb1c.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Wep_Axe_01.obj"
+dest_files=["res://.godot/imported/SM_Wep_Axe_01.obj-268d0efd282f4f01c04207f4aecbdb1c.mesh", "res://.godot/imported/SM_Wep_Axe_01.obj-268d0efd282f4f01c04207f4aecbdb1c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xeefcj6yxue7"
+path="res://.godot/imported/SM_Env_Tree_010.obj-bcbcb677c3cdb91794bf6f5e449bdf1a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Env_Tree_010.obj-bcbcb677c3cdb91794bf6f5e449bdf1a.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Env_Tree_010.obj"
+dest_files=["res://.godot/imported/SM_Env_Tree_010.obj-bcbcb677c3cdb91794bf6f5e449bdf1a.mesh", "res://.godot/imported/SM_Env_Tree_010.obj-bcbcb677c3cdb91794bf6f5e449bdf1a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

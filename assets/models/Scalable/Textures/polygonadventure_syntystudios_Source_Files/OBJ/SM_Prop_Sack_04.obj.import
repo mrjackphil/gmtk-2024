@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4b3dwheo2ncl"
+path="res://.godot/imported/SM_Prop_Sack_04.obj-e4020803f74808568e09b2784a196eff.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Sack_04.obj-e4020803f74808568e09b2784a196eff.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Prop_Sack_04.obj"
+dest_files=["res://.godot/imported/SM_Prop_Sack_04.obj-e4020803f74808568e09b2784a196eff.mesh", "res://.godot/imported/SM_Prop_Sack_04.obj-e4020803f74808568e09b2784a196eff.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

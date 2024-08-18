@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://da5bnu6e1p6oo"
+path="res://.godot/imported/SM_Env_Rock_010.obj-16674fa96b570fd4d70c73ec7deb1157.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Env_Rock_010.obj-16674fa96b570fd4d70c73ec7deb1157.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Env_Rock_010.obj"
+dest_files=["res://.godot/imported/SM_Env_Rock_010.obj-16674fa96b570fd4d70c73ec7deb1157.mesh", "res://.godot/imported/SM_Env_Rock_010.obj-16674fa96b570fd4d70c73ec7deb1157.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

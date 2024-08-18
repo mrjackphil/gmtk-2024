@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_2jvn3"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_402ov"]
 [ext_resource type="Script" path="res://components/composed/Destructable.gd" id="3_q5srn"]
+[ext_resource type="Material" uid="uid://dylnhn6t4gtw3" path="res://assets/materials/FloorTex.tres" id="4_y08yh"]
 [ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="5_dv80g"]
 [ext_resource type="PackedScene" uid="uid://dd5ny76s6npco" path="res://components/basic/ScalablePlatform.tscn" id="6_6yuip"]
 [ext_resource type="PackedScene" uid="uid://rhddg00ramae" path="res://scenes/enemy/flying.tscn" id="6_30yrh"]
@@ -17,11 +18,6 @@
 [ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="15_ixmfm"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_3rym8"]
 [ext_resource type="Texture2D" uid="uid://c3r8co6p4hrxu" path="res://assets/models/Scalable/Textures/Props_Billboard_Hint_EnemyChase1.png" id="16_je37j"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wmst6"]
-albedo_texture = ExtResource("5_dv80g")
-uv1_triplanar = true
-uv1_world_triplanar = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef2uv"]
 albedo_texture = ExtResource("5_dv80g")
@@ -103,49 +99,49 @@ SCALE_TRESHOLD = 1.5
 
 [node name="CSGBox3D40" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -3.25, 10.75, -39)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(10, 0.5, 2.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D47" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 10.75, -39.5)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(2, 0.5, 11)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D52" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -10, 10.75, -42)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(2, 0.5, 11)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D51" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -20.5, 10.75, -40.75)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(4.5, 0.5, 10)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D41" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.75, 10.75, -33)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(2, 0.5, 12.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D43" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.75, 10.75, -45)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(2, 0.5, 12.5)
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D42" type="CSGBox3D" parent="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 9.25, 10.75, -39)
-material_override = SubResource("StandardMaterial3D_wmst6")
+material_override = ExtResource("4_y08yh")
 use_collision = true
 size = Vector3(14, 0.5, 2.5)
 metadata/_edit_group_ = true

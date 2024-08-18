@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bxj40eyae3k21"
+path="res://.godot/imported/SM_Bld_Stall_Cover_04.obj-8038b6f3af443bce0c8a6c619d4dbbfb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Bld_Stall_Cover_04.obj-8038b6f3af443bce0c8a6c619d4dbbfb.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Bld_Stall_Cover_04.obj"
+dest_files=["res://.godot/imported/SM_Bld_Stall_Cover_04.obj-8038b6f3af443bce0c8a6c619d4dbbfb.mesh", "res://.godot/imported/SM_Bld_Stall_Cover_04.obj-8038b6f3af443bce0c8a6c619d4dbbfb.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

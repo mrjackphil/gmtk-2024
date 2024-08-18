@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bakbabelr7uu0"
+path="res://.godot/imported/SM_Wep_MusketPistol_01.obj-10438a57a54b8cbbc19f1faeacc5e715.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Wep_MusketPistol_01.obj-10438a57a54b8cbbc19f1faeacc5e715.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Wep_MusketPistol_01.obj"
+dest_files=["res://.godot/imported/SM_Wep_MusketPistol_01.obj-10438a57a54b8cbbc19f1faeacc5e715.mesh", "res://.godot/imported/SM_Wep_MusketPistol_01.obj-10438a57a54b8cbbc19f1faeacc5e715.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

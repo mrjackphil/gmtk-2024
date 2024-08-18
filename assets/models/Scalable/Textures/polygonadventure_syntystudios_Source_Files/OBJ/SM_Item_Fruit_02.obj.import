@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d2mdi41k283bq"
+path="res://.godot/imported/SM_Item_Fruit_02.obj-996c03d4bd7653c02fd13a53188ff71b.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Item_Fruit_02.obj-996c03d4bd7653c02fd13a53188ff71b.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Item_Fruit_02.obj"
+dest_files=["res://.godot/imported/SM_Item_Fruit_02.obj-996c03d4bd7653c02fd13a53188ff71b.mesh", "res://.godot/imported/SM_Item_Fruit_02.obj-996c03d4bd7653c02fd13a53188ff71b.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

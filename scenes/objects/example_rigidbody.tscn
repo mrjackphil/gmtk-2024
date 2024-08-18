@@ -22,5 +22,5 @@ mesh = ExtResource("1_lfkgf")
 script = ExtResource("4_52oty")
 
 [node name="Area3D" type="Area3D" parent="."]
-collision_layer = 0
+collision_layer = 8
 collision_mask = 8

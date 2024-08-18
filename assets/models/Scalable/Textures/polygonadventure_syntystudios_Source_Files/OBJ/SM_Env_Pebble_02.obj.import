@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://csq8jf6ssek68"
+path="res://.godot/imported/SM_Env_Pebble_02.obj-c0538f4f61214d022a66e59270d4d71d.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Env_Pebble_02.obj-c0538f4f61214d022a66e59270d4d71d.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Env_Pebble_02.obj"
+dest_files=["res://.godot/imported/SM_Env_Pebble_02.obj-c0538f4f61214d022a66e59270d4d71d.mesh", "res://.godot/imported/SM_Env_Pebble_02.obj-c0538f4f61214d022a66e59270d4d71d.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

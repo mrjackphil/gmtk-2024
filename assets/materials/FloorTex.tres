@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dylnhn6t4gtw3"]
+
+[ext_resource type="Texture2D" uid="uid://dajxyycopauqg" path="res://assets/textures/Bricks03/Bricks03_COL_VAR1_1K.jpg" id="1_amech"]
+
+[resource]
+albedo_texture = ExtResource("1_amech")
+uv1_triplanar = true
+uv1_world_triplanar = true

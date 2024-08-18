@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b3asq4aajl1hf"
+path="res://.godot/imported/SM_Prop_Book_01.obj-53f9db852ab7f30125782c33bba311d3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Book_01.obj-53f9db852ab7f30125782c33bba311d3.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Prop_Book_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Book_01.obj-53f9db852ab7f30125782c33bba311d3.mesh", "res://.godot/imported/SM_Prop_Book_01.obj-53f9db852ab7f30125782c33bba311d3.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

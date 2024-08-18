@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bgce3vraau2b5"
+path="res://.godot/imported/SM_Item_Potion_05.obj-1c38f8b33f7624a94e6111aa3ad77330.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Item_Potion_05.obj-1c38f8b33f7624a94e6111aa3ad77330.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Item_Potion_05.obj"
+dest_files=["res://.godot/imported/SM_Item_Potion_05.obj-1c38f8b33f7624a94e6111aa3ad77330.mesh", "res://.godot/imported/SM_Item_Potion_05.obj-1c38f8b33f7624a94e6111aa3ad77330.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

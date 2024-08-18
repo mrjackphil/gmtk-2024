@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bumx7ee0si0pi"
+path="res://.godot/imported/SM_Prop_Stall_Table_01.obj-f6dd23fddc2f8c9f3206617697f156ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Stall_Table_01.obj-f6dd23fddc2f8c9f3206617697f156ea.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Prop_Stall_Table_01.obj"
+dest_files=["res://.godot/imported/SM_Prop_Stall_Table_01.obj-f6dd23fddc2f8c9f3206617697f156ea.mesh", "res://.godot/imported/SM_Prop_Stall_Table_01.obj-f6dd23fddc2f8c9f3206617697f156ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

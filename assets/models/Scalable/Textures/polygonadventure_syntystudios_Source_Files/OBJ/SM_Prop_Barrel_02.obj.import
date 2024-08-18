@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b0h7r3nnedmrl"
+path="res://.godot/imported/SM_Prop_Barrel_02.obj-72469bd20efed0e6e21d51d8424cb9ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/SM_Prop_Barrel_02.obj-72469bd20efed0e6e21d51d8424cb9ea.mesh"]
+
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/OBJ/SM_Prop_Barrel_02.obj"
+dest_files=["res://.godot/imported/SM_Prop_Barrel_02.obj-72469bd20efed0e6e21d51d8424cb9ea.mesh", "res://.godot/imported/SM_Prop_Barrel_02.obj-72469bd20efed0e6e21d51d8424cb9ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
