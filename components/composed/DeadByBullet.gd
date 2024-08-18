@@ -20,5 +20,6 @@ func _ready() -> void:
 	area_entered.connect(_hurt)
 	dead.connect(print)
 
-func _hurt(_area: Area3D) -> void:
+func _hurt(area: Area3D) -> void:
 	hp -= 1
+	area.get_parent().queue_free()
