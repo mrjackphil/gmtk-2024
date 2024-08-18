@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bq8k7cqi71aqy"]
+[gd_scene load_steps=14 format=3 uid="uid://bq8k7cqi71aqy"]
 
 [ext_resource type="Script" path="res://components/composed/ShootAtPlayer.gd" id="2_f4nx7"]
 [ext_resource type="Script" path="res://components/enemy/EnemyRotationComponent.gd" id="3_qg8mw"]
@@ -12,14 +12,24 @@ size = Vector3(1, 2, 1)
 [sub_resource type="SphereShape3D" id="SphereShape3D_y0u6d"]
 radius = 14.0
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ta1uo"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wkbfg"]
+albedo_color = Color(1, 0, 0, 1)
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_qt5iv"]
+[sub_resource type="BoxMesh" id="BoxMesh_mrqjo"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ccqex"]
+albedo_color = Color(0.243137, 0, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_gjrpa"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_s58tg"]
 radius = 12.89
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4iuwn"]
+albedo_color = Color(0, 0, 0, 1)
+
 [sub_resource type="PrismMesh" id="PrismMesh_nctml"]
+material = SubResource("StandardMaterial3D_4iuwn")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_uc186"]
 size = Vector3(1.1, 2.1, 1.1)
@@ -49,13 +59,15 @@ shape = SubResource("SphereShape3D_y0u6d")
 [node name="Meshes" type="Node3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Meshes" groups=["npc"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00846, 0)
-mesh = SubResource("CapsuleMesh_ta1uo")
+transform = Transform3D(0.64, 0, 0, 0, 1.4, 0, -1.77636e-15, 0, 0.5, 0, 1.00846, 0)
+material_override = SubResource("StandardMaterial3D_wkbfg")
+mesh = SubResource("BoxMesh_mrqjo")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="Meshes"]
-transform = Transform3D(0.5, 0, 0, 0, -2.18557e-08, -0.5, 0, 0.5, -2.18557e-08, 0, 1.44555, -0.427416)
-mesh = SubResource("CapsuleMesh_qt5iv")
+transform = Transform3D(0.5, -4.37114e-08, 3.82137e-15, 1.91069e-15, 6.55671e-08, 0.5, -4.37114e-08, -0.5, 6.55671e-08, 0, 1.44555, -0.427416)
+material_override = SubResource("StandardMaterial3D_ccqex")
+mesh = SubResource("PrismMesh_gjrpa")
 
 [node name="ShootAtPlayer" type="Area3D" parent="Meshes"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -1)

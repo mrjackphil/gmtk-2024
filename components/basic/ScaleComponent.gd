@@ -3,7 +3,7 @@ class_name ScaleComponent
 # To work: parent object should have Area3D trigger with according collision
 # layer. It's LAYER 4 for now.
 
-@export var MIN_SCALE := 1.0
+@export var MIN_SCALE := 0.1
 @export var MAX_SCALE := 3.0
 @export var SCALE_VELOCITY := Vector3(1.0, 1.0, 1.0)
 @export var SCALE_SLOWNESS := 0.5

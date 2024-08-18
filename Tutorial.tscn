@@ -17,7 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://dw2r8phpv08pm" path="res://scenes/objects/scalable_crate.tscn" id="12_hl0h0"]
 [ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="15_h3rcx"]
 [ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="16_sxkac"]
-[ext_resource type="PackedScene" uid="uid://dt0gavdyjon25" path="res://TurretTutorial.tscn" id="17_lxtni"]
+[ext_resource type="PackedScene" uid="uid://dntqto3b77k3" path="res://Destruction.tscn" id="18_wl0ag"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oxmx2"]
 size = Vector3(2, 1, 2)
@@ -359,8 +359,7 @@ shape = SubResource("ConvexPolygonShape3D_jfckf")
 
 [node name="ScaleComponent" type="Node" parent="Node3D/CSGBox3D5/ExampleRigidbody3"]
 script = ExtResource("4_lqppd")
-MAX_SCALE = 5.0
-SCALE_VELOCITY = Vector3(1, 5, 1)
+MAX_SCALE = 2.0
 SCALE_SLOWNESS = 5.0
 SHRINK_SLOWNESS = 3.0
 
@@ -538,7 +537,10 @@ shape = SubResource("BoxShape3D_kpx0t")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.5, 6, -6)
 
 [node name="ScalableCrate3" parent="." instance=ExtResource("12_hl0h0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.5, 9.5, -8.5)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7154, 10.1192, -6.35071)
+
+[node name="ScalableCrate4" parent="." instance=ExtResource("12_hl0h0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8966, 10.1192, -10.5105)
 
 [node name="ScalableBox" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, 0.05, 4.5, -16.5)
@@ -558,7 +560,8 @@ shape = SubResource("BoxShape3D_eda4e")
 
 [node name="ScaleComponent" type="Node" parent="ScalableBox"]
 script = ExtResource("4_lqppd")
-MAX_SCALE = 100.0
+MIN_SCALE = 1.0
+MAX_SCALE = 10.0
 SCALE_VELOCITY = Vector3(0, 4, 0)
 SCALE_SLOWNESS = 10.0
 SHRINK_TIMEOUT = 200
@@ -590,7 +593,8 @@ shape = SubResource("BoxShape3D_eda4e")
 
 [node name="ScaleComponent" type="Node" parent="ScalableBox2"]
 script = ExtResource("4_lqppd")
-MAX_SCALE = 100.0
+MIN_SCALE = 1.0
+MAX_SCALE = 10.0
 SCALE_VELOCITY = Vector3(0, 4, 0)
 SCALE_SLOWNESS = 10.0
 SHRINK_TIMEOUT = 200
@@ -615,7 +619,7 @@ depth = 3.0
 
 [node name="WinZone" parent="." instance=ExtResource("16_sxkac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 9.5, -40)
-next_level = ExtResource("17_lxtni")
+next_level = ExtResource("18_wl0ag")
 
 [node name="SpotLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 3.5, 4.5, -16.5)

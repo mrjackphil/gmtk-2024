@@ -39,6 +39,7 @@ shape = SubResource("SphereShape3D_djkx4")
 
 [node name="ScaleComponent" type="Node" parent="."]
 script = ExtResource("2_qi1jp")
+MAX_SCALE = 10.0
 SCALE_SLOWNESS = 5.0
-SHRINK_TIMEOUT = 30
+SHRINK_TIMEOUT = 300
 SHRINK_SLOWNESS = 3.0
