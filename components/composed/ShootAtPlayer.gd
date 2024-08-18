@@ -13,11 +13,11 @@ var bullet := preload("res://scenes/enemy_bullet/enemy_bullet.tscn")
 
 func _loose() -> void:
 	target = null
-	
+
 func _collide(collider: Node3D) -> void:
 	if collider.owner.is_in_group("player"):
 		target = collider.owner
-		
+
 func _physics_process(delta: float) -> void:
 	if target and _timeout <= 0:
 		look_at(target.position)
@@ -25,6 +25,6 @@ func _physics_process(delta: float) -> void:
 		instnance.transform = global_transform
 		add_child(instnance)
 		_timeout = SHOOT_TIMEOUT
-		
+
 	if _timeout > 0:
 		_timeout -= 1

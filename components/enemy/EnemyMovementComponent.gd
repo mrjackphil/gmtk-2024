@@ -2,7 +2,7 @@ extends Node
 class_name EnemyMovementComponent
 
 @export var char_body: CharacterBody3D
-@export var speed_modificator: int = 0
+@export var speed_modificator: float = 0
 @export var nav: NavigationAgent3D
 
 
@@ -35,15 +35,14 @@ func _physics_process(delta: float) -> void:
 	var move_vect: Vector3 = direction.normalized().rotated(Vector3.UP, char_body.rotation.y) * speed
 
 	if move_vect:
-		#char_body.velocity.x = move_vect.x
-		#char_body.velocity.z = move_vect.z
-		#char_body.velocity.y = -move_vect.y
-		if char_body.get_node("Meshes"):
+		if char_body.find_child("Meshes") == null:
+			char_body.velocity.x = move_vect.x
+			char_body.velocity.z = move_vect.z
+		else:
 			char_body.velocity = char_body.get_node("Meshes").global_transform.basis.z * -1 * 10
 	else:
 		char_body.velocity.x = move_toward(char_body.velocity.x, 0, speed)
 		char_body.velocity.z = move_toward(char_body.velocity.z, 0, speed)
-		#char_body.velocity.y = move_toward(char_body.velocity.y, 0, speed)
 
 	char_body.move_and_slide()
 	for col_idx in char_body.get_slide_collision_count():
