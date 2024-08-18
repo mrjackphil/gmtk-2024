@@ -1,31 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://bl35qoneam738"]
+[gd_scene load_steps=4 format=3 uid="uid://bl35qoneam738"]
 
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="1_cjhmw"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrwvb"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i8y2v"]
 albedo_color = Color(1, 0, 0, 1)
 emission_enabled = true
 emission = Color(1, 0, 0, 1)
-emission_energy_multiplier = 4.68
-
-[sub_resource type="BoxMesh" id="BoxMesh_iykpq"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_3vyha"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_skmko"]
 margin = 0.1
 
-[node name="DeathZone" type="StaticBody3D"]
-
-[node name="DeathZone" type="MeshInstance3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-material_override = SubResource("StandardMaterial3D_nrwvb")
-mesh = SubResource("BoxMesh_iykpq")
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
-shape = SubResource("BoxShape3D_3vyha")
+[node name="DeathZone" type="CSGBox3D"]
+material_override = SubResource("StandardMaterial3D_i8y2v")
+use_collision = true
 
 [node name="KillOnTouch" type="Area3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
