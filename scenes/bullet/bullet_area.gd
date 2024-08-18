@@ -3,6 +3,7 @@ extends RigidBody3D
 @export var SPEED := 100
 var to_kill := false
 var timer_to_destroy := 5
+@export var scale_down := false
 
 func _ready() -> void:
 	linear_velocity = global_transform.basis.z * -1 * SPEED

@@ -16,6 +16,6 @@ func _collide(collider: Node3D) -> void:
 		
 	for c in child:
 		if c.has_method("collide"):
-			c.collide()
+			c.collide(owner.scale_down)
 
 	owner.queue_free()
