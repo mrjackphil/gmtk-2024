@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://cide4w7urra1m"]
+[gd_scene load_steps=26 format=3 uid="uid://cide4w7urra1m"]
 
 [ext_resource type="ArrayMesh" uid="uid://dnvrpa2axk42i" path="res://assets/models/SA_Wep_SMG.obj" id="1_kinyt"]
 [ext_resource type="Script" path="res://components/basic/CameraMouseMoveComponent.gd" id="1_ukkef"]
@@ -10,6 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://ccx4kj8vk2l12" path="res://components/composed/PlayerUIComponent.tscn" id="7_i87mi"]
 [ext_resource type="Script" path="res://components/basic/MovementHelper.gd" id="8_char7"]
 [ext_resource type="AnimationLibrary" uid="uid://evtjapo8bp5l" path="res://assets/player_anims.res" id="9_v3f1i"]
+[ext_resource type="AudioStream" uid="uid://5pa2f5xdb4rx" path="res://assets/sounds/Footsteps_Casual_Stone_10.ogg" id="11_pncdo"]
+[ext_resource type="AudioStream" uid="uid://cyduq4pr0w2lm" path="res://assets/sounds/Footsteps_Casual_Stone_11.ogg" id="12_c6b4e"]
+[ext_resource type="Script" path="res://components/basic/FootstepAudioComponent.gd" id="13_tgypl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ngi6h"]
 radius = 0.4
@@ -153,6 +156,11 @@ func _get_configuration_warnings() -> PackedStringArray:
 
 	return warnings
 "
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_th42j"]
+streams_count = 2
+stream_0/stream = ExtResource("11_pncdo")
+stream_1/stream = ExtResource("12_c6b4e")
 
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 
@@ -311,3 +319,10 @@ movement_component = NodePath("../../Components/MovementComponent")
 [node name="WalkCollision" type="CollisionShape3D" parent="Hitbox"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9, 0)
 shape = SubResource("CapsuleShape3D_mj3uu")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." node_paths=PackedStringArray("movement_component", "combat_component")]
+stream = SubResource("AudioStreamRandomizer_th42j")
+playback_type = 1
+script = ExtResource("13_tgypl")
+movement_component = NodePath("../Components/MovementComponent")
+combat_component = NodePath("../Components/CombatComponent")
