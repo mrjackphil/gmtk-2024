@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dt0gavdyjon25"]
+[gd_scene load_steps=45 format=3 uid="uid://dt0gavdyjon25"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_uk2pn"]
 [ext_resource type="PackedScene" uid="uid://drqufsbqmj65b" path="res://scenes/objects/destructable_obstacle.tscn" id="2_rjyre"]
@@ -24,6 +24,8 @@
 [ext_resource type="PackedScene" uid="uid://bq8k7cqi71aqy" path="res://scenes/objects/turret.tscn" id="17_fsgji"]
 [ext_resource type="Script" path="res://components/composed/KillOnTouch.gd" id="20_1uwh2"]
 [ext_resource type="PackedScene" uid="uid://4xf5fsbl5yur" path="res://components/basic/ScalableBox.tscn" id="20_n07hy"]
+[ext_resource type="PackedScene" uid="uid://wy2qm73shl0w" path="res://scenes/menu/death.tscn" id="25_nqq7r"]
+[ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="26_phi0f"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jk1lt"]
 albedo_texture = ExtResource("5_oh225")
@@ -719,6 +721,15 @@ transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 
 
 [node name="CollisionShape3D" parent="AmbRigidbody/RigidBody3D/Area3D" index="2"]
 transform = Transform3D(-4.37114e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.37114e-09, 0, 0, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Death" parent="CanvasLayer" instance=ExtResource("25_nqq7r")]
+visible = false
+
+[node name="WorldListenerComponent" type="Node" parent="." node_paths=PackedStringArray("DeathScreen")]
+script = ExtResource("26_phi0f")
+DeathScreen = NodePath("../CanvasLayer/Death")
 
 [editable path="Objects/Geometry/DestructableObstacle2"]
 [editable path="Objects/Geometry/DestructableObstacle3"]
