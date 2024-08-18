@@ -29,26 +29,30 @@ func _ready() -> void:
 func _get_collider() -> Node3D:
 	if target:
 		return target
-		
+
 	return parent
 
-func collide() -> void:
+func collide(scale_down: bool = false) -> void:
 	stream_player.play()
 	_scaling_up = true
 	_timeout = SHRINK_TIMEOUT
-	target_scale.x = clamp(_get_collider().scale.x + SCALE_VELOCITY.x, MIN_SCALE, MAX_SCALE)
-	target_scale.y = clamp(_get_collider().scale.y + SCALE_VELOCITY.y, MIN_SCALE, MAX_SCALE)
-	target_scale.z = clamp(_get_collider().scale.z + SCALE_VELOCITY.z, MIN_SCALE, MAX_SCALE)
+	
+	var _modificator = 1
+	if scale_down: _modificator = -1
+	
+	target_scale.x = clamp(_get_collider().scale.x + (SCALE_VELOCITY.x * _modificator), MIN_SCALE, MAX_SCALE)
+	target_scale.y = clamp(_get_collider().scale.y + (SCALE_VELOCITY.y * _modificator), MIN_SCALE, MAX_SCALE)
+	target_scale.z = clamp(_get_collider().scale.z + (SCALE_VELOCITY.z * _modificator), MIN_SCALE, MAX_SCALE)
 
 func _vec_more_each(vec1: Vector3, vec2: Vector3) -> bool:
-	var x := vec1.x > vec2.x
-	var y := vec1.y > vec2.y
-	var z := vec1.z > vec2.z
+	var x: bool = (abs(vec1.x - vec2.x) < 0.05)
+	var y: bool = (abs(vec1.y - vec2.y) < 0.05)
+	var z: bool = (abs(vec1.x - vec2.y) < 0.05)
 
 	return x and y and z
 
 func _physics_process(delta: float) -> void:
-	if _vec_more_each(_get_collider().scale, target_scale * 0.95):
+	if _vec_more_each(_get_collider().scale, target_scale):
 		_scaling_up = false
 
 	if _scaling_up:

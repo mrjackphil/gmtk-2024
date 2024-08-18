@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjylle4g3bkxc"
-path.s3tc="res://.godot/imported/Characters_Black.png-1b58ca4dc22d44668301c9f54c6fd565.s3tc.ctex"
+path.s3tc="res://.godot/imported/Characters_Black.png-ada241e37711c7aac10776eed1c73c7b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/textures/Characters_Black.png"
-dest_files=["res://.godot/imported/Characters_Black.png-1b58ca4dc22d44668301c9f54c6fd565.s3tc.ctex"]
+source_file="res://assets/models/Scalable/Textures/polygonadventure_syntystudios_Source_Files/Textures/Characters_Black.png"
+dest_files=["res://.godot/imported/Characters_Black.png-ada241e37711c7aac10776eed1c73c7b.s3tc.ctex"]
 
 [params]
 
