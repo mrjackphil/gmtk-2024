@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://didluft6npphe"]
+[gd_scene load_steps=38 format=3 uid="uid://didluft6npphe"]
 
 [ext_resource type="PackedScene" uid="uid://cide4w7urra1m" path="res://scenes/player.tscn" id="1_2jvn3"]
 [ext_resource type="Material" uid="uid://lsstpwhsq5lv" path="res://assets/materials/Brick.tres" id="2_402ov"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" path="res://components/world/WorldListenerComponent.gd" id="15_ixmfm"]
 [ext_resource type="ArrayMesh" uid="uid://dp8fengxq3pmj" path="res://assets/models/Scalable/Obj/billboard_mesh.obj" id="16_3rym8"]
 [ext_resource type="Texture2D" uid="uid://c3r8co6p4hrxu" path="res://assets/models/Scalable/Textures/Props_Billboard_Hint_EnemyChase1.png" id="16_je37j"]
+[ext_resource type="PackedScene" uid="uid://bk46h04480huo" path="res://scenes/menu/screens.tscn" id="21_6s3de"]
+[ext_resource type="PackedScene" uid="uid://ck8dex7yvlwjc" path="res://scenes/objects/win_zone.tscn" id="22_6b4f3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ef2uv"]
 albedo_texture = ExtResource("5_dv80g")
@@ -267,6 +269,47 @@ transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -30.5, 1
 material_override = ExtResource("2_402ov")
 use_collision = true
 size = Vector3(4, 5, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D63" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -29, 10, -41.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(1, 2, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D64" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -31, 11.5, -41.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(1, 5, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D65" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -31, 11.5, -39.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(1, 5, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D67" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -32, 11.5, -40.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(1, 5, 3)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D66" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -29, 10, -39.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
+size = Vector3(1, 2, 1)
+metadata/_edit_group_ = true
+
+[node name="CSGBox3D68" type="CSGBox3D" parent="Node3D"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, -29, 9.5, -40.5)
+material_override = ExtResource("2_402ov")
+use_collision = true
 metadata/_edit_group_ = true
 
 [node name="CSGBox3D46" type="CSGBox3D" parent="Node3D"]
@@ -1001,5 +1044,10 @@ transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, -10.5, 17.5, -42)
 transform = Transform3D(6.45239e-08, 0.25, -0.433013, -3.72529e-08, 0.433013, 0.25, 0.5, 0, 7.45058e-08, -17.5, 17.5, -40.5)
 material_override = SubResource("StandardMaterial3D_fqth4")
 mesh = ExtResource("16_3rym8")
+
+[node name="CanvasLayer2" parent="." instance=ExtResource("21_6s3de")]
+
+[node name="WinZone" parent="." instance=ExtResource("22_6b4f3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 12.5, -40.5)
 
 [editable path="Node3D/AmbRigidbody"]
