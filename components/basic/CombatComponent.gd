@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 func _idle(_anim_string: String) -> void:
 	rhand_anim_player.play(animations.idle)
 
-func shoot() -> void:
+func shoot(scale_down: bool = false) -> void:
 	if shoot_timeout > 0:
 		return
 	
@@ -56,6 +56,7 @@ func shoot() -> void:
 
 	var b := bullet.instantiate()
 	b.transform = bullet_placement.global_transform
+	b.scale_down = scale_down
 	bullet_placement.add_child(b)
 
 func attack() -> void:
@@ -63,13 +64,15 @@ func attack() -> void:
 
 # Kick, push, bash
 func push() -> void:
-	var collider := shoot_raycast.get_collider()
-	if collider and collider is RigidBody3D:
-		collider.apply_impulse((owner.global_position - collider.position) * FORCE_POWER, owner.global_position - collider.position)
-		force_signal.emit()
-	if collider and collider.owner is RigidBody3D:
-		collider.owner.apply_impulse((owner.global_position - collider.owner.position) * FORCE_POWER, owner.global_position - collider.owner.position)
-		force_signal.emit()
+	shoot(true)
+	#return
+	#var collider := shoot_raycast.get_collider()
+	#if collider and collider is RigidBody3D:
+		#collider.apply_impulse((owner.global_position - collider.position) * FORCE_POWER, owner.global_position - collider.position)
+		#force_signal.emit()
+	#if collider and collider.owner is RigidBody3D:
+		#collider.owner.apply_impulse((owner.global_position - collider.owner.position) * FORCE_POWER, owner.global_position - collider.owner.position)
+		#force_signal.emit()
 
 func dash() -> void: 
 	rhand_anim_player.play("defense")
