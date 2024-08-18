@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Yet another RPG"
 config/tags=PackedStringArray("3d")
-run/main_scene="res://world.tscn"
+run/main_scene="res://scenes/menu/start_scene.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://assets/sprites/sword.png"
 
